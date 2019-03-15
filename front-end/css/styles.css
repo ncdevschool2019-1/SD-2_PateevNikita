@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Bungee', cursive;
 	font-size: 100px;
 	font-weight: 400;
-	
+	margin: 90px auto 40px;
 	line-height: 1.3;
 }
 
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__logo {
 	font-family: 'Oswald', sans-serif;
 	font-size: 38px;
-	text-shadow: black 0px 0px 5px;
+	text-shadow: black 2px 3px 0px;
 	color: #ffce04;
 }
 
@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 	left: 0;
 	z-index: 10;
 
-	transition: opacity 0.2s linear;;
+	transition: opacity 0.2s linear;
 }
 
 .nav__link:hover {
@@ -133,9 +133,15 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 	text-decoration: none;
 	text-shadow: black 0px 0px 1px;
+	transition: color 0.2s linear, font-size 0.2s linear, text-shadow 0.2s linear;
 }
 
-
+.button:hover {
+	/*background-color: black;*/
+	color: #ffce04;
+	font-size: 17px;
+	text-shadow: 2px, 2px, 3px;
+}
 
 
 
