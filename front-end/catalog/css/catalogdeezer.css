@@ -1,0 +1,144 @@
+.deezer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+
+/* Spotify day */
+* {box-sizing: border-box;}
+.deezer_day {
+  width: 300px;
+  text-align: center;
+  margin: 20px 20px;
+  margin-left: 150px;
+  border-bottom: 2px solid #F5F5F5;
+  background-image: 
+  url("../../landing/images/night.gif");
+  font-family: 'Oswald', sans-serif;
+  transition: 0.2s linear;
+}
+
+.deezer_day:hover {
+  border-bottom: 2px solid #C71585;
+}
+
+.deezer_day img {
+  display: block;
+  width: 100%;
+}
+
+.deez_text {
+  color: white;
+  font-size: 19px;
+}
+
+/* Spotify month */
+
+* {box-sizing: border-box;}
+.deezer_month {
+  width: 300px;
+  text-align: center;
+  margin: 20px 20px;
+  border-bottom: 2px solid #F5F5F5;
+  background-image: 
+  url("../../landing/images/night.gif");
+  font-family: 'Oswald', sans-serif;
+  transition: 0.2s linear;
+}
+
+.deezer_month:hover {
+  border-bottom: 2px solid #C71585;
+}
+
+.deezer_month img {
+  display: block;
+  width: 100%;
+}
+
+
+/* Spotify year */
+* {box-sizing: border-box;}
+.deezer_year {
+  width: 300px;
+  text-align: center;
+  margin: 20px 20px;
+  margin-right: 150px;
+  border-bottom: 2px solid #F5F5F5;
+  background-image: 
+  url("../../landing/images/night.gif");
+  font-family: 'Oswald', sans-serif;
+  transition: 0.2s linear;
+}
+
+.deezer_year:hover {
+  border-bottom: 2px solid #C71585;
+}
+
+.deezer_year img {
+  display: block;
+  width: 100%;
+}
+
+
+.deezer-list h3 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #444444;
+  margin: 0 0 10px 0;
+}
+
+.price_deezer {
+  font-size: 22px;
+  color: white;
+  text-shadow: black 0px 0px 0.5px;
+  display: block;
+  margin-bottom: 12px;
+  transition: color 0.2s linear;
+}
+
+.price_deezer:hover {
+  color: #C71585;
+}
+
+
+.price_deezer:hover {
+  color: #C71585;
+}
+
+
+/* Button */
+.button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 12px;
+  margin-bottom: 30px;
+  background-color: white;
+  color: black;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 28px;
+  transition: 0.2s linear;
+  transition:color 0.2s linear, text-color 0.2s linear;
+}
+
+.deezer_day:hover .button {
+  background: #C71585;
+  color: white;
+}
+
+.deezer_month:hover .button {
+  background: #C71585;
+  color: white;
+}
+
+
+.deezer_year:hover .button {
+  background: #C71585;
+  color: white;
+}
+
+.image {
+  background-image: 
+  url("../../landing/images/night.gif");
+}
