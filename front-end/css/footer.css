@@ -1,0 +1,22 @@
+/* Footer */
+.footer {
+	padding-top: 20px;
+
+	background-image: 
+	url("../images/night.gif");
+}
+
+.image_foot {
+	max-width: 40px;
+	max-height: 40px;		
+	vertical-align: top;
+	display: inline-block;
+}
+
+.footer__logo {
+	font-family: 'Oswald', sans-serif;
+	font-size: 38px;
+	text-shadow: black 2px 3px 0px;
+	color: #ffce04;
+	margin: auto;
+}

@@ -1,0 +1,79 @@
+/* Header */
+.header {
+	width: 100%;
+	position: absolute;
+	padding-top: 30px;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+}
+
+.header__inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.header__logo {
+	font-family: 'Oswald', sans-serif;
+	font-size: 38px;
+	text-shadow: black 2px 3px 0px;
+	color: #ffce04;
+	margin: 0 0 0 -250px;
+}
+
+/* Logo Image */
+.image {
+	max-width: 40px;
+	max-height: 40px;		
+	vertical-align: top;
+	display: inline-block;
+}
+
+/* For folding */
+@media only screen and (max-width: 960px) {
+	
+.header {
+	width: 100%;
+	position: absolute;
+	padding-top: 30px;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	margin: auto;
+}
+
+.header__inner {
+	
+	margin: auto;
+	max-width: 960px;
+}
+
+.header__logo {
+	font-family: 'Oswald', sans-serif;
+	font-size: 38px;
+	text-shadow: black 2px 3px 0px;
+	color: #ffce04;
+	margin: auto;
+}
+}
+
+@media only screen and (max-width: 350px) {
+
+/* Header */
+.header__inner {
+	margin: auto;
+	max-width: 320px;
+}
+
+.header__logo {
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+	text-shadow: black 2px 3px 0px;
+	color: #ffce04;
+	margin: auto;
+}
+
+}

@@ -1,0 +1,53 @@
+/* Netflix */
+.netflix {
+	padding: none;	
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	background-image:
+	url("../images/netfl.gif");
+	background-size: cover;
+}
+
+.netflix__header {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 40px;
+	text-align: center;
+}
+
+.netflix__title {
+	font-family: 'Oswald', sans-serif;
+	font-size: 150px;
+	color: #e50914;
+	margin-top: 40px;
+	margin-left: 10px;
+	text-transform: uppercase;
+}
+
+.netflix__text {
+	font-size: 20px;
+	margin-top: -20px;
+}
+
+@media only screen and (max-width: 350px) {
+
+/* Netflix */
+.netflix__title {
+	font-family: 'Oswald', sans-serif;
+	font-size: 40px;
+	color: #e50914;
+	margin-top: 40px;
+	margin-left: 10px;
+	text-transform: uppercase;
+}
+
+.netflix__text {
+	font-size: 15px;
+	margin-top: -20px;
+}
+
+
+}

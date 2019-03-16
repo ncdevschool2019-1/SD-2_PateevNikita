@@ -1,0 +1,52 @@
+/* Music */ 
+.music {
+    padding: none;	
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	background-image:
+	url("../images/giphy.gif");
+	background-size: 50% 100%;
+}
+
+.music__header {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 40px;
+	text-align: center;
+}
+
+.music__title {
+	font-family: 'Bungee', cursive;
+	font-size: 100px;
+	color: #ffce04;
+	margin-top: 40px;
+	margin-left: 10px;
+}
+
+.music__text {
+	font-size: 20px;
+	margin-top: -20px;
+}
+
+@media only screen and (max-width: 350px) {
+
+
+/* Music */
+.music__title {
+	font-family: 'Bungee', cursive;
+	font-size: 40px;
+	color: #ffce04;
+	margin-top: 40px;
+	margin-left: 10px;
+}
+
+.music__text {
+	font-size: 15px;
+	margin-top: -20px;
+}
+
+
+}
