@@ -24,6 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 auto;  
 }
 
+
 /* Intro */
 .intro {
 	display: flex;
@@ -74,10 +75,19 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 38px;
 	text-shadow: black 2px 3px 0px;
 	color: #ffce04;
+	margin: 0 0 0 -250px;
+}
+
+/* Logo Image */
+.image {
+	max-width: 40px;
+	max-height: 40px;		
+	vertical-align: top;
+	display: inline-block;
 }
 
 /* Navigation */
-.navigation {
+.navigation {	
 	font-size: 18px;
 	text-transform: uppercase;
 	font-family: 'Oswald', sans-serif;
@@ -116,8 +126,18 @@ h1, h2, h3, h4, h5, h6 {
 	color: #ffce04;
 }
 
-.nav__link:hover:after {
+.nav__link:hover:after, 
+.nav__link.active:after {
 	opacity: 1;
+}
+
+.nav__link.active {
+    color: #ffce04;
+}
+
+.nav__link.active:hover {
+	color: white;
+	transition: color 0.2s linear;
 }
 
 /* Button */
@@ -146,6 +166,109 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* Music */ 
+.music {
+    padding: none;	
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	background-image:
+	url("../images/giphy.gif");
+	background-size: 50% 100%;
+}
+
+.music__header {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 40px;
+	text-align: center;
+}
+
+.music__title {
+	font-family: 'Bungee', cursive;
+	font-size: 100px;
+	color: #ffce04;
+	margin-top: 40px;
+	margin-left: 10px;
+}
+
+.music__text {
+	font-size: 20px;
+	margin-top: -20px;
+}
+
+
+
+
+/* Magazines */
+.mag {
+	padding: none;	
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	background-image:
+	url("../images/mag.gif");
+	background-size: cover;
+}
+
+.mag__title {
+	width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+	font-family: 'Bungee', cursive;
+	font-size: 100px;
+	color: #ffce04;
+	margin-top: 40px;
+}
+
+.mag__text {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 40px;
+	text-align: center;
+	font-size: 20px;
+	margin-top: -20px;
+}
+
+
+/* Netflix */
+.netflix {
+	padding: none;	
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+	background-image:
+	url("../images/netfl.gif");
+	background-size: cover;
+}
+
+.netflix__header {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 40px;
+	text-align: center;
+}
+
+.netflix__title {
+	font-family: 'Oswald', sans-serif;
+	font-size: 150px;
+	color: #e50914;
+	margin-top: 40px;
+	margin-left: 10px;
+	text-transform: uppercase;
+}
+
+.netflix__text {
+	font-size: 20px;
+	margin-top: -20px;
+}
 
 
 
@@ -153,7 +276,25 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+/* Footer */
+.footer {
+	padding-top: 20px;
 
+	background-image: 
+	url("../images/night.gif");
+}
 
+.image_foot {
+	max-width: 40px;
+	max-height: 40px;		
+	vertical-align: top;
+	display: inline-block;
+}
 
-
+.footer__logo {
+	font-family: 'Oswald', sans-serif;
+	font-size: 38px;
+	text-shadow: black 2px 3px 0px;
+	color: #ffce04;
+	margin: auto;
+}
