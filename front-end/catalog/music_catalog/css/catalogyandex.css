@@ -1,0 +1,137 @@
+.yandex {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+
+/* Yandex day */
+* {box-sizing: border-box;}
+.yandex_day {
+  width: 300px;
+  text-align: center;
+  margin: 20px 20px;
+  margin-left: 150px;
+  border-bottom: 2px solid #F5F5F5;
+  background-image: 
+  url("../../../landing/images/night.gif");
+  font-family: 'Oswald', sans-serif;
+  transition: 0.2s linear;
+}
+
+.yandex_day:hover {
+  border-bottom: 2px solid #ff0000;
+}
+
+.yandex_day img {
+  display: block;
+  width: 100%;
+}
+
+.yan_text {
+  color: white;
+  font-size: 19px;
+}
+
+/* Yandex month */
+
+* {box-sizing: border-box;}
+.yandex_month {
+  width: 300px;
+  text-align: center;
+  margin: 20px 20px;
+  border-bottom: 2px solid #F5F5F5;
+  background-image: 
+  url("../../../landing/images/night.gif");
+  font-family: 'Oswald', sans-serif;
+  transition: 0.2s linear;
+}
+
+.yandex_month:hover {
+  border-bottom: 2px solid #ff0000;
+}
+
+.yandex_month img {
+  display: block;
+  width: 100%;
+}
+
+
+/* Yandex year */
+* {box-sizing: border-box;}
+.yandex_year {
+  width: 300px;
+  text-align: center;
+  margin: 20px 20px;
+  margin-right: 150px;
+  border-bottom: 2px solid #F5F5F5;
+  background-image: 
+  url("../../../landing/images/night.gif");
+  font-family: 'Oswald', sans-serif;
+  transition: 0.2s linear;
+}
+
+.yandex_year:hover {
+  border-bottom: 2px solid #ff0000;
+}
+
+.yandex_year img {
+  display: block;
+  width: 100%;
+}
+
+.yandex-list h3 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #444444;
+  margin: 0 0 10px 0;
+}
+
+.price_yandex {
+  font-size: 22px;
+  color: white;
+  text-shadow: black 0px 0px 0.5px;
+  display: block;
+  margin-bottom: 12px;
+  transition: color 0.2s linear;
+}
+
+.price_yandex:hover {
+  color: #ff0000;
+}
+
+/* Button */
+.button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 12px;
+  margin-bottom: 30px;
+  background-color: white;
+  color: black;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 28px;
+  transition: 0.2s linear;
+  transition:color 0.2s linear, text-color 0.2s linear;
+}
+
+.yandex_day:hover .button {
+  background: #ff0000;
+  color: white;
+}
+
+.yandex_month:hover .button {
+  background: #ff0000;
+  color: white;
+}
+
+
+.yandex_year:hover .button {
+  background: #ff0000;
+  color: white;
+}
+
+.image {
+  background-image: 
+  url("../../../landing/images/night.gif");
+}

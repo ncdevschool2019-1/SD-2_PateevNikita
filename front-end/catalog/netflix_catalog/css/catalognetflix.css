@@ -1,93 +1,95 @@
-.yandex {
+.netflix {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-top: 5px;
 }
 
 
-/* Yandex day */
+/* Spotify day */
 * {box-sizing: border-box;}
-.yandex_day {
+.netflix_day {
   width: 300px;
   text-align: center;
   margin: 20px 20px;
   margin-left: 150px;
   border-bottom: 2px solid #F5F5F5;
   background-image: 
-  url("../../landing/images/night.gif");
+  url("../../../landing/images/night.gif");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
 }
 
-.yandex_day:hover {
-  border-bottom: 2px solid #ff0000;
+.netflix_day:hover {
+  border-bottom: 2px solid #e50914;
 }
 
-.yandex_day img {
+.netflix_day img {
   display: block;
   width: 100%;
 }
 
-.yan_text {
+.netfl_text {
   color: white;
   font-size: 19px;
 }
 
-/* Yandex month */
+/* Spotify month */
 
 * {box-sizing: border-box;}
-.yandex_month {
+.netflix_month {
   width: 300px;
   text-align: center;
   margin: 20px 20px;
   border-bottom: 2px solid #F5F5F5;
   background-image: 
-  url("../../landing/images/night.gif");
+  url("../../../landing/images/night.gif");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
 }
 
-.yandex_month:hover {
-  border-bottom: 2px solid #ff0000;
+.netflix_month:hover {
+  border-bottom: 2px solid #e50914;
 }
 
-.yandex_month img {
+.netflix_month img {
   display: block;
   width: 100%;
 }
 
 
-/* Yandex year */
+/* Spotify year */
 * {box-sizing: border-box;}
-.yandex_year {
+.netflix_year {
   width: 300px;
   text-align: center;
   margin: 20px 20px;
   margin-right: 150px;
   border-bottom: 2px solid #F5F5F5;
   background-image: 
-  url("../../landing/images/night.gif");
+  url("../../../landing/images/night.gif");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
 }
 
-.yandex_year:hover {
-  border-bottom: 2px solid #ff0000;
+.netflix_year:hover {
+  border-bottom: 2px solid #e50914;
 }
 
-.yandex_year img {
+.netflix_year img {
   display: block;
   width: 100%;
 }
 
-.yandex-list h3 {
+
+.netflix-list h3 {
   font-size: 18px;
   font-weight: 400;
   color: #444444;
   margin: 0 0 10px 0;
 }
 
-.price_yandex {
+.price_netflix {
   font-size: 22px;
   color: white;
   text-shadow: black 0px 0px 0.5px;
@@ -96,9 +98,10 @@
   transition: color 0.2s linear;
 }
 
-.price_yandex:hover {
-  color: #ff0000;
+.price_netflix:hover {
+  color: #e50914;
 }
+
 
 /* Button */
 .button {
@@ -115,23 +118,23 @@
   transition:color 0.2s linear, text-color 0.2s linear;
 }
 
-.yandex_day:hover .button {
-  background: #ff0000;
+.netflix_day:hover .button {
+  background: #e50914;
   color: white;
 }
 
-.yandex_month:hover .button {
-  background: #ff0000;
+.netflix_month:hover .button {
+  background: #e50914;
   color: white;
 }
 
 
-.yandex_year:hover .button {
-  background: #ff0000;
+.netflix_year:hover .button {
+  background: #e50914;
   color: white;
 }
 
 .image {
   background-image: 
-  url("../../landing/images/night.gif");
+  url("../../../landing/images/night.gif");
 }

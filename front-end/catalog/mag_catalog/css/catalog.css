@@ -1,0 +1,25 @@
+body {
+  padding-top: 0px;
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  color: white;
+  line-height: 1.6;
+  background-image: 
+  url("../../../landing/images/night.gif");
+
+}
+
+.header__logo {
+	margin-bottom: : 20px;
+  font-family: 'Oswald', sans-serif;
+	font-size: 200px;
+  text-shadow: #ffce04 10px 10px 6px;
+	color: #ffce04;
+	text-align: center;
+	text-transform: uppercase;
+  border: 10px solid #ffce04;
+  -webkit-text-stroke:black 5px;
+  background-image: 
+  url("../../../landing/images/mag.jpg");
+}
