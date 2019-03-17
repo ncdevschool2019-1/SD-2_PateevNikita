@@ -24,6 +24,16 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 auto;  
 }
 
+.sas {
+	overflow-x: hidden;
+	
+}
+
+.sas::-webkit-scrollbar-y {
+	width: 0px;
+}
+
+
 /* Logo Image */
 .image {
 	max-width: 40px;

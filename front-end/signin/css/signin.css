@@ -1,0 +1,83 @@
+body {
+	margin: 0;
+	font-family: 'Oswald', sans-serif;
+	font-size: 15px;
+	color: white;
+	line-height: 1.6;
+	background-image: 
+	url(../images/giph.gif);
+	background-size: cover;
+	
+	}
+
+.container {
+	width: 400px;
+	height: 500px;
+	background-image: 
+	url(../images/giphy.gif);
+	margin: 150px auto -50px auto;
+	text-align: center;
+	border-radius: 20px;
+}	
+
+.dws__input {
+	padding-top: 0px;
+}
+
+.forgot__pass {
+	color: white;
+	text-decoration: none;
+	text-shadow: black 2px 2px 2px;
+	transition: font-size 0.2s;
+}
+
+.forgot__pass:hover {
+	font-size: 20px;
+    text-shadow: black 2px 2px 4px;
+
+}
+
+input[type="text"], input[type="password"] {
+	width: 250px;
+	height: 50px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 18px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.button {
+	 padding: 13px 30px;
+	 margin: 5px 0px 20px 0px;
+	 font-size: 15px;
+	 color: white;
+	 background-image: 
+	 url(../images/giph.gif);
+	 border: none;
+	 text-shadow: black 2px 2px 2px;
+	 transition: text-shadow 0.2s, font-size 0.2s;
+}
+
+.button:hover {
+    cursor: pointer;
+    font-size: 20px;
+    text-shadow: black 2px 2px 4px;
+}
+
+
+.image {
+	max-height: 30%;
+	max-width: 30%;
+	margin-bottom: 50px;
+}
+
+.logos {
+	font-family: 'Oswald', sans-serif;
+	font-size: 38px;
+	text-shadow: black 2px 3px 0px;
+	color: #ffce04;
+	margin-top: -50px;
+	margin-bottom: 20px;
+	
+}

@@ -13,13 +13,9 @@ body {
 .header__logo {
 	margin-bottom: : 20px;
   font-family: 'Oswald', sans-serif;
-	font-size: 200px;
-  text-shadow: #ffce04 10px 10px 6px;
+	font-size: 228px;
 	color: #ffce04;
 	text-align: center;
 	text-transform: uppercase;
-  border: 10px solid #ffce04;
-  -webkit-text-stroke:black 5px;
-  background-image: 
-  url("../../../landing/images/mag.jpg");
+  border-bottom: 10px solid #ffce04;
 }
