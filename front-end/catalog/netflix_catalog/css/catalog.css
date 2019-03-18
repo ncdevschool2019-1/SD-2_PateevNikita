@@ -10,6 +10,8 @@ body {
 
 }
 
+
+
 .header__logo {
 	margin-bottom: 20px;
   font-family: 'Oswald', sans-serif;
@@ -18,8 +20,21 @@ body {
 	color: white;
 	text-align: center;
 	text-transform: uppercase;
-  border: 10px solid #e50914;
   -webkit-text-stroke:black 5px;
   background-image: 
   url("../../../landing/images/netflix.jpg")
+}
+
+.back {
+  display: inline-block;
+  vertical-align: top;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: black 3px 3px 6px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }

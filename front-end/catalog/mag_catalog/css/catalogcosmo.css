@@ -8,16 +8,17 @@
 /* Spotify day */
 * {box-sizing: border-box;}
 .cosmo_day {
-  padding-top: 20px;
+  
   width: 300px;
   text-align: center;
   margin: 20px 20px;
   margin-left: 150px;
   border-bottom: 2px solid #F5F5F5;
   background-image: 
-  url("../../../landing/images/night.gif");
+  url("../../../landing/images/blur.jpg");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
+   border-radius: 15px;
 }
 
 .cosmo_day:hover {
@@ -43,9 +44,10 @@
   margin: 20px 20px;
   border-bottom: 2px solid #F5F5F5;
   background-image: 
-  url("../../../landing/images/night.gif");
+  url("../../../landing/images/blur.jpg");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
+   border-radius: 15px;
 }
 
 .cosmo_month:hover {
@@ -67,9 +69,10 @@
   margin-right: 150px;
   border-bottom: 2px solid #F5F5F5;
   background-image: 
-  url("../../../landing/images/night.gif");
+  url("../../../landing/images/blur.jpg");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
+   border-radius: 15px;
 }
 
 .cosmo_year:hover {
@@ -134,7 +137,3 @@
   color: white;
 }
 
-.image {
-  background-image: 
-  url("../../../landing/images/night.gif");
-}

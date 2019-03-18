@@ -5,7 +5,7 @@ body {
 	color: white;
 	line-height: 1.6;
 	background-image: 
-	url(../images/gi.gif);
+	url(../images/black.jpg);
 	background-size: cover;
 	
 	}
@@ -29,12 +29,6 @@ body {
 	text-decoration: none;
 	text-shadow: black 2px 2px 2px;
 	transition: font-size 0.2s;
-}
-
-.forgot__pass:hover { 
-	font-size: 20px;
-    text-shadow: black 2px 2px 4px;
-
 }
 
 .back {

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+ 
 }
 
 
@@ -14,9 +15,10 @@
   margin-left: 150px;
   border-bottom: 2px solid #F5F5F5;
   background-image: 
-  url("../../../landing/images/night.gif");
+  url("../../../landing/images/grad.jpg");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
+  border-radius: 15px;
 }
 
 .deezer_day:hover {
@@ -42,9 +44,10 @@
   margin: 20px 20px;
   border-bottom: 2px solid #F5F5F5;
   background-image: 
-  url("../../../landing/images/night.gif");
+  url("../../../landing/images/grad.jpg");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
+   border-radius: 15px;
 }
 
 .deezer_month:hover {
@@ -66,9 +69,10 @@
   margin-right: 150px;
   border-bottom: 2px solid #F5F5F5;
   background-image: 
-  url("../../../landing/images/night.gif");
+  url("../../../landing/images/grad.jpg");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
+   border-radius: 15px;
 }
 
 .deezer_year:hover {
@@ -138,7 +142,4 @@
   color: white;
 }
 
-.image {
-  background-image: 
-  url("../../../landing/images/night.gif");
-}
+
