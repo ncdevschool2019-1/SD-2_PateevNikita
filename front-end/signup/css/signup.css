@@ -5,32 +5,20 @@ body {
 	color: white;
 	line-height: 1.6;
 	background-image: 
-	url(../images/giph.gif);
+	url(../images/gi.gif);
 	background-size: cover;
 	
 	}
 
-
-
 .container {
 	max-width: 400px;
-	height: 500px;
+	height: 600px;
 	background-image: 
 	url(../images/giphy.gif);
 	margin: 50px auto 90px auto;
 	text-align: center;
 	border-radius: 20px;
 }	
-
-.back {
-	color: white;
-	text-decoration: none;
-	text-shadow: black 2px 2px 2px;
-	transition: font-size 0.2s;
-	margin-right: 350px;
-	font-size: 25px;
-	margin-top: 50px;
-}
 
 .dws__input {
 	padding-top: 0px;
@@ -43,13 +31,24 @@ body {
 	transition: font-size 0.2s;
 }
 
-.forgot__pass:hover {
+.forgot__pass:hover { 
 	font-size: 20px;
     text-shadow: black 2px 2px 4px;
 
 }
 
-input[type="text"], input[type="password"] {
+.back {
+	color: white;
+	text-decoration: none;
+	text-shadow: black 2px 2px 2px;
+	transition: font-size 0.2s;
+	margin-right: 350px;
+	font-size: 25px;
+	margin-top: 50px;
+}
+
+
+input[type="text"], input[type="password"], input[type="email"] {
 	width: 250px;
 	height: 50px;
 	font-family: 'Oswald', sans-serif;
@@ -65,7 +64,7 @@ input[type="text"], input[type="password"] {
 	 font-size: 15px;
 	 color: white;
 	 background-image: 
-	 url(../images/giph.gif);
+	 url(../images/gi.gif);
 	 border: none;
 	 text-shadow: black 2px 2px 2px;
 	 transition: text-shadow 0.2s, font-size 0.2s;
