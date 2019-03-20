@@ -13,16 +13,6 @@ body {
 	font-size: 19px;
 }
 
-/* Container */
-.container {
-	width: 100%;
-	max-width: 1920px;
-	margin: 0 auto;  
-	color: white;
-	text-shadow: black 2px 3px 4px;
-	font-family: 'Oswald', sans-serif;
-}
-
 /* Logo Image */
 .image {
 	max-width: 40px;

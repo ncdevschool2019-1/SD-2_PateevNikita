@@ -8,8 +8,8 @@ html {
 
 body {
   background-image: 
-  url(../images/black.jpg);
-  background-size: cover;
+  url(../images/giphy.gif);
+ 
   font-family: 'Oswald', sans-serif;
   font-size: 19px;
 }
@@ -20,18 +20,23 @@ a {
   transition: .5s ease;
 }
 a:hover {
-  color: #bbbbbb;
+  color: #6c0256;
 }
 
 .form {
-  background-image: 
-  url(../images/giphy.gif);
+  background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+  opacity: 0.7;
   padding: 40px;
-  max-width: 500px;
+  max-width: 400px;
   max-height: 600px;
   margin: 40px auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  transition: opacity 0.2s linear;
+}
+
+.form:hover {
+  opacity: 1;
 }
 
 .tab-group {
@@ -50,7 +55,7 @@ a:hover {
   text-decoration: none;
   padding: 15px;
   background: rgba(160, 179, 176, 0.25);
-  color: #a0b3b0;
+  color: white;
   font-size: 20px;
   float: left;
   width: 50%;
@@ -64,7 +69,6 @@ a:hover {
 }
 .tab-group .active a {
   background: #8a096f;
-  color: #ffffff;
 }
 
 .tab-content > div:last-child {
@@ -167,7 +171,7 @@ textarea {
   cursor: pointer;
 }
 .button:hover, .button:focus {
-  background:  #6c0256;
+  background: #6c0256;
 }
 
 .button-block {
