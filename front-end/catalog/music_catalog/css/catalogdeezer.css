@@ -18,8 +18,7 @@
   url("../../../landing/images/grad.jpg");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
-  border-radius: 15px;
-}
+  }
 
 .deezer_day:hover {
   border-bottom: 2px solid #C71585;
@@ -47,7 +46,7 @@
   url("../../../landing/images/grad.jpg");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
-   border-radius: 15px;
+
 }
 
 .deezer_month:hover {
@@ -60,7 +59,7 @@
 }
 
 
-/* Spotify year */
+/* Deezer year */
 * {box-sizing: border-box;}
 .deezer_year {
   width: 300px;
@@ -141,5 +140,3 @@
   background: #C71585;
   color: white;
 }
-
-

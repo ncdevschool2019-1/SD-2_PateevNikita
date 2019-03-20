@@ -1,36 +1,16 @@
 body {
+  background-image: 
+  url("../../../landing/images/grad.jpg");
   padding-top: 0px;
   margin: 0;
   font-family: 'Oswald', sans-serif;
   font-size: 15px;
   color: white;
   line-height: 1.6;
-  background-image: 
-  url("../../../landing/images/grad.jpg");
   background-size: cover;
 }
 
-.header__logo {
-	margin-bottom: : 20px;
-  font-family: 'Oswald', sans-serif;
-	font-size: 200px;
-	text-shadow: black 1px 1px 3px;
-	color: #ffce04;
-	text-align: center;
-	text-transform: uppercase;
-  border-bottom: 10px solid #ffce04;
-}
-
-.back {
-  display: inline-block;
-  vertical-align: top;
-  color: white;
-  text-transform: uppercase;
-  font-family: 'Oswald', sans-serif;
-  font-size: 35px;
-  font-weight: 700;
-  text-decoration: none;
-  text-shadow: black 0px 0px 1px;
-  margin-left: 10px;
-  margin-bottom: -40px;
+.cont {
+	font-family: 'Oswald', sans-serif;
+	font-size: 19px;
 }

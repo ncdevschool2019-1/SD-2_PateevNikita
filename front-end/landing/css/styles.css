@@ -1,38 +1,27 @@
-body {
-	margin: 0;
-	font-family: 'Oswald', sans-serif;
-	font-size: 15px;
-	text-shadow: black 2px 3px 4px;
-	color: white;
-	line-height: 1.6;
-}
-
 *,
 *:before,
 *:after {
 	box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0;
+body {
+	font-family: 'Oswald', sans-serif;
+}
+
+.cont {
+	font-family: 'Oswald', sans-serif;
+	font-size: 19px;
 }
 
 /* Container */
 .container {
 	width: 100%;
-	max-width: 1228px;
+	max-width: 1920px;
 	margin: 0 auto;  
+	color: white;
+	text-shadow: black 2px 3px 4px;
+	font-family: 'Oswald', sans-serif;
 }
-
-.sas {
-	overflow-x: hidden;
-	
-}
-
-.sas::-webkit-scrollbar-y {
-	width: 0px;
-}
-
 
 /* Logo Image */
 .image {
@@ -41,3 +30,4 @@ h1, h2, h3, h4, h5, h6 {
 	vertical-align: top;
 	display: inline-block;
 }
+
