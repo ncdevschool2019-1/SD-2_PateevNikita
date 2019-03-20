@@ -2,9 +2,15 @@ body {
   background-image: 
   url("../../../landing/images/night.gif");
   font-family: 'Oswald', sans-serif;
+  padding-top: 0px;
+  margin: 0;
   color: white;
   font-size: 15px;
   line-height: 1.9;
+}
+
+html {
+  overflow-y: scroll;
 }
 
 .cont {
@@ -19,6 +25,7 @@ body {
 }
 
 
+
 /* Netflix day */
 * {box-sizing: border-box;}
 .netflix_day {
@@ -31,6 +38,7 @@ body {
   url("../../../landing/images/night.gif");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
+  border-radius: 15px;
 }
 
 .netflix_day:hover {
@@ -59,6 +67,7 @@ body {
   url("../../../landing/images/night.gif");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
+  border-radius: 15px;
 }
 
 .netflix_month:hover {
@@ -83,6 +92,7 @@ body {
   url("../../../landing/images/night.gif");
   font-family: 'Oswald', sans-serif;
   transition: 0.2s linear;
+  border-radius: 15px;
 }
 
 .netflix_year:hover {

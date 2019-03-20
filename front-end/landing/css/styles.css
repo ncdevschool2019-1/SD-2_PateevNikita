@@ -31,3 +31,169 @@ body {
 	display: inline-block;
 }
 
+.carousel-inner {
+	max-height: 685px;
+	font-family: 'Oswald', sans-serif;	
+	background-size: cover;
+}
+
+/* Netflix */
+.netflix__title {
+	font-family: 'Oswald', sans-serif;
+	font-size: 150px;
+	color: #e50914;
+    margin-bottom: 100px;
+	text-transform: uppercase;
+	text-shadow: black 3px 3px 6px;
+}
+
+.netflix__text {
+	font-size: 20px;
+	margin-bottom: 150px;
+	text-shadow: black 2px 2px 3px;
+}
+
+@media only screen and (max-width: 350px) {
+
+/* Netflix */
+.netflix__title {
+	font-family: 'Oswald', sans-serif;
+	font-size: 40px;
+	color: #e50914;
+	margin-top: 40px;
+	margin-left: 10px;
+	text-transform: uppercase;
+}
+
+.netflix__text {
+	font-size: 15px;
+	margin-top: -20px;
+}
+
+
+}
+
+/* Music */
+.music__title {
+	font-family: 'Bungee', cursive;
+	font-size: 150px;
+	color: #ffce04;
+	margin-bottom: 100px;
+	text-shadow: black 3px 3px 6px;
+}
+
+.music__text {
+	font-size: 20px;
+	margin-bottom: 150px;
+   text-shadow: black 2px 2px 3px;
+}
+
+@media only screen and (max-width: 350px) {
+
+
+/* Music */
+.music__title {
+	font-family: 'Bungee', cursive;
+	font-size: 40px;
+	color: #ffce04;
+	margin-top: 40px;
+	margin-left: 10px;
+}
+
+.music__text {
+	font-size: 15px;
+	margin-top: -20px;
+}
+
+
+}
+
+/* Intro */
+.intro__inner {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro__title {
+	color: #ffce04;
+	border: 4px bold #ffce04; 
+	border-radius: 10px;
+	font-family: 'Bungee', cursive;
+	font-size: 100px;
+	font-weight: 400;
+	margin-bottom: 150px;
+	line-height: 1.3;
+	text-shadow: black 2px 2px 4px;
+}
+
+@media only screen and (max-width: 960px) {
+	
+.intro__title {
+	color: #ffce04;
+	font-family: 'Bungee', cursive;
+	font-size: 70px;
+	font-weight: 400;
+	margin: 90px auto 40px;
+	line-height: 1.3;
+}
+
+}
+
+@media only screen and (max-width: 350px) {
+
+/* Intro */
+.intro__title {
+	color: #ffce04;
+	font-family: 'Bungee', cursive;
+	font-size: 40px;
+	font-weight: 400;
+	margin: 90px auto 40px;
+	line-height: 1.3;
+}
+
+
+}
+
+/* Magazines */
+.mag__title {
+	font-family: 'Bungee', cursive;
+	font-size: 150px;
+	color: #ffce04;
+	margin-bottom: 100px;
+    text-shadow: black 3px 3px 6px;
+}
+
+.mag__text {
+	margin-bottom: 150px;
+	font-size: 20px;
+	text-shadow: black 2px 2px 3px;
+}
+
+@media only screen and (max-width: 350px) {
+
+/* Magazines */
+.mag__title {
+	width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+	font-family: 'Bungee', cursive;
+	font-size: 40px;
+	color: #ffce04;
+	margin-top: 40px;
+}
+
+.mag__text {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto 40px;
+	text-align: center;
+	font-size: 15px;
+	margin-top: -20px;
+}
+
+}
+
+
