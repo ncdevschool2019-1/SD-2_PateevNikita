@@ -24,7 +24,9 @@ html {
   align-items: baseline;
 }
 
-
+.navbar-brand {
+  font-size: 25px;
+}
 
 /* Netflix day */
 * {box-sizing: border-box;}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NetCracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="icon" href="images/logo.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Oswald|Titillium+Web:400,700&amp;subset=cyrillic" rel="stylesheet">   
+  </head>
+
+  <body>
+
+<div class="cont">
+  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img class="navbar-brand" src="../landing/images/logo.png" height="50">
+  <a class="navbar-brand" href="#">NetCracker Sub System</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="../landing/index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../catalog/music_catalog/index.html">Music</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="../catalog/mag_catalog/index.html">Magazines</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="../catalog/netflix_catalog/index.html">Netflix</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../auth/index.html">Sign in/Sign up</a>
+      </li>
+       <li class="nav-item">
+        <a href="index.html" ><img class="nav-link" class="nav-link" src="https://img.icons8.com/metro/24/000000/user-male-circle.png">  </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">User/Admin <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+</div>
+  
+  <div class="content">
+
+    <div class="userInfo">
+      <p class="field" id="firstName">Name:</p><p class="value">Vadim</p>
+      <p class="field" id="userName">Username:</p><p class="value">Karpishuk</p>
+      <p class="field" id="billingAccount №1">Payment method:</p><p class="value">CARD</p>
+      <p class="value" id="money">Balance: 1337 u.e.</p>
+      <p class="field" id="billingAccount №2">Payment method:</p><p class="value">WEBMONEY</p>
+     <p class="value" id="money">Balance: -228 u.e.</p>
+    </div>
+    
+    <div class="admin">
+
+    <table class="accTable" border="1" width="100%" cellpadding="5" cols="6">
+   <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Payment method</th>
+    <th>Balance</th>
+    <th>Billing Account</th>
+   </tr>
+   <tr>
+    <td>1</td>
+    <td>Vadim</td>
+    <td>Vadim1337</td>
+    <td>CARD</td>
+    <td>1337$</td>
+    <td>id123456</td>
+  </tr>
+   <tr>
+    <td>2</td>
+    <td>Anton</td>
+    <td>Joji1998</td>
+    <td>WEBMONEY</td>
+    <td>-228$</td>
+    <td>id3885757</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Eugene</td>
+    <td>lowHigh229</td>
+    <td>WEBMONEY</td>
+    <td>0$</td>
+    <td>id22332</td>
+  </tr>
+ </table>
+
+  <table class="subsTable" border="1" width="100%" cellpadding="6">
+   <tr>
+    <th>id</th>
+    <th>User_id</th>
+    <th>Service</th>
+    <th>Service_id</th>
+    <th>Time</th>
+    <th>State</th>
+   </tr>
+   <tr>
+    <td>1</td>
+    <td>Vadim1337</td>
+    <td>Music</td>
+    <td>Spotify</td>
+    <td>25 days</td>
+    <td>Active</td>
+  </tr>
+   <tr>
+    <td>2</td>
+    <td>Joji1998</td>
+    <td>Netflix</td>
+    <td>Netflix1month</td>
+    <td>12 days</td>
+    <td>Active</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>lowHigh229</td>
+    <td>Magazines</td>
+    <td>Cosmopolitan</td>
+    <td>10 days</td>
+    <td>Blocked</td>
+  </tr>
+ </table>
+
+ </div>
+
+</div> 
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
