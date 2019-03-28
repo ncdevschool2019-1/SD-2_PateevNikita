@@ -44,6 +44,20 @@ body {
 	text-shadow: black 2px 2px 3px;
 }
 
+
+.tab-style{
+font-size:20px;
+width:50%;
+background-color:#f2f2f2;
+  text-align:center;
+  
+
+}
+.nav-tabs > li > a {
+    margin-right: 0px;
+    color:grey;
+}
+
 @media only screen and (max-width: 350px) {
 
 /* Netflix */
@@ -117,6 +131,10 @@ body {
 	margin-bottom: 150px;
 	line-height: 1.3;
 	text-shadow: black 2px 2px 4px;
+}
+
+.nav-link {
+	cursor: pointer;
 }
 
 @media only screen and (max-width: 960px) {

@@ -22,13 +22,30 @@ a:hover {
   color: #6c0256;
 }
 
+.close {
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #8a096f;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
 .form {
   background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
   opacity: 0.7;
   padding: 40px;
   max-width: 400px;
   max-height: 600px;
-  margin: 40px auto;
+  margin: 70px auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
   transition: opacity 0.2s linear;
