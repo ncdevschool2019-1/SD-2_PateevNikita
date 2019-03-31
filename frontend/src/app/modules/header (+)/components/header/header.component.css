@@ -1,0 +1,8 @@
+.nav-link {
+	cursor: pointer;
+}
+
+.nav-tabs > li > a {
+    margin-right: 0px;
+    color:grey;
+}
