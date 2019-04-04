@@ -1,0 +1,9 @@
+.accTable {
+	align-content: center;
+	padding-bottom:  10px;
+    width: 1000px;
+}
+
+.accTable > table {
+	padding-bottom: 20px;
+}

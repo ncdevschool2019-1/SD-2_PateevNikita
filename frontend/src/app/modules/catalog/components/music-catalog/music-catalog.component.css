@@ -1,5 +1,6 @@
 body {
-  background-color: black;
+  background-image:
+  url("~src/images/logo_112.jpg");
   padding-top: 0px;
   margin: 0;
   font-family: 'Oswald', sans-serif;
@@ -30,7 +31,7 @@ body {
   margin: 20px 20px;
   margin-left: 150px;
   border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+  background-image: url("~src/images/logo_112.jpg");
   font-family: 'Oswald', sans-serif;
   border-radius: 15px;
   transition: 0.2s linear;

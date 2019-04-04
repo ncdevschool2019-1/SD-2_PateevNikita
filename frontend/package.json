@@ -23,6 +23,7 @@
     "@ng-bootstrap/ng-bootstrap": "^4.1.0",
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
+    "ngx-hm-carousel": "^1.6.5-bata.1",
     "popper.js": "^1.14.7",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"

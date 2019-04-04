@@ -5,6 +5,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule }   from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxHmCarouselModule } from "ngx-hm-carousel";
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,8 +21,7 @@ import { BalanceComponent } from './modules/account/components/balance/balance.c
 import { MusicCatalogComponent } from './modules/catalog/components/music-catalog/music-catalog.component';
 import { MagazinesCatalogComponent } from './modules/catalog/components/magazines-catalog/magazines-catalog.component';
 import { NetflixCatalogComponent } from './modules/catalog/components/netflix-catalog/netflix-catalog.component';
-
-
+import { CarouselComponent } from './modules/landing/components/carousel/carousel.component';
 
 
 @NgModule({
@@ -37,13 +37,15 @@ import { NetflixCatalogComponent } from './modules/catalog/components/netflix-ca
     BalanceComponent,
     MusicCatalogComponent,
     MagazinesCatalogComponent,
-    NetflixCatalogComponent
+    NetflixCatalogComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     NgbModule,
+    NgxHmCarouselModule,
     Ng4LoadingSpinnerModule.forRoot(),
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
