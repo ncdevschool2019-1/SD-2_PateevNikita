@@ -2,82 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00be06c8-7f72-40e0-9322-7e7befca2239" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ethalon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ethalon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/edu/fapi/filter/CORSFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/edu/fapi/filter/CORSFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/edu/fapi/models/BillingAccountViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/edu/fapi/models/BillingAccountViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/edu/fapi/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/com/netcracker/edu/fapi/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/auth/js/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/balance/balance.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/account/models/subscriptions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/balance/balance.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/balance/balance.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/balance/balance.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/billing-account/billing-account.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/billing-account/billing-account.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/billing-account/billing-account.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/billing-account/billing-account.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/subscriptions/subscriptions.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/subscriptions/subscriptions.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/subscriptions/subscriptions.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/subscriptions/subscriptions.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/user-info/user-info.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/user-info/user-info.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/user-info/user-info.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/user-info/user-info.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/user-subscriptions/user-subscriptions.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/user-subscriptions/user-subscriptions.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/user-subscriptions/user-subscriptions.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/user-subscriptions/user-subscriptions.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/users-list/users-list.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/users-list/users-list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/users-list/users-list.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/components/users-list/users-list.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/account/models/billing-account.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/authorization/models/user.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/magazines-catalog/magazines-catalog.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/magazines-catalog/magazines-catalog.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/magazines-catalog/magazines-catalog.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/magazines-catalog/magazines-catalog.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/music-catalog/music-catalog.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/music-catalog/music-catalog.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/music-catalog/music-catalog.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/music-catalog/music-catalog.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/netflix-catalog/netflix-catalog.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/netflix-catalog/netflix-catalog.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/netflix-catalog/netflix-catalog.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/components/netflix-catalog/netflix-catalog.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/catalog/models/music.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/header/components/header/header.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/header/components/header/header.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/header/components/header/header.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/header/components/header/header.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/header/models/link.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/header/models/mock-links.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/landing/components/carousel/carousel.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/landing/components/carousel/carousel.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/landing/components/carousel/carousel.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/landing/components/carousel/carousel.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/landing/components/images/magz.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/landing/components/images/music.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/landing/components/images/netflix.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/landing/components/images/pre.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/landing/models/ngx-hm-carousel.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/header.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/header.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/images/logo_112.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/js/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/logo.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/header/components/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/header/components/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/modules/header/models/mock-links.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/modules/header/models/mock-links.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/fapi/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -120,23 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/header/components/header/header.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -171,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/header/components/header/header.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="55" lean-forward="true" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+            <state relative-caret-position="306">
+              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -269,14 +184,14 @@
         <option value="$PROJECT_DIR$/frontend/src/app/modules/layout/components/home/home.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/landing/landing.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/header/models/mock-links.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/layout/components/auth/auth.component.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/header/components/header/header.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/index.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/modules/layout/components/acc/acc.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/header/models/mock-links.ts" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/header/components/header/header.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.html" />
       </list>
     </option>
   </component>
@@ -347,7 +262,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
+              <item name="authorization" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SD-2_PateevNikita" type="b2602c69:ProjectViewProjectNode" />
@@ -356,7 +271,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
+              <item name="authorization" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -366,9 +281,9 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
+              <item name="authorization" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
+              <item name="authorization" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SD-2_PateevNikita" type="b2602c69:ProjectViewProjectNode" />
@@ -403,7 +318,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554550836304" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554552935766" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -490,12 +405,12 @@
       <workItem from="1554415452559" duration="2478000" />
       <workItem from="1554418555276" duration="1619000" />
       <workItem from="1554420505090" duration="1146000" />
-      <workItem from="1554535615560" duration="12785000" />
+      <workItem from="1554535615560" duration="14147000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78916000" />
+    <option name="totallyTimeSpent" value="80278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -583,7 +498,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/layout/components/netflix-catalog/netflix-catalog.component.html" />
     <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/layout/layout.module.spec.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -808,13 +722,6 @@
     <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/header/header.module.spec.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/header/models/mock-links.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/authorization/authorization.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -862,13 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/layout/components/acc/acc.component.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -913,10 +813,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/header/models/link.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/header/models/mock-links.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/header/components/header/header.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="55" lean-forward="true" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+        <state relative-caret-position="306">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/modules/authorization/components/authorization/authorization.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
         </state>
       </provider>
     </entry>
