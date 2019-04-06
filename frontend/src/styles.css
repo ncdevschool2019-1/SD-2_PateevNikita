@@ -2,7 +2,9 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 body {
+  background-image: url("assets/img/back2.jpg");
 	font-family: 'Oswald', sans-serif;
+  background-size: cover;
 }
 
 .transition {

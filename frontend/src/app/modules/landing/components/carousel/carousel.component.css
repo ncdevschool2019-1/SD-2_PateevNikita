@@ -67,3 +67,7 @@
   margin-bottom: 150px;
   text-shadow: black 2px 2px 3px;
 }
+
+h5 {
+  cursor: pointer;
+}

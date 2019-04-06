@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Link} from "../../../header/models/link";
+import {element} from "protractor";
 
 @Component({
   selector: 'app-authorization',
@@ -18,13 +19,7 @@ export class AuthorizationComponent implements OnInit {
   }
 
   notRegistered() {
-    alert("animation");
-   /*$('.message a').click(function(){
-      $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-    });*/
 
-
-  }
-
+    }
 
 }

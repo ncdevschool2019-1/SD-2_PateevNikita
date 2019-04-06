@@ -7,10 +7,10 @@
   max-width: 300px;
   margin: 60px auto 100px;
   padding: 30px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   text-align: center;
 }
 .form .thumbnail {
@@ -149,9 +149,10 @@ body:before {
 }
 
 h1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Bungee', cursive;
   font-size: 60px;
   text-align: center;
-  color: gray;
+  color: white;
   margin-top: 10px;
+  text-shadow: black 0.5px 0.5px 1.5px;
 }
