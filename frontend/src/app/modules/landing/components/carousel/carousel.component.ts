@@ -1,49 +1,15 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: [ './carousel.component.scss' ]
+  styleUrls: [ './carousel.component.css' ]
 })
-export class CarouselComponent  {
-
-  index = 0;
-  speed = 4000;
-  infinite = true;
-  direction = 'right';
-  directionToggle = true;
-  autoplay = true;
-  avatars = '12345'.split('').map((x, i) => {
-    const num = i;
-    // const num = Math.floor(Math.random() * 1000);
-    return {
-      url: `https://picsum.photos/600/400/?${num}`,
-      title: `${num}`
-    };
-  });
+export class CarouselComponent implements OnInit {
 
   constructor() { }
 
-  push() {
-    this.avatars.push(
-      {
-        url: `https://picsum.photos/600/400/?${this.avatars.length + 1}`,
-        title: `${this.avatars.length + 1}`
-      }
-    );
-  }
-
-  remove() {
-    this.avatars.splice(this.avatars.length - 1, 1);
-  }
-
-
-  indexChanged(index) {
-    console.log(index);
-  }
-
-  toggleDirection($event) {
-    this.direction = this.directionToggle ? 'right' : 'left';
+  ngOnInit() {
   }
 
 }

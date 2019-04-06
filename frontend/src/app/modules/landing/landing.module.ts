@@ -4,6 +4,7 @@ import {Ng4LoadingSpinnerModule} from 'ng4-loading-spinner';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import {CarouselComponent} from "./components/carousel/carousel.component";
 
 @NgModule({
   imports: [
@@ -14,10 +15,10 @@ import {RouterModule} from '@angular/router';
     RouterModule
   ],
   exports: [
-
+    CarouselComponent
   ],
   declarations: [
-
+    CarouselComponent
   ]
 
 })
