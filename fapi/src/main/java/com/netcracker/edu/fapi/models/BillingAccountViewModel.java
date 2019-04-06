@@ -13,7 +13,7 @@ public class BillingAccountViewModel {
     public BillingAccountViewModel() {
     }
 
-    public BillingAccountViewModel(int id, String address, String username) {
+    public BillingAccountViewModel(int id, String address, String username, String email) {
         this.id = id;
         this.address = address;
         this.username = username;

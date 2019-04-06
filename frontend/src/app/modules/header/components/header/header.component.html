@@ -1,21 +1,22 @@
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <img class="navbar-brand" src="https://img.icons8.com/ios/64/000000/cloud.png" height="64">
   <a class="navbar-brand" href="#">NetCracker Sub System</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li *ngFor="let link of links" [class.selected]="link === getSelectedLink()" (click)="onSelect(link)"
-          class="nav-item ">
-        <a class="nav-link" href="#">  {{link.name}}</a>
-      </li>
-       <li class="nav-item">
-        <a href="#" ><img class="nav-link" class="nav-link" src="https://img.icons8.com/metro/24/000000/user-male-circle.png"></a>
-      </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li *ngFor="let link of links" [class.selected]="link === getSelectedLink()"
+            class="nav-item ">
+          <a class="nav-link" routerLink="/{{link.name.toLowerCase().replace(' ','')}}"
+             (click)="onSelect(link)">{{link.name}}</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="" ><img class="nav-link" class="nav-link" src="https://img.icons8.com/metro/24/000000/user-male-circle.png"></a>
+        </li>
+      </ul>
     
   </div>
 </nav>
+

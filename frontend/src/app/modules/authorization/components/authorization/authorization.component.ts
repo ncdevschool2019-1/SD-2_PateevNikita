@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Link} from "../../../header/models/link";
 
 @Component({
   selector: 'app-authorization',
@@ -21,6 +22,8 @@ export class AuthorizationComponent implements OnInit {
    /*$('.message a').click(function(){
       $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
     });*/
+
+
   }
 
 
