@@ -9,7 +9,7 @@
       <ul class="navbar-nav mr-auto">
         <li *ngFor="let link of links" [class.selected]="link === getSelectedLink()"
             class="nav-item ">
-          <a class="nav-link" routerLink="/{{link.name.toLowerCase().replace(' ','')}}"
+          <a class="nav-link" [class.selected]="link === getSelectedLink()" routerLink="/{{link.name.toLowerCase().replace(' ','')}}"
              (click)="onSelect(link)">{{link.name}}</a>
         </li>
         <li class="nav-item">

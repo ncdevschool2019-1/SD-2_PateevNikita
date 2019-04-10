@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Link} from "../../../header/models/link";
-import {element} from "protractor";
+import {trigger, state, style, animate, transition} from '@angular/animations';
 
 @Component({
   selector: 'app-authorization',
@@ -9,7 +8,8 @@ import {element} from "protractor";
 })
 export class AuthorizationComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
@@ -19,7 +19,7 @@ export class AuthorizationComponent implements OnInit {
   }
 
   notRegistered() {
-
+    //document.getElementById("pretty").animate({height: "toggle", opacity: "toggle"}, "slow");
     }
 
 }

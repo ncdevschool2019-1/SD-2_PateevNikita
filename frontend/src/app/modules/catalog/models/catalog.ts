@@ -1,5 +1,6 @@
 export class Catalog {
-  serviceType: string;
+  id: number;
+  type: string;
   cost: number;
-  serviceName: string;
+  date: string;
 }
