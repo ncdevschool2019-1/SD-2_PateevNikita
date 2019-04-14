@@ -3,12 +3,12 @@
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    border: 8px solid black;
+    border: 0px solid black;
     padding: 0px;
     min-width: 25%;
     padding-top: 100px;
     text-align: center;
-    background: #dddddd;
+    background: white;
 }
 
 .userInfo > p {
@@ -24,4 +24,36 @@
 
 .value {
 	color: black;
+}
+
+.ava {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.infosite {
+  text-align: center;
+  background-image: url("~src/assets/img/pattern.jpg");
+
+  padding: 50px;
+}
+
+.infosite h1 {
+  margin-top: 0;
+  color: #f05f40;
+}
+
+.col-main {
+  width: 70%;
+  float: left;
+  max-height: 500px;
+}
+
+.col-sidebar {
+  max-height: 500px;
+  width: 25%;
+  background: #eee;
+  float: right;
+  padding: 20px 2.5%;
 }

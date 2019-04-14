@@ -1,4 +1,11 @@
-/* Form */
+.main {
+  padding: 0;
+  height: 750px;
+  max-height: 1080px;
+  background-image: url("~src/assets/img/back2.jpg");
+  background-size: cover;
+}
+
 .form {
   font-family: 'Oswald', sans-serif;
   position: relative;
@@ -153,6 +160,6 @@ h1 {
   font-size: 60px;
   text-align: center;
   color: white;
-  margin-top: 10px;
+
   text-shadow: black 0.5px 0.5px 1.5px;
 }

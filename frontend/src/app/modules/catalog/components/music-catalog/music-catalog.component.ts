@@ -12,4 +12,8 @@ export class MusicCatalogComponent implements OnInit {
   ngOnInit() {
   }
 
+  getMusicCatalog() {
+
+  }
+
 }

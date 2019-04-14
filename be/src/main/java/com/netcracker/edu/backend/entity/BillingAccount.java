@@ -4,24 +4,28 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "billing_account")
+@Table(name = "billingaccounts")
 public class BillingAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String address;
-    private String username;
-    private String email;
 
-    public BillingAccount(String address, String username, String email) {
-        this.address = address;
-        this.username = username;
-        this.email = email;
+    private double balance;
+
+    @Column(name = "paymentMethod")
+    private String payment_method;
+
+    private int userId;
+
+
+    public BillingAccount() { }
+
+    public BillingAccount(double balance, String payment_method, int userId) {
+       this.balance = balance;
+       this.payment_method = payment_method;
+       this.userId = userId;
     }
 
-    public BillingAccount() {
-
-    }
 
     public long getId() {
         return id;
@@ -31,28 +35,28 @@ public class BillingAccount {
         this.id = id;
     }
 
-    public String getAddress() {
-        return address;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
-    public String getUsername() {
-        return username;
+    public String getPayment_method() {
+        return payment_method;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setPayment_method(String payment_method) {
+        this.payment_method = payment_method;
     }
 
-    public String getEmail() {
-        return email;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     @Override
@@ -60,25 +64,23 @@ public class BillingAccount {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BillingAccount that = (BillingAccount) o;
-        return id == that.id &&
-                Objects.equals(address, that.address) &&
-                Objects.equals(username, that.username) &&
-                Objects.equals(email, that.email);
+        return getId() == that.getId() &&
+                Objects.equals(getBalance(), that.getBalance()) &&
+                Objects.equals(getPayment_method(), that.getPayment_method());
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(id, address, username, email);
+        return Objects.hash(getId(), getBalance(), getPayment_method());
     }
 
     @Override
     public String toString() {
         return "BillingAccount{" +
             "id=" + id +
-            ", address='" + address + '\'' +
-            ", username='" + username + '\'' +
-            ", email='" + email + '\'' +
+            ", balance='" + balance + '\'' +
+            ", payment_method='" + payment_method + '\'' +
+                ", userId='" + userId + '\'' +
             '}';
     }
 }

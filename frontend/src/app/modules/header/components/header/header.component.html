@@ -7,10 +7,20 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li *ngFor="let link of links" [class.selected]="link === getSelectedLink()"
-            class="nav-item ">
-          <a class="nav-link" [class.selected]="link === getSelectedLink()" routerLink="/{{link.name.toLowerCase().replace(' ','')}}"
-             (click)="onSelect(link)">{{link.name}}</a>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/music" >Music</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/magazines" >Magazines</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/netflix" >Netflix</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/account" >Account</a>
         </li>
         <li class="nav-item">
           <a routerLink="/account" ><img class="nav-link" class="nav-link" src="https://img.icons8.com/metro/24/000000/user-male-circle.png"></a>
