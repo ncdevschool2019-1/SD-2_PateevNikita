@@ -1,9 +1,5 @@
 .accTable {
-	align-content: center;
-	padding-bottom:  10px;
-    width: 1000px;
+  text-align: center;
+  max-width: 100%;
 }
 
-.accTable > table {
-	padding-bottom: 20px;
-}

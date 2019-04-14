@@ -1,20 +1,16 @@
-/* User account */
-.userInfo {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    border: 0px solid black;
-    padding: 0px;
-    min-width: 25%;
-    padding-top: 100px;
-    text-align: center;
-    background: white;
+main {
+  justify-content: space-between;
+  align-items: baseline;
 }
 
-.userInfo > p {
-    margin: 0px;
-    padding: 0px;
-    margin-bottom: 10px;
+.subs {
+  color: #f05f40;
+}
+
+.line {
+  display: inline-block;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .field {
@@ -35,7 +31,6 @@
 .infosite {
   text-align: center;
   background-image: url("~src/assets/img/pattern.jpg");
-
   padding: 50px;
 }
 
@@ -45,15 +40,30 @@
 }
 
 .col-main {
-  width: 70%;
+  width: 50%;
   float: left;
   max-height: 500px;
+  flex-direction: column;
+  border: 5px solid #f05f40;
+  padding: 0px;
+  min-width: 25%;
+  text-align: center;
+  background: white;
 }
 
 .col-sidebar {
-  max-height: 500px;
+  max-height: 100%;
   width: 25%;
   background: #eee;
   float: right;
   padding: 20px 2.5%;
+}
+
+.col-sidebar-2 {
+  max-height: 100%;
+  width: 25%;
+  background: #eee;
+  float: right;
+  padding: 20px 2.5%;
+  border-right: 3px solid black;
 }

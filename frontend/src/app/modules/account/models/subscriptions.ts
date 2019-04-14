@@ -4,6 +4,6 @@ export class Subscriptions {
   price: number;
   userId: number;
   serviceType: string;
-  is_active: boolean;
+  isActive: boolean;
   startTime: number;
 }
