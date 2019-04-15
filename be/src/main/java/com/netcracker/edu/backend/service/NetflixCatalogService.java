@@ -2,7 +2,6 @@ package com.netcracker.edu.backend.service;
 
 import com.netcracker.edu.backend.entity.Service;
 
-import java.util.List;
-
-public interface CatalogService {
+public interface NetflixCatalogService {
+    Iterable<Service> getAllNetflixCatalog();
 }

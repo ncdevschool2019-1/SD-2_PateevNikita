@@ -14,8 +14,8 @@ main {
 }
 
 .field {
-	color: white;
-	text-shadow: black 1px 1px 0px;
+	color: #f05f40;
+	text-shadow: black 0px 1px 0px;
 }
 
 .value {
@@ -39,31 +39,50 @@ main {
   color: #f05f40;
 }
 
+.userinfo_ {
+  text-align: center;
+  padding: 50px;
+}
+
 .col-main {
   width: 50%;
   float: left;
   max-height: 500px;
   flex-direction: column;
-  border: 5px solid #f05f40;
+  border: 1px solid #d3d3d3;
   padding: 0px;
   min-width: 25%;
   text-align: center;
-  background: white;
+  background-image: linear-gradient(to right, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
 }
 
 .col-sidebar {
   max-height: 100%;
-  width: 25%;
-  background: #eee;
+  width: 50%;
   float: right;
   padding: 20px 2.5%;
+  background-image: linear-gradient(to right, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
 }
 
 .col-sidebar-2 {
   max-height: 100%;
-  width: 25%;
-  background: #eee;
+  width: 50%;
   float: right;
   padding: 20px 2.5%;
-  border-right: 3px solid black;
+  background-image: linear-gradient(to left, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+}
+
+.subscriptions {
+  width: 50%;
+  min-height: 150px;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);;
+  float: left;
+}
+
+.billingAccs {
+  width: 50%;
+  min-height: 150px;
+  background-image: linear-gradient(180deg, #fdfbfb 0%, #ebedee 100%);
+  margin-left: 50%;
+  border-left: 3px solid black;
 }

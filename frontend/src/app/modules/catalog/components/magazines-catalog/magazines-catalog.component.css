@@ -3,11 +3,8 @@ body {
   margin: 0;
   font-family: 'Oswald', sans-serif;
   font-size: 15px;
-  color: white;
   line-height: 1.6;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  background-size: cover;
-
+  background-image: linear-gradient(to right, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
 }
 
 .forbes {
@@ -20,7 +17,6 @@ body {
 /* Spotify day */
 * {box-sizing: border-box;}
 .forbes_day {
-  
   width: 300px;
   text-align: center;
   margin: 20px 20px;

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/billingaccounts")
+@RequestMapping("/api/account/billing")
 public class BillingAccountController {
 
     private BillingAccountService billingAccountService;
@@ -30,7 +30,7 @@ public class BillingAccountController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public Iterable<BillingAccount> getAllBillingAcounts() {
+    public Iterable<BillingAccount> getAllBillingAccounts() {
         return billingAccountService.getAllBillingAccounts();
     }
 
