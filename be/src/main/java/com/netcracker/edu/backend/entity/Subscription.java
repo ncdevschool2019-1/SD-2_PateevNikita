@@ -10,16 +10,20 @@ public class Subscription {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "is_active")
+    @Column(name = "Is_Active")
     private boolean isActive;
 
     private double price;
+
+    @Column(name = "StartDate")
     private int startTime;
+
     private int expiredTime;
+    @Column(name = "UserId")
     private int userId;
 
     @ManyToOne
-    @JoinColumn(name = "serviceId")
+    @JoinColumn(name = "ServiceId")
     private Service service;
 
     public Subscription() {}
@@ -27,6 +31,7 @@ public class Subscription {
     public Subscription(boolean isActive, double price, int startTime, int expiredTime, int userId, Service service) {
         this.isActive = isActive;
         this.price = price;
+
         this.startTime = startTime;
         this.expiredTime = expiredTime;
         this.userId = userId;

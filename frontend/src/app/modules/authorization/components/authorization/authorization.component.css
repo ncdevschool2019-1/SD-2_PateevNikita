@@ -1,7 +1,7 @@
 .main {
   padding: 0;
-  height: 750px;
-  max-height: 1080px;
+  height: 700px;
+  max-height: 2048px;
   background-image: url("~src/assets/img/back2.jpg");
   background-size: cover;
 }
@@ -120,23 +120,6 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
-
-.close_but {
-  margin: auto;
-  padding-bottom: 10px;
-}
-
-.close_but a {
-  font-size: 15px;
-  text-decoration: none;
-  color: black;
-  transition: 0.2s linear;
-}
-
-.close_but a:hover {
-  font-size: 16px;
-}
-
 
 body {
   background: #D3D3D3;

@@ -15,11 +15,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/username/{userName}", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/username/{userName}", method = RequestMethod.GET)
     public ResponseEntity<User> getUserByLogin(@PathVariable(name = "userName") String userName) {
         User user = userService.findByUsername(userName);
         return ResponseEntity.ok(user);
-    }
+    }*/
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<User> getAllUsers() {

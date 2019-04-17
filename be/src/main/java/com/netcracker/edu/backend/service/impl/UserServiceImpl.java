@@ -19,10 +19,10 @@ public class UserServiceImpl implements UserService {
         return (List<User>) userRepository.findAll();
     }
 
-    @Override
-    public User findByLogin(String login) {
-        return userRepository.findByLogin(login);
-    }
+   /* @Override
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }*/
 
     @Override
     public User save(User user) {
