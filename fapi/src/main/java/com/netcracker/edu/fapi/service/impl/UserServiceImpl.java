@@ -1,4 +1,4 @@
-package com.netcracker.edu.fapi.service.impl;
+/*package com.netcracker.edu.fapi.service.impl;
 
 import com.netcracker.edu.fapi.models.User;
 import com.netcracker.edu.fapi.service.UserService;
@@ -37,14 +37,14 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         return usersResponse == null ? Collections.emptyList() : Arrays.asList(usersResponse);
     }
 
-    @Override
+   /* @Override
     public User save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.postForEntity(backendServerUrl + "/api/user", user, User.class).getBody();
     }
 
-    @Override
+   @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = findByLogin(username);
         if (user == null) {
@@ -59,4 +59,4 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         return authorities;
     }
 
-}
+}*/

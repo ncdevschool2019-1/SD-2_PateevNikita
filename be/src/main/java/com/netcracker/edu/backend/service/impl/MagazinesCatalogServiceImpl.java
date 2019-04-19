@@ -1,23 +1,27 @@
-package com.netcracker.edu.backend.service.impl;
+/*package com.netcracker.edu.backend.service.impl;
 
 import com.netcracker.edu.backend.entity.Service;
+import com.netcracker.edu.backend.entity.ServiceType;
 import com.netcracker.edu.backend.repository.CatalogRepository;
+import com.netcracker.edu.backend.service.CatalogTypeService;
 import com.netcracker.edu.backend.service.MagazinesCatalogService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import java.util.List;
 
-@Component
+@org.springframework.stereotype.Service
 public class MagazinesCatalogServiceImpl implements MagazinesCatalogService {
 
+    @Autowired
     private CatalogRepository repository;
 
     @Autowired
-    public MagazinesCatalogServiceImpl(CatalogRepository repository) {
-        this.repository = repository;
-    }
+    private CatalogTypeService catalogTypeService;
+
+
 
     @Override
-    public Iterable<Service> getAllMagazinesCatalog() {
-        return repository.findAll();
+    public List<Service> getAllMagazinesCatalogByType() {
+        String type = catalogTypeService.getServiceTypeById(2).getService();
+        return (List<Service>) repository.findAllByType(type);
     }
-}
+}*/

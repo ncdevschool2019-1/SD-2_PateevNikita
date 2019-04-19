@@ -1,412 +1,63 @@
-body {
-  padding-top: 0px;
-  margin: 0;
-  font-family: 'Oswald', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  background-image: linear-gradient(to right, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
-}
-
-.forbes {
+.sas {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
 }
 
-
-/* Spotify day */
-* {box-sizing: border-box;}
-.forbes_day {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-left: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-  border-radius: 15px;
-}
-
-.forbes_day:hover {
-  border-bottom: 2px solid gray;
-}
-
-.forbes_day img {
-  display: block;
-  width: 100%;
-}
-
-.forbes_text {
-  color: white;
-  font-size: 19px;
-}
-
-/* Spotify month */
-
-* {box-sizing: border-box;}
-.forbes_month {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-  border-radius: 15px;
-}
-
-.forbes_month:hover {
-  border-bottom: 2px solid gray;
-}
-
-.forbes_month img {
-  display: block;
-  width: 100%;
-}
-
-
-/* Spotify year */
-* {box-sizing: border-box;}
-.forbes_year {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-right: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-  border-radius: 15px;
-}
-
-.forbes_year:hover {
-  border-bottom: 2px solid gray;
-}
-
-.forbes_year img {
-  display: block;
-  width: 100%;
-}
-
-
-.forbes-list h3 {
-  font-size: 18px;
-  font-weight: 400;
-  color: #444444;
-  margin: 0 0 10px 0;
-}
-
-.price_forbes {
-  font-size: 22px;
-  color: white;
-  text-shadow: black 0px 0px 0.5px;
-  display: block;
-  margin-bottom: 12px;
-  transition: color 0.2s linear;
-}
-
-.price_forbes:hover {
-  color: gray;
-}
-
-
-/* Button */
-.button {
-  text-decoration: none;
-  display: inline-block;
-  padding: 0 12px;
-  margin-bottom: 30px;
-  background-color: white;
-  color: black;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 28px;
-  transition:color 0.2s linear, text-color 0.2s linear;
-}
-
-.forbes_day:hover .button {
-  background: gray;
-  color: white;
-}
-
-.forbes_month:hover .button {
-  background: gray;
-  color: white;
-}
-
-
-.forbes_year:hover .button {
-  background: gray;
-  color: white;
-}
-
-.cosmo {
+.form-group {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
 }
 
-
-/* Spotify day */
-* {box-sizing: border-box;}
-.cosmo_day {
-  
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-left: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
+.logo {
+  max-width: 150px;
+  max-height: 150px;
 }
 
-.cosmo_day:hover {
-  border-bottom: 2px solid #ca8cab;
-}
-
-.cosmo_day img {
-  display: block;
-  width: 100%;
-}
-
-.cosmo_text {
-  color: white;
-  font-size: 19px;
-}
-
-/* Spotify month */
-
-* {box-sizing: border-box;}
-.cosmo_month {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
-}
-
-.cosmo_month:hover {
-  border-bottom: 2px solid #ca8cab;
-}
-
-.cosmo_month img {
-  display: block;
-  width: 100%;
-}
-
-
-/* Spotify year */
-* {box-sizing: border-box;}
-.cosmo_year {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-right: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
-}
-
-.cosmo_year:hover {
-  border-bottom: 2px solid #ca8cab;
-}
-
-.cosmo_year img {
-  display: block;
-  width: 100%;
-}
-
-
-.cosmo-list h3 {
-  font-size: 18px;
-  font-weight: 400;
-  color: #444444;
-  margin: 0 0 10px 0;
-}
-
-.price_cosmo {
-  font-size: 22px;
-  color: white;
-  text-shadow: black 0px 0px 0.5px;
-  display: block;
-  margin-bottom: 12px;
-  transition: color 0.2s linear;
-}
-
-.price_cosmo:hover {
-  color: #ca8cab;
-}
-
-
-/* Button */
-.button {
-  text-decoration: none;
-  display: inline-block;
-  padding: 0 12px;
-  margin-bottom: 30px;
-  background-color: white;
+button {
+  margin: auto;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   color: black;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 28px;
-  transition:color 0.2s linear, text-color 0.2s linear;
 }
 
-.cosmo_day:hover .button {
-  background: #ca8cab;
-  color: white;
-}
-
-.cosmo_month:hover .button {
-  background: #ca8cab;
-  color: white;
-}
-
-
-.cosmo_year:hover .button {
-  background: #ca8cab;
-  color: white;
-}
-
-.mens {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-
-/* Spotify day */
-* {box-sizing: border-box;}
-.mens_day {
- 
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-left: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+table {
+  border-spacing: 0 10px;
   font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
+  font-weight: bold;
+  width: 80%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.mens_day:hover {
-  border-bottom: 2px solid #e50914;
+th {
+  padding: 10px 20px;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  color: #630808;
+  border: 6px solid black;
+  font-size: 30px;
 }
-
-.mens_day img {
-  display: block;
-  width: 100%;
+th:first-child {
+  text-align: left;
 }
+th:last-child {
 
-.mens_text {
-  color: white;
-  font-size: 19px;
 }
-
-/* Spotify month */
-
-* {box-sizing: border-box;}
-.mens_month {
-  width: 300px;
+td {
+  vertical-align: middle;
+  padding: 10px;
+  font-size: 20px;
   text-align: center;
-  margin: 20px 20px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
+  border-top: 2px solid #56433D;
+  border-bottom: 2px solid #56433D;
+  border-right: 2px solid #56433D;
 }
-
-.mens_month:hover {
-  border-bottom: 2px solid #e50914;
+td:first-child {
+  border-left: 2px solid #56433D;
+  border-right: none;
 }
-
-.mens_month img {
-  display: block;
-  width: 100%;
+td:nth-child(2){
+  text-align: left;
 }
 
 
-/* Spotify year */
-* {box-sizing: border-box;}
-.mens_year {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-right: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
-}
-
-.mens_year:hover {
-  border-bottom: 2px solid #e50914;
-}
-
-.mens_year img {
-  display: block;
-  width: 100%;
-}
 
 
-.mens-list h3 {
-  font-size: 18px;
-  font-weight: 400;
-  color: #444444;
-  margin: 0 0 10px 0;
-}
 
-.price_mens {
-  font-size: 22px;
-  color: white;
-  text-shadow: black 0px 0px 0.5px;
-  display: block;
-  margin-bottom: 12px;
-  transition: color 0.2s linear;
-}
-
-.price_mens:hover {
-  color: #e50914;
-}
-
-
-/* Button */
-.button {
-  text-decoration: none;
-  display: inline-block;
-  padding: 0 12px;
-  margin-bottom: 30px;
-  background-color: white;
-  color: black;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 28px;
-  transition:color 0.2s linear, text-color 0.2s linear;
-}
-
-.mens_day:hover .button {
-  background: #e50914;
-  color: white;
-}
-
-.mens_month:hover .button {
-  background: #e50914;
-  color: white;
-}
-
-
-.mens_year:hover .button {
-  background: #e50914;
-  color: white;
-}

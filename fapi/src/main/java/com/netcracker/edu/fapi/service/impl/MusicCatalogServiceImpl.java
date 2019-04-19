@@ -18,9 +18,9 @@ public class MusicCatalogServiceImpl implements MusicCatalogService {
     private String backendServerUrl;
 
     @Override
-    public List<MusicCatalogViewModel> getMusicCatalog() {
+    public List<MusicCatalogViewModel> getMusicCatalog(String type) {
         RestTemplate restTemplate = new RestTemplate();
-        MusicCatalogViewModel[] musicCatalogViewModelsResponse = restTemplate.getForObject(backendServerUrl + "api/music/", MusicCatalogViewModel[].class);
+        MusicCatalogViewModel[] musicCatalogViewModelsResponse = restTemplate.getForObject(backendServerUrl + "api/catalog/" + type, MusicCatalogViewModel[].class);
         return musicCatalogViewModelsResponse == null ? Collections.emptyList() : Arrays.asList(musicCatalogViewModelsResponse);
     }
 }

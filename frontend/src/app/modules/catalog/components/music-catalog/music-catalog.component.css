@@ -1,422 +1,63 @@
-body {
-  color: red;
-  padding-top: 0px;
-  margin: 0;
-  font-family: 'Oswald', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  background-size: cover;
-}
-
-.cont {
-	font-family: 'Oswald', sans-serif;
-	font-size: 19px;
-}
-
-.deezer {
+.sas {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
 }
 
-
-/* Deezer day */
-* {box-sizing: border-box;}
-.deezer_day {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-left: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
-  font-family: 'Oswald', sans-serif;
-  border-radius: 15px;
-  transition: 0.2s linear;
-  }
-
-.deezer_day:hover {
-  border-bottom: 2px solid #C71585;
-}
-
-.deezer_day img {
-  display: block;
-  width: 100%;
-}
-
-.deez_text {
-  color: white;
-  font-size: 19px;
-}
-
-/* deezer month */
-
-* {box-sizing: border-box;}
-.deezer_month {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-  border-radius: 15px;
-}
-
-.deezer_month:hover {
-  border-bottom: 2px solid #C71585;
-}
-
-.deezer_month img {
-  display: block;
-  width: 100%;
-}
-
-
-/* Deezer year */
-* {box-sizing: border-box;}
-.deezer_year {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-right: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-  border-radius: 15px;
-}
-
-.deezer_year:hover {
-  border-bottom: 2px solid #C71585;
-}
-
-.deezer_year img {
-  display: block;
-  width: 100%;
-}
-
-
-.deezer-list h3 {
-  font-size: 18px;
-  font-weight: 400;
-  color: #444444;
-  margin: 0 0 10px 0;
-}
-
-.price_deezer {
-  font-size: 22px;
-  color: white;
-  text-shadow: black 0px 0px 0.5px;
-  display: block;
-  margin-bottom: 12px;
-  transition: color 0.2s linear;
-}
-
-.price_deezer:hover {
-  color: #C71585;
-}
-
-
-.price_deezer:hover {
-  color: #C71585;
-}
-
-
-/* Button */
-.button {
-  text-decoration: none;
-  display: inline-block;
-  padding: 0 12px;
-  margin-bottom: 30px;
-  background-color: white;
-  color: black;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 28px;
-  transition:color 0.2s linear, text-color 0.2s linear;
-}
-
-.deezer_day:hover .button {
-  background: #C71585;
-  color: white;
-}
-
-.deezer_month:hover .button {
-  background: #C71585;
-  color: white;
-}
-
-
-.deezer_year:hover .button {
-  background: #C71585;
-  color: white;
-}
-
-.spotify {
+.form-group {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
 }
 
-
-/* Spotify day */
-* {box-sizing: border-box;}
-.spotify_day {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-left: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
+.logo {
+  max-width: 150px;
+  max-height: 150px;
 }
 
-.spotify_day:hover {
-  border-bottom: 2px solid #1db954;
-}
-
-.spotify_day img {
-  display: block;
-  width: 100%;
-}
-
-.spot_text {
-  color: white;
-  font-size: 19px;
-}
-
-/* Spotify month */
-
-* {box-sizing: border-box;}
-.spotify_month {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
-}
-
-.spotify_month:hover {
-  border-bottom: 2px solid #1db954;
-}
-
-.spotify_month img {
-  display: block;
-  width: 100%;
-}
-
-
-/* Spotify year */
-* {box-sizing: border-box;}
-.spotify_year {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-right: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
-}
-
-.spotify_year:hover {
-  border-bottom: 2px solid #1db954;
-}
-
-.spotify_year img {
-  display: block;
-  width: 100%;
-}
-
-
-.spotify-list h3 {
-  font-size: 18px;
-  font-weight: 400;
-  color: #444444;
-  margin: 0 0 10px 0;
-}
-
-.price_spotify {
-  font-size: 22px;
-  color: white;
-  text-shadow: black 0 0 0.5px;
-  display: block;
-  margin-bottom: 12px;
-  transition: color 0.2s linear;
-}
-
-.price_spotify:hover {
-  color: #1db954;
-}
-
-
-/* Button */
-.button {
-  text-decoration: none;
-  display: inline-block;
-  padding: 0 12px;
-  margin-bottom: 30px;
-  background-color: white;
+button {
+  margin: auto;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   color: black;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 28px;
-  transition:color 0.2s linear, text-color 0.2s linear;
 }
 
-.spotify_day:hover .button {
-  background: #1db954;
-  color: white;
-}
-
-.spotify_month:hover .button {
-  background: #1db954;
-  color: white;
-}
-
-
-.spotify_year:hover .button {
-  background: #1db954;
-  color: white;
-}
-
-.yandex {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-
-/* Yandex day */
-* {box-sizing: border-box;}
-.yandex_day {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-left: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+table {
+  border-spacing: 0 10px;
   font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
+  font-weight: bold;
+  width: 80%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.yandex_day:hover {
-  border-bottom: 2px solid #ff0000;
+th {
+  padding: 10px 20px;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  color: #630808;
+  border: 6px solid black;
+  font-size: 30px;
 }
-
-.yandex_day img {
-  display: block;
-  width: 100%;
+th:first-child {
+  text-align: left;
 }
+th:last-child {
 
-.yan_text {
-  color: white;
-  font-size: 19px;
 }
-
-/* Yandex month */
-
-* {box-sizing: border-box;}
-.yandex_month {
-  width: 300px;
+td {
+  vertical-align: middle;
+  padding: 10px;
+  font-size: 20px;
   text-align: center;
-  margin: 20px 20px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
+  border-top: 2px solid #56433D;
+  border-bottom: 2px solid #56433D;
+  border-right: 2px solid #56433D;
 }
-
-.yandex_month:hover {
-  border-bottom: 2px solid #ff0000;
+td:first-child {
+  border-left: 2px solid #56433D;
+  border-right: none;
 }
-
-.yandex_month img {
-  display: block;
-  width: 100%;
+td:nth-child(2){
+  text-align: left;
 }
 
 
-/* Yandex year */
-* {box-sizing: border-box;}
-.yandex_year {
-  width: 300px;
-  text-align: center;
-  margin: 20px 20px;
-  margin-right: 150px;
-  border-bottom: 2px solid #F5F5F5;
-  background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
-  font-family: 'Oswald', sans-serif;
-  transition: 0.2s linear;
-   border-radius: 15px;
-}
-
-.yandex_year:hover {
-  border-bottom: 2px solid #ff0000;
-}
-
-.yandex_year img {
-  display: block;
-  width: 100%;
-}
-
-.yandex-list h3 {
-  font-size: 18px;
-  font-weight: 400;
-  color: #444444;
-  margin: 0 0 10px 0;
-}
-
-.price_yandex {
-  font-size: 22px;
-  color: white;
-  text-shadow: black 0px 0px 0.5px;
-  display: block;
-  margin-bottom: 12px;
-  transition: color 0.2s linear;
-}
-
-.price_yandex:hover {
-  color: #ff0000;
-}
-
-/* Button */
-.button {
-  text-decoration: none;
-  display: inline-block;
-  padding: 0 12px;
-  margin-bottom: 30px;
-  background-color: white;
-  color: black;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 28px;
-  transition:color 0.2s linear, text-color 0.2s linear;
-}
-
-.yandex_day:hover .button {
-  background: #ff0000;
-  color: white;
-}
-
-.yandex_month:hover .button {
-  background: #ff0000;
-  color: white;
-}
-
-
-.yandex_year:hover .button {
-  background: #ff0000;
-  color: white;
-}
 
 
 

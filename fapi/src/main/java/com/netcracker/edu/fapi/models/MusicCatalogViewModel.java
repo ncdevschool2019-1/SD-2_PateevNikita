@@ -2,25 +2,24 @@ package com.netcracker.edu.fapi.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.Objects;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MusicCatalogViewModel {
 
-    private int id;
+    private long id;
     private String type;
+    private String serviceName;
     private double cost;
-    private String date;
+    private int date;
 
     public MusicCatalogViewModel() {
-        id = 1;
-        type = "music";
-        cost = 2.28;
-        date = "for 6 month";
     }
 
-    public MusicCatalogViewModel(int id, String type, double cost, String date)
-    {
+    public MusicCatalogViewModel(long id, String type, String serviceName, double cost, int date) {
         this.id = id;
         this.type = type;
+        this.serviceName = serviceName;
         this.cost = cost;
         this.date = date;
     }
@@ -33,19 +32,19 @@ public class MusicCatalogViewModel {
         this.cost = cost;
     }
 
-    public String getDate() {
+    public int getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(int date) {
         this.date = date;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -55,5 +54,41 @@ public class MusicCatalogViewModel {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MusicCatalogViewModel that = (MusicCatalogViewModel) o;
+        return getId() == that.getId() &&
+                Double.compare(that.getCost(), getCost()) == 0 &&
+                getDate() == that.getDate() &&
+                Objects.equals(getType(), that.getType()) &&
+                Objects.equals(getServiceName(), that.getServiceName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getType(), getServiceName(), getCost(), getDate());
+    }
+
+    @Override
+    public String toString() {
+        return "MusicCatalogViewModel{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", cost=" + cost +
+                ", date=" + date +
+                '}';
     }
 }

@@ -2,6 +2,7 @@ package com.netcracker.edu.backend.entity;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.List;
 
 @Entity
 @Table(name = "servicetype")
@@ -39,20 +40,18 @@ public class ServiceType {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ServiceType that = (ServiceType) o;
-        return getId() == that.getId() &&
-                Objects.equals(getService(), that.getService());
+        return Objects.equals(getService(), that.getService());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getService());
+        return Objects.hash(getService());
     }
 
     @Override
     public String toString() {
         return "ServiceType{" +
-                "id=" + id +
-                ", service='" + service + '\'' +
+                "service='" + service + '\'' +
                 '}';
     }
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {NetflixCatalogService} from "../../../../services/netflix-catalog.service";
+import {Catalog} from "../../models/catalog";
+import {Subscription} from "rxjs";
+
 
 @Component({
   selector: 'app-netflix-catalog',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NetflixCatalogComponent implements OnInit {
 
-  constructor() { }
+  public catalog: Catalog[];
+  private subscription: Subscription;
+
+  constructor(private netflixCatalogService: NetflixCatalogService) { }
 
   ngOnInit() {
+    this.getNetflixCatalog();
+  }
+
+  getNetflixCatalog() {
+    if(this.subscription) {
+      this.subscription.unsubscribe();
+    }
+
+    this.subscription = this.netflixCatalogService.getNetflixCatalog().subscribe(catalog => this.catalog = catalog);
   }
 
 }

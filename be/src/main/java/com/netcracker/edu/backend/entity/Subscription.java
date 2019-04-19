@@ -19,19 +19,19 @@ public class Subscription {
     private int startTime;
 
     private int expiredTime;
-    @Column(name = "UserId")
-    private int userId;
 
-    @ManyToOne
+    @Column(name = "UserId")
+    private long userId;
+
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "ServiceId")
     private Service service;
 
     public Subscription() {}
 
-    public Subscription(boolean isActive, double price, int startTime, int expiredTime, int userId, Service service) {
+    public Subscription(boolean isActive, double price, int startTime, int expiredTime, long userId, Service service) {
         this.isActive = isActive;
         this.price = price;
-
         this.startTime = startTime;
         this.expiredTime = expiredTime;
         this.userId = userId;
@@ -78,11 +78,11 @@ public class Subscription {
         this.expiredTime = expiredTime;
     }
 
-    public int getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 

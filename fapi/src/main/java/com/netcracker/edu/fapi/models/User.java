@@ -2,6 +2,8 @@ package com.netcracker.edu.fapi.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.Objects;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 
@@ -10,19 +12,19 @@ public class User {
     private String lastName;
     private String userName;
     private String email;
-    private String password;
+    private String userPassword;
     private String role;
 
     public User() {
     }
 
-    public User(long id, String firstName, String lastName, String userName, String email, String password, String role) {
+    public User(long id, String firstName, String lastName, String userName, String email, String userPassword, String role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.email = email;
-        this.password = password;
+        this.userPassword = userPassword;
         this.role = role;
     }
 
@@ -55,12 +57,12 @@ public class User {
 
     public void setEmail(String email) { this.email = email; }
 
-    public String getPassword() {
-        return password;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 
     public String getRole() {
@@ -79,8 +81,27 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 ", userName='" + userName + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
+                ", userPassword='" + userPassword + '\'' +
                 ", role='" + role + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return getId() == user.getId() &&
+                Objects.equals(getFirstName(), user.getFirstName()) &&
+                Objects.equals(getLastName(), user.getLastName()) &&
+                Objects.equals(getUserName(), user.getUserName()) &&
+                Objects.equals(getEmail(), user.getEmail()) &&
+                Objects.equals(getUserPassword(), user.getUserPassword()) &&
+                Objects.equals(getRole(), user.getRole());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getFirstName(), getLastName(), getUserName(), getEmail(), getUserPassword(), getRole());
     }
 }

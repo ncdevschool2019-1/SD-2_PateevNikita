@@ -6,18 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/music")
+@RequestMapping("/api/catalog")
 public class MusicCatalogController {
 
     @Autowired
     private MusicCatalogService musicCatalogService;
 
-    @RequestMapping
-    public ResponseEntity<List<MusicCatalogViewModel>> getMusicCatalog() {
-        return ResponseEntity.ok(musicCatalogService.getMusicCatalog());
+    @RequestMapping(value = "/{type}", method = RequestMethod.GET)
+    public ResponseEntity<List<MusicCatalogViewModel>> getMusicCatalog(@PathVariable String type) {
+        return ResponseEntity.ok(musicCatalogService.getMusicCatalog(type));
     }
 }

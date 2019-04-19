@@ -1,23 +1,19 @@
-package com.netcracker.edu.backend.service.impl;
+/*package com.netcracker.edu.backend.service.impl;
 
 import com.netcracker.edu.backend.entity.Service;
 import com.netcracker.edu.backend.repository.CatalogRepository;
 import com.netcracker.edu.backend.service.NetflixCatalogService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import java.util.List;
 
-@Component
+@org.springframework.stereotype.Service
 public class NetflixCatalogServiceImpl implements NetflixCatalogService {
 
+    @Autowired
     private CatalogRepository repository;
 
-    @Autowired
-    public NetflixCatalogServiceImpl(CatalogRepository repository) {
-        this.repository = repository;
-    }
-
     @Override
-    public Iterable<Service> getAllNetflixCatalog() {
-        return repository.findAll();
+    public List<Service> getAllNetflixCatalog(String type) {
+        return (List<Service>) repository.findAllByType(type);
     }
-}
+}*/

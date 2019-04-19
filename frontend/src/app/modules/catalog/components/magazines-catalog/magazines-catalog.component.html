@@ -1,96 +1,22 @@
-<div class="mens">
-
-<div class="mens_day">
-  <img class="image" src="../../../../../assets/img/mens.png" alt="Men's Health">
-  <div class="mens-list">
-    <div class="mens_text">Free trial</div>
-      <span class="price_mens">0.00$</span>
-      <a routerLink="/auth" class="button">Subscribe</a>
-  </div>
-</div>
-
-<div class="mens_month">
-  <img class="image" src="../../../../../assets/img/mens.png" alt="Men's Health">
-  <div class="mens-list">
-   <div class="mens_text">For 6 month</div>
-      <span class="price_mens">14.99$</span>
-      <a routerLink="/auth" class="button">Subscribe</a>
-  </div>
-</div>
-
-
-<div class="mens_year">
-  <img class="image" src="../../../../../assets/img/mens.png" alt="Men's Health">
-  <div class="mens-list">
-    <div class="mens_text">For 12 month</div>
-      <span class="price_mens">29.99$</span>
-      <a routerLink="/auth" class="button">Subscribe</a>
-  </div>
-</div>
-
-</div>
-
-<div class="cosmo">
-
-<div class="cosmo_day">
-  <img class="image" src="../../../../../assets/img/cosmo.png" alt="Cosmopolitan">
-  <div class="cosmo-list">
-    <div class="cosmo_text">Free trial</div>
-      <span class="price_cosmo">0.00$</span>
-      <a routerLink="/auth" class="button">Subscribe</a>
-  </div>
-</div>
-
-<div class="cosmo_month">
-  <img class="image" src="../../../../../assets/img/cosmo.png" alt="Cosmopolitan">
-  <div class="cosmo-list">
-   <div class="cosmo_text">For 6 month</div>
-      <span class="price_cosmo">12.99$</span>
-      <a routerLink="/auth" class="button">Subscribe</a>
-  </div>
-</div>
-
-
-<div class="cosmo_year">
-  <img class="image" src="../../../../../assets/img/cosmo.png" alt="Cosmopolitan">
-  <div class="cosmo-list">
-    <div class="cosmo_text">For 12 month</div>
-      <span class="price_cosmo">24.99$</span>
-      <a routerLink="/auth" class="button">Subscribe</a>
-  </div>
-</div>
-
-</div>
-
-
-<div class="forbes">
-
-<div class="forbes_day">
-  <img class="image" src="../../../../../assets/img/forbes.png" alt="Forbes">
-  <div class="forbes-list">
-    <div class="forbes_text">Free trial</div>
-      <span class="price_forbes">0.00$</span>
-      <a routerLink="/auth" class="button">Subscribe</a>
-  </div>
-</div>
-
-<div class="forbes_month">
-  <img class="image" src="../../../../../assets/img/forbes.png" alt="Forbes">
-  <div class="forbes-list">
-   <div class="forbes_text">For 6 month</div>
-      <span class="price_forbes">9.99$</span>
-      <a routerLink="/auth" class="button">Subscribe</a>
-  </div>
-</div>
-
-
-<div class="forbes_year">
-  <img class="image" src="../../../../../assets/img/forbes.png" alt="Forbes">
-  <div class="forbes-list">
-    <div class="forbes_text">For 12 month</div>
-      <span class="price_forbes">18.99$</span>
-      <a routerLink="/auth" class="button">Subscribe</a>
-  </div>
-</div>
-
+<div class="sas">
+  <table>
+    <tr>
+      <th colspan="2">Service</th>
+      <th>Price</th>
+      <th>Time</th>
+      <th>Subscribe</th>
+    </tr>
+    <tr *ngFor="let service of catalog">
+      <td><img class="logo" src="../../../../../assets/img/{{service.serviceName}}.png" alt="service"></td>
+      <td></td>
+      <td>{{service.cost}}</td>
+      <td>1 month</td>
+      <td>
+        <div class="form-group">
+          <button type="submit" class="btn btn-secondary float-right">
+            Subscribe
+          </button></div>
+      </td>
+    </tr>
+  </table>
 </div>

@@ -12,6 +12,7 @@ public class Service {
 
     private double cost;
     private String serviceName;
+    private String type;
 
     @ManyToOne
     @JoinColumn(name = "serviceTypeId")
@@ -19,9 +20,10 @@ public class Service {
 
     public Service() {}
 
-    public Service(double cost, String serviceName, ServiceType serviceType) {
+    public Service(double cost, String serviceName, String type, ServiceType serviceType) {
         this.cost = cost;
         this.serviceName = serviceName;
+        this.type = type;
         this.serviceType = serviceType;
     }
 
@@ -57,6 +59,14 @@ public class Service {
         this.serviceType = serviceType;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -65,12 +75,13 @@ public class Service {
         return getId() == service.getId() &&
                 Double.compare(service.getCost(), getCost()) == 0 &&
                 Objects.equals(getServiceName(), service.getServiceName()) &&
+                Objects.equals(getType(), service.getType()) &&
                 Objects.equals(getServiceType(), service.getServiceType());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getCost(), getServiceName(), getServiceType());
+        return Objects.hash(getId(), getCost(), getServiceName(), getType(), getServiceType());
     }
 
     @Override
@@ -79,6 +90,7 @@ public class Service {
                 "id=" + id +
                 ", cost=" + cost +
                 ", serviceName='" + serviceName + '\'' +
+                ", type='" + type + '\'' +
                 ", serviceType=" + serviceType +
                 '}';
     }

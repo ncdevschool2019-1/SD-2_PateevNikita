@@ -1,23 +1,21 @@
 package com.netcracker.edu.backend.service.impl;
 
 import com.netcracker.edu.backend.entity.Service;
+import com.netcracker.edu.backend.entity.ServiceType;
 import com.netcracker.edu.backend.repository.CatalogRepository;
 import com.netcracker.edu.backend.service.MusicCatalogService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import java.util.List;
 
-@Component
+@org.springframework.stereotype.Service
 public class MusicCatalogServiceImpl implements MusicCatalogService {
 
+    @Autowired
     private CatalogRepository repository;
 
-    @Autowired
-    public MusicCatalogServiceImpl(CatalogRepository repository) {
-        this.repository = repository;
-    }
-
     @Override
-    public Iterable<Service> getAllMusicCatalog() {
-        return repository.findAll();
+    public List<Service> getAllMusicCatalogByType() {
+         ServiceType serviceType = new ServiceType("music");
+         return (List<Service>) repository.findAllByType(serviceType.getService());
     }
 }
