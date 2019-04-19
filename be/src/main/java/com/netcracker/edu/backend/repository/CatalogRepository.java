@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CatalogRepository extends CrudRepository<Service, Long> {
-    Iterable<Service> findAllByType(String serviceType);
+    Iterable<Service> findAllByServiceTypeId(long id);
 }

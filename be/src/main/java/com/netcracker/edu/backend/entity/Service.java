@@ -20,12 +20,7 @@ public class Service {
 
     public Service() {}
 
-    public Service(double cost, String serviceName, String type, ServiceType serviceType) {
-        this.cost = cost;
-        this.serviceName = serviceName;
-        this.type = type;
-        this.serviceType = serviceType;
-    }
+
 
     public long getId() {
         return id;
@@ -65,6 +60,13 @@ public class Service {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Service(double cost, String serviceName, String type, ServiceType serviceType) {
+        this.cost = cost;
+        this.serviceName = serviceName;
+        this.type = type;
+        this.serviceType = serviceType;
     }
 
     @Override

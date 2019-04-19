@@ -15,7 +15,6 @@ public class MusicCatalogServiceImpl implements MusicCatalogService {
 
     @Override
     public List<Service> getAllMusicCatalogByType() {
-         ServiceType serviceType = new ServiceType("music");
-         return (List<Service>) repository.findAllByType(serviceType.getService());
+         return (List<Service>) repository.findAllByServiceTypeId(1);
     }
 }
