@@ -1,16 +1,15 @@
 <div class="sas">
 <table>
   <tr>
-    <th colspan="2">Service</th>
+    <th>Service</th>
     <th>Price</th>
     <th>Time</th>
     <th>Subscribe</th>
   </tr>
   <tr *ngFor="let service of catalog">
     <td><img class="logo" src="../../../../../assets/img/{{service.serviceName}}.png" alt="service"></td>
-    <td></td>
     <td>{{service.cost}}</td>
-    <td>1 month</td>
+    <td>365 days</td>
     <td>
       <div class="form-group">
       <button type="submit" class="btn btn-secondary float-right">

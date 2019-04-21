@@ -29,14 +29,14 @@ public class BillingAccountController {
         }
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public Iterable<BillingAccount> getAllBillingAccounts() {
         return billingAccountService.getAllBillingAccounts();
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public BillingAccount saveBillingAccount(@RequestBody BillingAccount account) {
-        return billingAccountService.saveBillingAccount(account);
+    public BillingAccount addBillingAccount(@RequestBody BillingAccount account) {
+        return billingAccountService.addBillingAccount(account);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

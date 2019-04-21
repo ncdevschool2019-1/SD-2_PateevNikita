@@ -2,14 +2,13 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from "@angular/common/http";
 import {Ng4LoadingSpinnerModule} from 'ng4-loading-spinner';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import {BalanceComponent} from "./components/balance/balance.component";
 import {BillingAccountComponent} from "./components/billing-account/billing-account.component";
-import {SubscriptionsComponent} from "./components/subscriptions/subscriptions.component";
 import {UserInfoComponent} from "./components/user-info/user-info.component";
 import {UserSubscriptionsComponent} from "./components/user-subscriptions/user-subscriptions.component";
 import {UsersListComponent} from "./components/users-list/users-list.component";
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   imports: [
@@ -17,23 +16,22 @@ import {UsersListComponent} from "./components/users-list/users-list.component";
     Ng4LoadingSpinnerModule.forRoot(),
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule
   ],
   exports: [
-    BalanceComponent,
     BillingAccountComponent,
-    SubscriptionsComponent,
     UserInfoComponent,
     UserSubscriptionsComponent,
-    UsersListComponent
+    UsersListComponent,
+    AdminComponent
   ],
   declarations: [
-    BalanceComponent,
     BillingAccountComponent,
-    SubscriptionsComponent,
     UserInfoComponent,
     UserSubscriptionsComponent,
-    UsersListComponent
+    UsersListComponent,
+    AdminComponent
   ]
 })
 export class AccountModule { }

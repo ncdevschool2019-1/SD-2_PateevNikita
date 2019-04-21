@@ -14,6 +14,7 @@ import { AccComponent } from './components/acc/acc.component';
 import { UserSubsComponent } from './components/user-subs/user-subs.component';
 import { UserBillAccsComponent } from './components/user-bill-accs/user-bill-accs.component';
 import { UserInfComponent } from './components/user-inf/user-inf.component';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,7 @@ import { UserInfComponent } from './components/user-inf/user-inf.component';
     LandingModule
   ],
   declarations: [
-    HomeComponent, MusicComponent, MagazinesComponent, NetflixComponent, AuthComponent, AccComponent, UserSubsComponent, UserBillAccsComponent, UserInfComponent
+    HomeComponent, MusicComponent, MagazinesComponent, NetflixComponent, AuthComponent, AccComponent, UserSubsComponent, UserBillAccsComponent, UserInfComponent, AdminPageComponent
   ],
   exports: [
     HomeComponent, MusicComponent, MagazinesComponent, NetflixComponent, AuthComponent, AccComponent

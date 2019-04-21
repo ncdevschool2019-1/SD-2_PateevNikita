@@ -20,7 +20,7 @@ export class MusicCatalogComponent implements OnInit, OnDestroy {
   }
 
   getMusicCatalog() {
-     this.subscriptions.push(this.musicCatalogService.getMusicCatalog("music").subscribe(catalog => this.catalog = catalog));
+     this.subscriptions.push(this.musicCatalogService.getMusicCatalog().subscribe(catalog => this.catalog = catalog));
   }
 
   ngOnDestroy(): void {

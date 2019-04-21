@@ -19,9 +19,7 @@ public class BillingAccountServiceImpl implements BillingAccountService {
     }
 
     @Override
-    public BillingAccount saveBillingAccount(BillingAccount account) {
-        return repository.save(account);
-    }
+    public BillingAccount addBillingAccount(BillingAccount account) { return repository.save(account); }
 
     @Override
     public Optional<BillingAccount> getBillingAccountById(Long id) {

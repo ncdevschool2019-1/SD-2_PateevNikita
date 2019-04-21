@@ -5,20 +5,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Objects;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MusicCatalogViewModel {
-
+public class CatalogViewModel {
     private long id;
-    private String type;
     private String serviceName;
     private double cost;
     private int date;
 
-    public MusicCatalogViewModel() {
+    public CatalogViewModel() {
     }
 
-    public MusicCatalogViewModel(long id, String type, String serviceName, double cost, int date) {
+    public CatalogViewModel(long id, String serviceName, double cost, int date) {
         this.id = id;
-        this.type = type;
         this.serviceName = serviceName;
         this.cost = cost;
         this.date = date;
@@ -48,13 +45,6 @@ public class MusicCatalogViewModel {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public String getServiceName() {
         return serviceName;
@@ -68,24 +58,22 @@ public class MusicCatalogViewModel {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MusicCatalogViewModel that = (MusicCatalogViewModel) o;
+        CatalogViewModel that = (CatalogViewModel) o;
         return getId() == that.getId() &&
                 Double.compare(that.getCost(), getCost()) == 0 &&
                 getDate() == that.getDate() &&
-                Objects.equals(getType(), that.getType()) &&
                 Objects.equals(getServiceName(), that.getServiceName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getType(), getServiceName(), getCost(), getDate());
+        return Objects.hash(getId(), getServiceName(), getCost(), getDate());
     }
 
     @Override
     public String toString() {
-        return "MusicCatalogViewModel{" +
+        return "CatalogViewModel{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
                 ", serviceName='" + serviceName + '\'' +
                 ", cost=" + cost +
                 ", date=" + date +

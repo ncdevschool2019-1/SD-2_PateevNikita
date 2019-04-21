@@ -1,4 +1,4 @@
-/*package com.netcracker.edu.backend.controller;
+package com.netcracker.edu.backend.controller;
 
 import com.netcracker.edu.backend.entity.Service;
 import com.netcracker.edu.backend.repository.CatalogRepository;
@@ -14,11 +14,8 @@ public class MagazinesCatalogController {
     @Autowired
     private MagazinesCatalogService magazinesCatalogService;
 
-
-
     @RequestMapping(method = RequestMethod.GET)
     public Iterable<Service> getAllMagazinesCatalogByType() {
         return magazinesCatalogService.getAllMagazinesCatalogByType();
     }
 }
-*/

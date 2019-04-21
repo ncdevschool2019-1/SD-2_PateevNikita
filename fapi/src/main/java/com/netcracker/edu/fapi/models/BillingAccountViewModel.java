@@ -2,53 +2,82 @@ package com.netcracker.edu.fapi.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.Objects;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BillingAccountViewModel {
 
-    private int id;
-    private String address;
-    private String username;
-    private String email;
+    private long id;
+    private double balance;
+    private String payment_method;
+    private long userId;
+
 
     public BillingAccountViewModel() {
     }
 
-    public BillingAccountViewModel(int id, String address, String username, String email) {
+    public BillingAccountViewModel(long id, double balance, String payment_method, long userId) {
         this.id = id;
-        this.address = address;
-        this.username = username;
-        this.email = email;
+        this.balance = balance;
+        this.payment_method = payment_method;
+        this.userId = userId;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getAddress() {
-        return address;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
-    public String getUsername() {
-        return username;
+    public String getPayment_method() {
+        return payment_method;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setPayment_method(String payment_method) {
+        this.payment_method = payment_method;
     }
 
-    public String getEmail() {
-        return email;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BillingAccountViewModel that = (BillingAccountViewModel) o;
+        return getId() == that.getId() &&
+                Double.compare(that.getBalance(), getBalance()) == 0 &&
+                getUserId() == that.getUserId() &&
+                Objects.equals(getPayment_method(), that.getPayment_method());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getBalance(), getPayment_method(), getUserId());
+    }
+
+    @Override
+    public String toString() {
+        return "BillingAccountViewModel{" +
+                "id=" + id +
+                ", balance=" + balance +
+                ", payment_method='" + payment_method + '\'' +
+                ", userId=" + userId +
+                '}';
     }
 }

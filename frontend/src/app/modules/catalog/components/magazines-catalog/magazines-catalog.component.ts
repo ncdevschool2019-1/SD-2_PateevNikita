@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Catalog} from "../../models/catalog";
 import {Subscription} from "rxjs";
 import {MagazinesCatalogService} from "../../../../services/magazines-catalog.service";
@@ -8,10 +8,10 @@ import {MagazinesCatalogService} from "../../../../services/magazines-catalog.se
   templateUrl: './magazines-catalog.component.html',
   styleUrls: ['./magazines-catalog.component.css']
 })
-export class MagazinesCatalogComponent implements OnInit {
+export class MagazinesCatalogComponent implements OnInit, OnDestroy {
 
   public catalog: Catalog[];
-  private subscription: Subscription;
+  private subscriptions: Subscription[] = [];
 
   constructor(private magazinesCatalogService: MagazinesCatalogService) { }
 
@@ -20,10 +20,10 @@ export class MagazinesCatalogComponent implements OnInit {
   }
 
   getMagazinesCatalog() {
-    if(this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    this.subscriptions.push(this.magazinesCatalogService.getMagazinesCatalog().subscribe(catalog => this.catalog = catalog));
+  }
 
-    this.subscription = this.magazinesCatalogService.getMagazinesCatalog().subscribe(catalog => this.catalog = catalog);
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(s => s.unsubscribe());
   }
 }

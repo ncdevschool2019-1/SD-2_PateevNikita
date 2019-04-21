@@ -30,6 +30,11 @@
   color: #f05f40;
 }
 
+.form-group {
+  margin-top: 10px;
+}
+
+
 p {
   font-family: 'Oswald', sans-serif;
   font-size: 17px;
@@ -47,6 +52,11 @@ li {
   width: 800px;
   list-style-type: none;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.btn-primary {
+  background-color: #f05f40;
+  border: 2px solid #f05f40;
 }
 
 .infosite .btn-secondary {

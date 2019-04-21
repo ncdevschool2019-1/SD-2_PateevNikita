@@ -12,15 +12,12 @@ public class Service {
 
     private double cost;
     private String serviceName;
-    private String type;
 
     @ManyToOne
     @JoinColumn(name = "serviceTypeId")
     private ServiceType serviceType;
 
     public Service() {}
-
-
 
     public long getId() {
         return id;
@@ -54,18 +51,9 @@ public class Service {
         this.serviceType = serviceType;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Service(double cost, String serviceName, String type, ServiceType serviceType) {
+    public Service(double cost, String serviceName, ServiceType serviceType) {
         this.cost = cost;
         this.serviceName = serviceName;
-        this.type = type;
         this.serviceType = serviceType;
     }
 
@@ -77,13 +65,12 @@ public class Service {
         return getId() == service.getId() &&
                 Double.compare(service.getCost(), getCost()) == 0 &&
                 Objects.equals(getServiceName(), service.getServiceName()) &&
-                Objects.equals(getType(), service.getType()) &&
                 Objects.equals(getServiceType(), service.getServiceType());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getCost(), getServiceName(), getType(), getServiceType());
+        return Objects.hash(getId(), getCost(), getServiceName(), getServiceType());
     }
 
     @Override
@@ -92,7 +79,6 @@ public class Service {
                 "id=" + id +
                 ", cost=" + cost +
                 ", serviceName='" + serviceName + '\'' +
-                ", type='" + type + '\'' +
                 ", serviceType=" + serviceType +
                 '}';
     }

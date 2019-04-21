@@ -11,8 +11,8 @@ export class MusicCatalogService {
 
   constructor(private http: HttpClient) { }
 
-  getMusicCatalog(type: string): Observable<Catalog[]> {
-    return this.http.get<Catalog[]>('http://localhost:8081/api/catalog/' + type);
+  getMusicCatalog(): Observable<Catalog[]> {
+    return this.http.get<Catalog[]>('http://localhost:8081/api/catalog/music');
   }
 
 }

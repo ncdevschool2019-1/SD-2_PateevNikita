@@ -1,29 +1,18 @@
 <div class="billingAccount">
   <section class="infosite">
     <h1>Billing Accounts</h1>
-    <button type="submit" class="btn btn-secondary float-center">
+    <button type="button" class="btn btn-primary float-center btn-outline-dark" data-toggle="modal" data-target="#myModal">
       Add new billing account
     </button>
   </section>
   <div class="ba_container">
   <ul>
-    <li>
-      <p class="text">Billing-Account #1 id12345678</p>
-      <p class="balance">Balance: 228$</p>
+    <li *ngFor="let ba of billingAccount">
+      <p class="text">Billing-Account id{{ba.id}}</p>
+      <p class="balance">Payment method: {{ba.payment_method}}</p>
+      <p class="balance">Balance: {{ba.balance}}$</p>
       <div class="form-group">
-        <button type="submit" class="btn btn-secondary float-right">
-          Delete
-        </button>
-        <button type="submit" class="btn btn-secondary float-right">
-          Add money
-        </button>
-      </div>
-    </li>
-    <li>
-      <p class="text">Billing-Account #2 id12345678</p>
-      <p class="balance">Balance: 228$</p>
-      <div class="form-group">
-        <button type="submit" class="btn btn-secondary float-right">
+        <button type="button" class="btn btn-secondary float-right" (click)="deleteBillingAccount(ba.id)">
           Delete
         </button>
         <button type="submit" class="btn btn-secondary float-right">
@@ -32,5 +21,51 @@
       </div>
     </li>
   </ul>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">NEW BILLING ACCOUNT</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+
+
+        <form [formGroup]="addBillingAccountForm" novalidate (ngSubmit)="submit()">
+          <div class="form-group">
+            <label for="sel1">Choose your payment method:</label>
+            <select class="form-control" id="sel1" formControlName="payment_method" type="text">
+              <option>Visa</option>
+              <option>MasterCard</option>
+              <option>PayPal</option>
+              <option>WebMoney</option>
+              <option>Maestro</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <input type="number" formControlName="money" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Amount of money" min="1">
+            <div class="input-group-append">
+              <span class="input-group-text">$</span>
+              <span class="input-group-text">0.00</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success float-right" [disabled]="addBillingAccountForm.invalid">Save new billing account</button>
+          </div>
+        </form>
+
+      </div>
+
+
+
+    </div>
   </div>
 </div>

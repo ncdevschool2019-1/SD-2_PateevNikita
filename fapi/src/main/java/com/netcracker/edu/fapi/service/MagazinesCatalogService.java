@@ -4,6 +4,6 @@ import com.netcracker.edu.fapi.models.CatalogViewModel;
 
 import java.util.List;
 
-public interface NetflixCatalogService {
-    List<CatalogViewModel> getNetflixCatalog();
+public interface MagazinesCatalogService {
+    List<CatalogViewModel> getMagazinesCatalog();
 }

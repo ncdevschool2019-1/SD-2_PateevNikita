@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NetflixCatalogService} from "../../../../services/netflix-catalog.service";
 import {Catalog} from "../../models/catalog";
 import {Subscription} from "rxjs";
@@ -9,10 +9,10 @@ import {Subscription} from "rxjs";
   templateUrl: './netflix-catalog.component.html',
   styleUrls: ['./netflix-catalog.component.css']
 })
-export class NetflixCatalogComponent implements OnInit {
+export class NetflixCatalogComponent implements OnInit, OnDestroy {
 
   public catalog: Catalog[];
-  private subscription: Subscription;
+  private subscriptions: Subscription[] = [];
 
   constructor(private netflixCatalogService: NetflixCatalogService) { }
 
@@ -21,11 +21,11 @@ export class NetflixCatalogComponent implements OnInit {
   }
 
   getNetflixCatalog() {
-    if(this.subscription) {
-      this.subscription.unsubscribe();
-    }
+    this.subscriptions.push(this.netflixCatalogService.getNetflixCatalog().subscribe(catalog => this.catalog = catalog));
+  }
 
-    this.subscription = this.netflixCatalogService.getNetflixCatalog().subscribe(catalog => this.catalog = catalog);
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(s => s.unsubscribe());
   }
 
 }

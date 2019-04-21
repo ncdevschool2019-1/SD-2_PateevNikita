@@ -1,8 +1,7 @@
 package com.netcracker.edu.fapi.service.impl;
 
-import com.netcracker.edu.fapi.models.MusicCatalogViewModel;
+import com.netcracker.edu.fapi.models.CatalogViewModel;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import com.netcracker.edu.fapi.service.MusicCatalogService;
@@ -18,9 +17,9 @@ public class MusicCatalogServiceImpl implements MusicCatalogService {
     private String backendServerUrl;
 
     @Override
-    public List<MusicCatalogViewModel> getMusicCatalog(String type) {
+    public List<CatalogViewModel> getMusicCatalog() {
         RestTemplate restTemplate = new RestTemplate();
-        MusicCatalogViewModel[] musicCatalogViewModelsResponse = restTemplate.getForObject(backendServerUrl + "api/catalog/" + type, MusicCatalogViewModel[].class);
-        return musicCatalogViewModelsResponse == null ? Collections.emptyList() : Arrays.asList(musicCatalogViewModelsResponse);
+        CatalogViewModel[] catalogViewModelsResponse = restTemplate.getForObject(backendServerUrl + "api/catalog/music", CatalogViewModel[].class);
+        return catalogViewModelsResponse == null ? Collections.emptyList() : Arrays.asList(catalogViewModelsResponse);
     }
 }

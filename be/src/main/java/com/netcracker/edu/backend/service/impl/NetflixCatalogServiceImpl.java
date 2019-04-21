@@ -1,4 +1,4 @@
-/*package com.netcracker.edu.backend.service.impl;
+package com.netcracker.edu.backend.service.impl;
 
 import com.netcracker.edu.backend.entity.Service;
 import com.netcracker.edu.backend.repository.CatalogRepository;
@@ -13,7 +13,7 @@ public class NetflixCatalogServiceImpl implements NetflixCatalogService {
     private CatalogRepository repository;
 
     @Override
-    public List<Service> getAllNetflixCatalog(String type) {
-        return (List<Service>) repository.findAllByType(type);
+    public List<Service> getAllNetflixCatalogByType() {
+        return (List<Service>) repository.findAllByServiceTypeId(3);
     }
-}*/
+}
