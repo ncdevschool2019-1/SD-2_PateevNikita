@@ -1,27 +1,24 @@
 <div class="main">
 <h1>NetCracker Sub System</h1>
- 
+
 <div class="form">
   <div class="thumbnail">
     <img src="https://img.icons8.com/ios/96/000000/cloud.png"/>
-  </div>  
-  <form class="register-form">
-    <input type="text" required autocomplete="off" placeholder="First name"/>
-    <input type="text" required autocomplete="off" placeholder="Last name"/>
-    <input type="text" required autocomplete="off" placeholder="Username"/>
-    <input type="email" required autocomplete="off" placeholder="E-mail"/>
-    <input type="password" required autocomplete="off" placeholder="Password"/>
-    <button type="submit">Create</button>
-    <p class="message">Already registered? <a href="#">Sign In</a></p>
+  </div>
+  <form class="register-form" [formGroup]="addUserForm" novalidate (ngSubmit)="submitUser()">
+    <input type="text" formControlName="firstName" autocomplete="off" placeholder="First name" required />
+    <input type="text" required formControlName="lastName" autocomplete="off" placeholder="Last name"/>
+    <input type="text" required formControlName="userName" autocomplete="off" placeholder="Username"/>
+    <input type="email" required formControlName="email" autocomplete="off" placeholder="E-mail"/>
+    <input type="password" required formControlName="userPassword" autocomplete="off" placeholder="Password"/>
+    <button type="submit" [disabled]="addUserForm.invalid">Create</button>
+    <p class="message">Already registered? <a>Sign In</a></p>
   </form>
-  <form if="pretty" class="login-form">
+  <form class="login-form">
     <input type="text" required autocomplete="off" placeholder="Username"/>
     <input type="password" required autocomplete="off" placeholder="Password"/>
-    <button type="submit" (click)="onClickMe()">Sign in</button>
-    <p class="message">Not registered? <a href="#" (click)="notRegistered()">Create an account</a></p>
+    <button type="submit">Sign in</button>
+    <p class="create">Not registered? <a>Create an account</a></p>
   </form>
+  </div>
 </div>
-</div>
-
-
-

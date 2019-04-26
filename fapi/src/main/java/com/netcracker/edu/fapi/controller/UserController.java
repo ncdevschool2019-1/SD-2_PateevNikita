@@ -10,7 +10,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/account")
 public class UserController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class UserController {
         return userService.findByLogin(login);
     }
 
-    @RequestMapping(value="/signup", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value="/auth", method = RequestMethod.POST, produces = "application/json")
     public User saveUser(@RequestBody User user){
         return userService.save(user);
     }

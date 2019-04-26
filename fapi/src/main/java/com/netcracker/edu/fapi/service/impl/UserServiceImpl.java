@@ -1,4 +1,4 @@
-/*package com.netcracker.edu.fapi.service.impl;
+package com.netcracker.edu.fapi.service.impl;
 
 import com.netcracker.edu.fapi.models.User;
 import com.netcracker.edu.fapi.service.UserService;
@@ -26,22 +26,22 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     @Override
     public User findByLogin(String login) {
         RestTemplate restTemplate = new RestTemplate();
-        User user = restTemplate.getForObject(backendServerUrl + "/api/user/login/" + login, User.class);
+        User user = restTemplate.getForObject(backendServerUrl + "/api/account/admin" + login, User.class);
         return user;
     }
 
     @Override
     public List<User> findAll() {
         RestTemplate restTemplate = new RestTemplate();
-        User[] usersResponse = restTemplate.getForObject(backendServerUrl + "/api/user", User[].class);
+        User[] usersResponse = restTemplate.getForObject(backendServerUrl + "/api/account/admin", User[].class);
         return usersResponse == null ? Collections.emptyList() : Arrays.asList(usersResponse);
     }
 
-   /* @Override
+    @Override
     public User save(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setUserPassword(bCryptPasswordEncoder.encode(user.getUserPassword()));
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.postForEntity(backendServerUrl + "/api/user", user, User.class).getBody();
+        return restTemplate.postForEntity(backendServerUrl + "/api/account/auth", user, User.class).getBody();
     }
 
    @Override
@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         if (user == null) {
             throw new UsernameNotFoundException("Invalid username or password.");
         }
-        return new org.springframework.security.core.userdetails.User(user.getLogin(), user.getPassword(), getAuthority(user));
+        return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getUserPassword(), getAuthority(user));
     }
 
     private Set<SimpleGrantedAuthority> getAuthority(User user) {
@@ -59,4 +59,4 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         return authorities;
     }
 
-}*/
+}

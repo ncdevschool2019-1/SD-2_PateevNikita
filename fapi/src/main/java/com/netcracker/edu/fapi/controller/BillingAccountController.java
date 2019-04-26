@@ -33,4 +33,13 @@ public class BillingAccountController {
         }
         return ResponseEntity.badRequest().build();
     }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<BillingAccountViewModel> addMoney(@PathVariable Long id, @RequestBody BillingAccountViewModel billingAccount) {
+        if (billingAccount != null) {
+            billingAccountService.addMoney(billingAccount, id);
+            return ResponseEntity.ok(billingAccount);
+        }
+        return ResponseEntity.badRequest().build();
+    }
 }

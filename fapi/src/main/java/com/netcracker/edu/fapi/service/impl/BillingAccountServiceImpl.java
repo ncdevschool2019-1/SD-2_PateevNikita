@@ -34,4 +34,10 @@ public class BillingAccountServiceImpl implements BillingAccountService {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.postForEntity(backendServerUrl + "api/account/billing", account, BillingAccountViewModel.class).getBody();
     }
+
+    @Override
+    public void addMoney(BillingAccountViewModel account, Long id) {
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.put(backendServerUrl + "api/account/billing/" + id, account, BillingAccountViewModel.class);
+    }
 }

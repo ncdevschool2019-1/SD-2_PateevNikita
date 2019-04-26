@@ -1,7 +1,6 @@
 .main {
   padding: 0;
   height: 700px;
-  max-height: 2048px;
   background-image: url("~src/assets/img/back2.jpg");
   background-size: cover;
 }
@@ -79,9 +78,22 @@
   font-size: 12px;
 }
 .form .message a {
-  color: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+  color: darkblue;
   text-decoration: none;
+  cursor: pointer;
 }
+
+.form .create {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .create a {
+  color: darkblue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .form .register-form {
   font-family: 'Oswald', sans-serif;
   display: none;
@@ -120,6 +132,7 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
+
 
 body {
   background: #D3D3D3;

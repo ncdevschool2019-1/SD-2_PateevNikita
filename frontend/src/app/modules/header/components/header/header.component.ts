@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Link } from "../../models/link";
 import { HeaderService } from "../../../../services/header.service";
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-header',
@@ -11,15 +12,17 @@ import { HeaderService } from "../../../../services/header.service";
 export class HeaderComponent implements OnInit {
 
   links: Link[];
+  isVisible: boolean = false;
 
   constructor(private headerService: HeaderService) { }
 
   ngOnInit() {
-	  this.getLinks();
+    this.getLinks();
   }
 
   getLinks() {
     this.links = this.headerService.getLinks();
+    this.isVisible = true;
   }
 
   onSelect(link: Link): void {

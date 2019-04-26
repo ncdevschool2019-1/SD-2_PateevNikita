@@ -9,4 +9,5 @@ public interface BillingAccountService {
     Iterable<BillingAccount> getAllBillingAccounts();
     void deleteBillingAccount(Long id);
     BillingAccount addBillingAccount(BillingAccount account);
+    BillingAccount addMoney(BillingAccount account);
 }

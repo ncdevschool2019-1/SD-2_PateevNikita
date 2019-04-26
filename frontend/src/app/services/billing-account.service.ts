@@ -32,4 +32,8 @@ export class BillingAccountService {
   addBillingAccount(acc: BillingAccount): Observable<BillingAccount> {
     return this.http.post<BillingAccount>('http://localhost:8081/api/account/billing', acc);
   }
+
+  addMoney(acc: BillingAccount): Observable<BillingAccount> {
+    return this.http.put<BillingAccount>('http://localhost:8081/api/account/billing/' + acc.id, acc);
+  }
 }

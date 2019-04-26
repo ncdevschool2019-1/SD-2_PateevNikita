@@ -35,4 +35,17 @@ public class BillingAccountServiceImpl implements BillingAccountService {
     public void deleteBillingAccount(Long id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public BillingAccount addMoney(BillingAccount account) {
+        if (repository.findById(account.getId()).isPresent()) {
+            BillingAccount tmp = repository.findById(account.getId()).get();
+            if (account.getBalance() > tmp.getBalance()) {
+                return repository.save(account);
+            } else {
+                return tmp;
+            }
+        }
+        return null;
+    }
 }

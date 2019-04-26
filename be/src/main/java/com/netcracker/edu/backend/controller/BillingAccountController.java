@@ -44,4 +44,8 @@ public class BillingAccountController {
         billingAccountService.deleteBillingAccount(id);
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public BillingAccount addMoney(@PathVariable(name = "id") Long id, @RequestBody BillingAccount account) {
+        return billingAccountService.addMoney(account);
+    }
 }

@@ -12,6 +12,7 @@ export class MagazinesCatalogComponent implements OnInit, OnDestroy {
 
   public catalog: Catalog[];
   private subscriptions: Subscription[] = [];
+  public isVisible: boolean = false;
 
   constructor(private magazinesCatalogService: MagazinesCatalogService) { }
 
@@ -21,6 +22,7 @@ export class MagazinesCatalogComponent implements OnInit, OnDestroy {
 
   getMagazinesCatalog() {
     this.subscriptions.push(this.magazinesCatalogService.getMagazinesCatalog().subscribe(catalog => this.catalog = catalog));
+    this.isVisible = true;
   }
 
   ngOnDestroy(): void {

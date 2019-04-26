@@ -8,4 +8,5 @@ public interface BillingAccountService {
     List<BillingAccountViewModel> getBillingAccounts();
     void deleteBillingAccount(Long id);
     BillingAccountViewModel addBillingAccount(BillingAccountViewModel account);
+    void addMoney(BillingAccountViewModel account, Long id);
 }

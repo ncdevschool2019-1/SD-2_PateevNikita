@@ -1,26 +1,45 @@
 <div class="billingAccount">
   <section class="infosite">
-    <h1>Billing Accounts</h1>
+    <h1>Billing Account</h1>
     <button type="button" class="btn btn-primary float-center btn-outline-dark" data-toggle="modal" data-target="#myModal">
-      Add new billing account
+      Add new wallet
     </button>
   </section>
   <div class="ba_container">
-  <ul>
-    <li *ngFor="let ba of billingAccount">
-      <p class="text">Billing-Account id{{ba.id}}</p>
-      <p class="balance">Payment method: {{ba.payment_method}}</p>
-      <p class="balance">Balance: {{ba.balance}}$</p>
-      <div class="form-group">
-        <button type="button" class="btn btn-secondary float-right" (click)="deleteBillingAccount(ba.id)">
-          Delete
-        </button>
-        <button type="submit" class="btn btn-secondary float-right">
-          Add money
-        </button>
-      </div>
-    </li>
-  </ul>
+    <ul>
+      <li *ngFor="let ba of billingAccount">
+        <img class="logo" src="../../../../../assets/img/{{ba.payment_method}}.png" alt="{{ba.id}}">
+        <p class="balance">Payment method: {{ba.payment_method}}</p>
+        <p class="balance">Balance: {{ba.balance}}$</p>
+        <div id="mn" class="form-group">
+          <button type="button" class="btn btn-secondary float-right" (click)="deleteBillingAccount(ba.id)">
+            Delete wallet
+          </button>
+        </div>
+        <form [formGroup]="addMoneyForm" novalidate (ngSubmit)="addMoney(ba.id)">
+        <div id="money_input" class="input-group mb-3 float-center">
+          <input type="text" class="form-control" formControlName="add_money" placeholder="$" aria-label="Recipient's username" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-outline-success" [disabled]="addMoneyForm.invalid">Add money</button>
+          </div>
+        </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="..." class="rounded mr-2" alt="...">
+    <strong class="mr-auto">Bootstrap</strong>
+    <small>11 mins ago</small>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    Hello, world! This is a toast message.
   </div>
 </div>
 
@@ -31,13 +50,12 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">NEW BILLING ACCOUNT</h4>
+        <h4 class="modal-title">NEW WALLET</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
-
 
         <form [formGroup]="addBillingAccountForm" novalidate (ngSubmit)="submit()">
           <div class="form-group">
@@ -46,25 +64,22 @@
               <option>Visa</option>
               <option>MasterCard</option>
               <option>PayPal</option>
-              <option>WebMoney</option>
               <option>Maestro</option>
             </select>
           </div>
           <div class="input-group">
-            <input type="number" formControlName="money" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Amount of money" min="1">
+            <input type="number" formControlName="money" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="$" min="1">
             <div class="input-group-append">
               <span class="input-group-text">$</span>
               <span class="input-group-text">0.00</span>
             </div>
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-success float-right" [disabled]="addBillingAccountForm.invalid">Save new billing account</button>
+            <button type="submit" class="btn btn-success float-right" [disabled]="addBillingAccountForm.invalid">Save new wallet<span class="spinner-grow spinner-grow-sm"></span></button>
           </div>
         </form>
 
       </div>
-
-
 
     </div>
   </div>

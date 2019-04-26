@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+
 @RestController
 @RequestMapping("/api/catalog/magazines")
 public class MagazinesCatalogController {
@@ -18,4 +20,5 @@ public class MagazinesCatalogController {
     public Iterable<Service> getAllMagazinesCatalogByType() {
         return magazinesCatalogService.getAllMagazinesCatalogByType();
     }
+
 }
