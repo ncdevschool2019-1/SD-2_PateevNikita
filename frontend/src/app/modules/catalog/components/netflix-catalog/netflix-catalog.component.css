@@ -1,66 +1,32 @@
-.sas {
-  display: flex;
-}
-
-.form-group {
-  display: flex;
-  padding-top: 20px;
-}
-
-.logo {
-  max-width: 150px;
-  max-height: 150px;
-}
-
-button {
-  margin: auto;
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-  color: black;
-}
-
-table {
-  /*background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);*/
-  border-spacing: 0 10px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: bold;
-  width: 100%;
-  margin-top: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-th {
-  border: 2px solid #d3d3d3;
-  padding: 10px 20px;
+.cont {
   background-image: url("~src/assets/img/pattern.jpg");
-  color: black;
+}
+
+.card {
+  background-image: url("~src/assets/img/netflix-hex-colors-gradient-background.png");
+  background-size: cover;
+  display: flex;
+  width: 900px;
+  height: 300px;
+  margin: 0 300px 30px 300px;
+  border: none;
+}
+
+.card-title {
+  text-align: left;
+  font-family: 'Oswald', sans-serif;
+  font-size: 120px;
+  text-transform: uppercase;
+  color: #e50914;
+  z-index: 2;
+  text-shadow: 2px 2px 3px grey;
+}
+
+.card-text {
   font-size: 30px;
-  text-align: center;
-}
-th:first-child {
-
-}
-th:last-child {
-
-}
-td {
-  vertical-align: middle;
-  padding: 10px;
-  font-size: 20px;
-  text-align: center;
-  border-right: 2px solid #d3d3d3;
-  border-bottom: 2px solid #d3d3d3;
-  height: 100px;
-}
-td:first-child {
-  border-left: 2px solid #d3d3d3;
-  border-right: 2px solid #d3d3d3;
-}
-td:nth-child(2){
-  text-align: center;
 }
 
-
-
-
-
+.btn {
+  display: inline-block;
+  margin-right: 20px;
+}

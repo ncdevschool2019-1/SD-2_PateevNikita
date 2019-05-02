@@ -19,23 +19,25 @@
       <li class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" [routerLink]="['/catalog/netflix']">Netflix</a>
       </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/account/user']"><img src="https://img.icons8.com/ios/24/000000/contacts.png"></a>
-      </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/account/subs']"><img src="https://img.icons8.com/ios/24/000000/folder-invoices.png"></a>
-      </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/account/billing']"><img src="https://img.icons8.com/ios/24/000000/wallet.png"></a>
+      <li class="nav-item dropdown" [routerLinkActive]="['active']">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Username
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['/account/user']"><img class="acc" src="https://img.icons8.com/ios/24/000000/contacts.png">Personal information</a>
+          <a class="dropdown-item" [routerLink]="['/account/subs']"><img class="acc" src="https://img.icons8.com/ios/24/000000/folder-invoices.png">Subscriptions</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/account/billing']"><img class="acc" src="https://img.icons8.com/ios/24/000000/wallet.png">Billing account</a>
+        </div>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']">
         <a class="nav-link" [routerLink]="['/admin']">Admin</a>
       </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/account/auth']">Sign in/Sign up</a>
-      </li>
     </ul>
-
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/auth']"><img class="login" src="https://img.icons8.com/ios/38/000000/user-male-circle-filled.png">Login/Sign up</a></li>
+    </ul>
   </div>
 </nav>
 

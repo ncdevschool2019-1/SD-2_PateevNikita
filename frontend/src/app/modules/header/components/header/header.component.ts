@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Link } from "../../models/link";
 import { HeaderService } from "../../../../services/header.service";
-import * as $ from 'jquery';
+import {UserService} from "../../../../services/user.service";
+import {User} from "../../../account/models/user";
 
 @Component({
   selector: 'app-header',
@@ -11,25 +12,14 @@ import * as $ from 'jquery';
 
 export class HeaderComponent implements OnInit {
 
-  links: Link[];
-  isVisible: boolean = false;
+  user: User;
 
-  constructor(private headerService: HeaderService) { }
+  constructor(private userService: UserService) { }
+
+  /**вставить функцию getByUserId и вывести текущий userName**/
 
   ngOnInit() {
-    this.getLinks();
   }
 
-  getLinks() {
-    this.links = this.headerService.getLinks();
-    this.isVisible = true;
-  }
 
-  onSelect(link: Link): void {
-    this.headerService.setSelectedLink(link);
-  }
-
-  getSelectedLink(): Link {
-    return this.headerService.getSelectedLink();
-  }
 }

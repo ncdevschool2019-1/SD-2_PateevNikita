@@ -42,7 +42,7 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
   submitUser(): void {
     this.subscriptions.push(this.userService.addUser(
       new User(null, this.addUserForm.get("firstName").value, this.addUserForm.get("lastName").value, this.addUserForm.get("userName").value,
-        this.addUserForm.get("email").value, this.addUserForm.get("userPassword").value))
+        this.addUserForm.get("email").value, this.addUserForm.get("userPassword").value, "admin"))
       .subscribe());
   }
 

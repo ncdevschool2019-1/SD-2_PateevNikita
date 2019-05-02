@@ -2,10 +2,10 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 body {
-  background-color: white;
 	font-family: 'Oswald', sans-serif;
 }
 
 .transition {
   transition: all 0.2s ease-in-out;
 }
+

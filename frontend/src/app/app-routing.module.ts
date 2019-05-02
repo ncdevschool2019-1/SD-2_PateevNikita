@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'catalog/music', component: MusicComponent},
   {path: 'catalog/netflix', component: NetflixComponent},
   {path: 'catalog/magazines', component: MagazinesComponent},
-  {path: 'account/auth', component: AuthComponent},
+  {path: 'auth', component: AuthComponent},
   {path: 'account/user', component: UserInfComponent},
   {path: 'account/subs', component: UserSubsComponent},
   {path: 'account/billing', component: UserBillAccsComponent},

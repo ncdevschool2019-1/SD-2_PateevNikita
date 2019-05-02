@@ -20,14 +20,18 @@ export class BillingAccountComponent implements OnInit, OnDestroy {
   });
 
   addMoneyForm: FormGroup = new FormGroup({
-    add_money: new FormControl("", Validators.required)
+    add_money: new FormControl("",
+      [Validators.required,Validators.max(999999999),Validators.pattern('^[0-9]+$')])
   });
-
-
 
   constructor(private billingAccountService: BillingAccountService) { }
 
-
+  updateAddMoneyForms() {
+    this.addMoneyForm = new FormGroup({
+      add_money: new FormControl("",
+        [Validators.required,Validators.max(999999999),Validators.pattern('^[0-9]+$')])
+    });
+  }
 
   getBillingAccounts(): void {
     this.subscriptions.push(this.billingAccountService.getBillingAccounts().subscribe(billingAccount => this.billingAccount = billingAccount as BillingAccount[]));
@@ -53,11 +57,16 @@ export class BillingAccountComponent implements OnInit, OnDestroy {
   }
 
   addMoney(baId: number): void {
-    this.subscriptions.push(
-      this.billingAccountService.addMoney(new BillingAccount(this.billingAccount[baId].id, this.billingAccount[baId].balance + Number(this.addMoneyForm[baId].get("add_money").value), this.billingAccount[baId].payment_method, this.billingAccount[baId].userId))
-        .subscribe(() => {
-          this.billingAccountService.updateBillingAccounts();
-        }));
+     this.billingAccount.forEach(value => {
+       if(value.id == baId) {
+         this.subscriptions.push(
+           this.billingAccountService.addMoney(new BillingAccount(value.id, value.balance + Number(this.addMoneyForm.get("add_money").value), value.payment_method, value.userId))
+             .subscribe(() => {
+               this.updateBillingAccounts();
+             }));
+       }
+     });
+     this.updateAddMoneyForms();
   }
 
   ngOnInit() {

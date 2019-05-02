@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     @Override
     public List<User> findAll() {
         RestTemplate restTemplate = new RestTemplate();
-        User[] usersResponse = restTemplate.getForObject(backendServerUrl + "/api/account/admin", User[].class);
+        User[] usersResponse = restTemplate.getForObject(backendServerUrl + "/api/admin", User[].class);
         return usersResponse == null ? Collections.emptyList() : Arrays.asList(usersResponse);
     }
 

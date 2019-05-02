@@ -9,6 +9,7 @@ import {UserInfoComponent} from "./components/user-info/user-info.component";
 import {UserSubscriptionsComponent} from "./components/user-subscriptions/user-subscriptions.component";
 import {UsersListComponent} from "./components/users-list/users-list.component";
 import { AdminComponent } from './components/admin/admin.component';
+import {YandexComponent} from "./components/yandex/yandex.component";
 
 @NgModule({
   imports: [
@@ -24,14 +25,16 @@ import { AdminComponent } from './components/admin/admin.component';
     UserInfoComponent,
     UserSubscriptionsComponent,
     UsersListComponent,
-    AdminComponent
+    AdminComponent,
+    YandexComponent
   ],
   declarations: [
     BillingAccountComponent,
     UserInfoComponent,
     UserSubscriptionsComponent,
     UsersListComponent,
-    AdminComponent
+    AdminComponent,
+    YandexComponent
   ]
 })
 export class AccountModule { }

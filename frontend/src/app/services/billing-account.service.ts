@@ -17,14 +17,6 @@ export class BillingAccountService {
     return this.http.get<BillingAccount[]>('http://localhost:8081/api/account/billing');
   }
 
-  updateBillingAccounts() {
-    if(this.subscription) {
-      this.subscription.unsubscribe();
-    }
-    this.subscription = this.http.get<BillingAccount[]>('http://localhost:8081/api/account/billing')
-      .subscribe(billingAccounts => this.billingAccounts = billingAccounts);
-  }
-
   deleteBillingAccount(id: number): Observable<void> {
     return this.http.delete<void>('http://localhost:8081/api/account/billing/' + id)
   }

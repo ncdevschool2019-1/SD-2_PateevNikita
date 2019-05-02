@@ -5,8 +5,8 @@
   <div class="thumbnail">
     <img src="https://img.icons8.com/ios/96/000000/cloud.png"/>
   </div>
-  <form class="register-form" [formGroup]="addUserForm" novalidate (ngSubmit)="submitUser()">
-    <input type="text" formControlName="firstName" autocomplete="off" placeholder="First name" required />
+  <form class="register-form" [formGroup]="addUserForm" ngNativeValidate (ngSubmit)="submitUser()">
+    <input type="text" required  formControlName="firstName" autocomplete="off" placeholder="First name"/>
     <input type="text" required formControlName="lastName" autocomplete="off" placeholder="Last name"/>
     <input type="text" required formControlName="userName" autocomplete="off" placeholder="Username"/>
     <input type="email" required formControlName="email" autocomplete="off" placeholder="E-mail"/>

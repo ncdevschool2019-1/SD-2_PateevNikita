@@ -12,6 +12,7 @@ export class MusicCatalogComponent implements OnInit, OnDestroy {
 
   public catalog: Catalog[];
   private subscriptions: Subscription[] = [];
+  public isVisible: boolean = false;
 
   constructor(private musicCatalogService: MusicCatalogService) { }
 
