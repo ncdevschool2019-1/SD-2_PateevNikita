@@ -19,25 +19,32 @@ public class BillingAccountServiceImpl implements BillingAccountService {
     @Override
     public List<BillingAccountViewModel> getBillingAccounts() {
         RestTemplate restTemplate = new RestTemplate();
-        BillingAccountViewModel[] billingAccountViewModelsResponse = restTemplate.getForObject(backendServerUrl + "api/account/billing", BillingAccountViewModel[].class);
+        BillingAccountViewModel[] billingAccountViewModelsResponse = restTemplate.getForObject(backendServerUrl + "api/billing-accounts", BillingAccountViewModel[].class);
         return billingAccountViewModelsResponse == null ? Collections.emptyList() : Arrays.asList(billingAccountViewModelsResponse);
+    }
+
+    @Override
+    public List<BillingAccountViewModel> getBillingAccountsByUserId(Long id) {
+        RestTemplate restTemplate = new RestTemplate();
+        BillingAccountViewModel[] billingAccountViewModelResponse = restTemplate.getForObject(backendServerUrl + "api/billing-accounts/" + id, BillingAccountViewModel[].class);
+        return billingAccountViewModelResponse == null ? Collections.emptyList() : Arrays.asList(billingAccountViewModelResponse);
     }
 
     @Override
     public void deleteBillingAccount(Long id) {
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.delete(backendServerUrl + "api/account/billing/" + id);
+        restTemplate.delete(backendServerUrl + "api/billing-accounts/" + id);
     }
 
     @Override
     public BillingAccountViewModel addBillingAccount(BillingAccountViewModel account) {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.postForEntity(backendServerUrl + "api/account/billing", account, BillingAccountViewModel.class).getBody();
+        return restTemplate.postForEntity(backendServerUrl + "api/billing-accounts", account, BillingAccountViewModel.class).getBody();
     }
 
     @Override
     public void addMoney(BillingAccountViewModel account, Long id) {
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.put(backendServerUrl + "api/account/billing/" + id, account, BillingAccountViewModel.class);
+        restTemplate.put(backendServerUrl + "api/billing-accounts/" + id, account, BillingAccountViewModel.class);
     }
 }

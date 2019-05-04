@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface BillingAccountService {
     List<BillingAccountViewModel> getBillingAccounts();
+    List<BillingAccountViewModel> getBillingAccountsByUserId(Long id);
     void deleteBillingAccount(Long id);
     BillingAccountViewModel addBillingAccount(BillingAccountViewModel account);
     void addMoney(BillingAccountViewModel account, Long id);

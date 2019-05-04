@@ -24,6 +24,10 @@ export class MusicCatalogComponent implements OnInit, OnDestroy {
      this.subscriptions.push(this.musicCatalogService.getMusicCatalog().subscribe(catalog => this.catalog = catalog));
   }
 
+  subscribe() {
+
+  }
+
   ngOnDestroy(): void {
     this.subscriptions.forEach(s => s.unsubscribe());
   }

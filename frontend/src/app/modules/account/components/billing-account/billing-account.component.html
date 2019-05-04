@@ -12,7 +12,7 @@
         <p class="balance">Payment method: {{ba.payment_method}}</p>
         <p class="balance">Balance: {{ba.balance}}$</p>
         <div id="mn" class="form-group">
-          <button type="button" class="btn btn-secondary float-right"(click)="deleteBillingAccount(ba.id)">
+          <button type="button" class="btn btn-secondary float-right" data-toggle="modal" data-target="#eModal" (click)="deleteBillingAccount(ba.id)">
             Delete wallet
           </button>
         </div>

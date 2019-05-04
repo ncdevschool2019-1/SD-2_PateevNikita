@@ -13,12 +13,12 @@ public class User {
     private String userName;
     private String email;
     private String userPassword;
-    private String role;
+    private Role role;
 
     public User() {
     }
 
-    public User(long id, String firstName, String lastName, String userName, String email, String userPassword, String role) {
+    public User(long id, String firstName, String lastName, String userName, String email, String userPassword, Role role) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -65,25 +65,12 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", email='" + email + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                ", role='" + role + '\'' +
-                '}';
     }
 
     @Override
@@ -103,5 +90,18 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(getId(), getFirstName(), getLastName(), getUserName(), getEmail(), getUserPassword(), getRole());
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", role=" + role +
+                '}';
     }
 }

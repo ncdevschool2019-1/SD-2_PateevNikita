@@ -21,7 +21,7 @@ public class UserController {
         return ResponseEntity.ok(user);
     }*/
 
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
     public List<User> getAllUsers() {
         return userService.findAll();
     }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/account/billing")
+@RequestMapping("/api/billing-accounts")
 public class BillingAccountController {
 
     @Autowired
@@ -18,6 +18,12 @@ public class BillingAccountController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<BillingAccountViewModel>> getBillingAccounts() {
         return ResponseEntity.ok(billingAccountService.getBillingAccounts());
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ResponseEntity<List<BillingAccountViewModel>> getBillingAccountsByUserId(@PathVariable String id) {
+        billingAccountService.getBillingAccountsByUserId(Long.valueOf(id));
+        return ResponseEntity.ok().build();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

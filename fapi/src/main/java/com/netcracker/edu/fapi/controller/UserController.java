@@ -11,13 +11,13 @@ import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.findAll());
     }
@@ -28,9 +28,9 @@ public class UserController {
         return userService.findAll();
     }*/
 
-    @GetMapping("/login/{login}")
-    public User getUserByLogin(@PathVariable String login) {
-        return userService.findByLogin(login);
+    @GetMapping("/username/{userName}")
+    public User getUserByUserName(@PathVariable String userName) {
+        return userService.findByUserName(userName);
     }
 
     @RequestMapping(value="/auth", method = RequestMethod.POST, produces = "application/json")

@@ -14,18 +14,18 @@ export class BillingAccountService {
   constructor(private http: HttpClient) { }
 
   getBillingAccounts(): Observable<BillingAccount[]> {
-    return this.http.get<BillingAccount[]>('http://localhost:8081/api/account/billing');
+    return this.http.get<BillingAccount[]>('http://localhost:8081/api/billing-accounts');
   }
 
   deleteBillingAccount(id: number): Observable<void> {
-    return this.http.delete<void>('http://localhost:8081/api/account/billing/' + id)
+    return this.http.delete<void>('http://localhost:8081/api/billing-accounts/' + id)
   }
 
   addBillingAccount(acc: BillingAccount): Observable<BillingAccount> {
-    return this.http.post<BillingAccount>('http://localhost:8081/api/account/billing', acc);
+    return this.http.post<BillingAccount>('http://localhost:8081/api/billing-accounts', acc);
   }
 
   addMoney(acc: BillingAccount): Observable<BillingAccount> {
-    return this.http.put<BillingAccount>('http://localhost:8081/api/account/billing/' + acc.id, acc);
+    return this.http.put<BillingAccount>('http://localhost:8081/api/billing-accounts/' + acc.id, acc);
   }
 }
