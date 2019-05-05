@@ -4,6 +4,7 @@ import {UserService} from "../../../../services/user.service";
 import {Subscription} from "rxjs";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import * as $ from 'jquery';
+import {RegUser} from "../../models/RegUser";
 
 @Component({
   selector: 'app-authorization',
@@ -13,7 +14,6 @@ import * as $ from 'jquery';
 export class AuthorizationComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
-  user: User[] = [];
 
   addUserForm: FormGroup = new FormGroup({
     userName: new FormControl("", Validators.required),
@@ -40,10 +40,10 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
   }
 
   submitUser(): void {
-    this.subscriptions.push(this.userService.addUser(
-      new User(null, this.addUserForm.get("firstName").value, this.addUserForm.get("lastName").value, this.addUserForm.get("userName").value,
-        this.addUserForm.get("email").value, this.addUserForm.get("userPassword").value, "admin"))
-      .subscribe());
+    let user = new RegUser(this.addUserForm.get("firstName").value, this.addUserForm.get("lastName").value, this.addUserForm.get("userName").value,
+      this.addUserForm.get("email").value, this.addUserForm.get("userPassword").value);
+
+    this.subscriptions.push(this.userService.addUser(user).subscribe());
   }
 
   ngOnInit() {

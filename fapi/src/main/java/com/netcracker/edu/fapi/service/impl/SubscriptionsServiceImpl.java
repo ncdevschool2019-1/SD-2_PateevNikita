@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-
+@Service
 public class SubscriptionsServiceImpl implements SubscriptionsService {
 
     @Value("${backend.server.url}")

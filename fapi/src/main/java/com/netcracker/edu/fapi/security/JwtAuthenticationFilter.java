@@ -1,5 +1,6 @@
 package com.netcracker.edu.fapi.security;
 
+import com.netcracker.edu.fapi.service.impl.UserDetailsServiceImpl;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
     private TokenProvider tokenProvider;
 
-    @Qualifier("customUserDetailsService")
     @Autowired
-    private UserDetailsService userDetailsService;
+    private UserDetailsServiceImpl userDetailsService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
