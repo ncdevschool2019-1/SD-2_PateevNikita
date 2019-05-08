@@ -1,24 +1,68 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,1)"
+  size="large"
+  color="#fff"
+  type="ball-scale-multiple">
+  <p class="spin">Loading...</p>
+</ngx-spinner>
+
+<ng-container *ngIf="!isAuthorized()">
+
 <div class="main">
 <h1>NetCracker Sub System</h1>
 
+
+
 <div class="form">
   <div class="thumbnail">
-    <img src="https://img.icons8.com/ios/96/000000/cloud.png"/>
+    <img src="https://img.icons8.com/ios/96/000000/login-as-user-filled.png"/>
   </div>
-  <form class="register-form" [formGroup]="addUserForm" ngNativeValidate (ngSubmit)="submitUser()">
-    <input type="text" required  formControlName="firstName" autocomplete="off" placeholder="First name"/>
-    <input type="text" required formControlName="lastName" autocomplete="off" placeholder="Last name"/>
-    <input type="text" required formControlName="userName" autocomplete="off" placeholder="Username"/>
-    <input type="email" required formControlName="email" autocomplete="off" placeholder="E-mail"/>
-    <input type="password" required formControlName="userPassword" autocomplete="off" placeholder="Password"/>
-    <button type="submit" [disabled]="addUserForm.invalid">Create</button>
+  <form class="register-form" [formGroup]="addUserForm" ngNativeValidate (ngSubmit)="regUser()">
+    <div class="form-group">
+     <input type="text" class="form-control" required [ngClass]="{'is-invalid': addUserForm.get('firstName').touched && addUserForm.get('firstName').invalid}" formControlName="firstName" autocomplete="off" placeholder="First name"/>
+      <div class="invalid-feedback">
+        <div>First name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" required [ngClass]="{'is-invalid': addUserForm.get('lastName').touched && addUserForm.get('lastName').invalid}" formControlName="lastName" autocomplete="off" placeholder="Last name"/>
+      <div class="invalid-feedback">
+        <div>Last name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" required [ngClass]="{'is-invalid': addUserForm.get('userName').touched && addUserForm.get('userName').invalid}" formControlName="userName" autocomplete="off" placeholder="Username"/>
+      <div *ngIf="addUserForm.get('email').touched && addUserForm.get('email').invalid" class="invalid-feedback">
+        <div>Username is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+    <input type="email" class="form-control" required [ngClass]="{'is-invalid': addUserForm.get('email').touched && addUserForm.get('email').invalid}" formControlName="email" autocomplete="off" placeholder="E-Mail"/>
+    <div *ngIf="addUserForm.get('email').touched && addUserForm.get('email').invalid"  class="invalid-feedback">
+      <div *ngIf="addUserForm.get('email').errors['required']">E-Mail is required!</div>
+      <div *ngIf="addUserForm.get('email').errors['email']">Must be a valid E-Mail address<p>(example: Nagibator1337@gmail.com)</p></div>
+    </div>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" required [ngClass]="{'is-invalid': addUserForm.get('userPassword').touched && addUserForm.get('userPassword').invalid}" formControlName="userPassword" autocomplete="off" placeholder="Password"/>
+      <div *ngIf="addUserForm.get('userPassword').touched && addUserForm.get('userPassword').invalid" class="invalid-feedback">
+        <div *ngIf="addUserForm.get('userPassword').errors['required']">Password is required!</div>
+        <div *ngIf="addUserForm.get('userPassword').errors['pattern']">Password must be at least 7-20 characters long, and include at least one lowercase letter, one uppercase letter, and a number</div>
+      </div>
+    </div>
+    <button class="btn btn-success" type="submit" [disabled]="addUserForm.invalid">Create</button>
     <p class="message">Already registered? <a>Sign In</a></p>
   </form>
-  <form class="login-form">
-    <input type="text" required autocomplete="off" placeholder="Username"/>
-    <input type="password" required autocomplete="off" placeholder="Password"/>
-    <button type="submit">Sign in</button>
+  <form [formGroup]="loginForm" ngNativeValidate (ngSubmit)="loginUser()" class="login-form">
+    <div class="form-group">
+      <input type="text" class="form-control" required formControlName="userName" autocomplete="off" placeholder="Username"/>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" required formControlName="userPassword" autocomplete="off" placeholder="Password"/>
+    </div>
+    <button class="btn btn-secondary" type="submit">Sign in</button>
     <p class="create">Not registered? <a>Create an account</a></p>
   </form>
   </div>
 </div>
+</ng-container>

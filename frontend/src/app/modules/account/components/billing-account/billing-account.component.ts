@@ -3,6 +3,7 @@ import {BillingAccount} from "../../models/billing-account";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {BillingAccountService} from "../../../../services/billing-account.service";
 import {Subscription} from "rxjs";
+import {AuthorizationService} from "../../../../services/authorization.service";
 
 @Component({
   selector: 'app-billing-account',
@@ -24,7 +25,7 @@ export class BillingAccountComponent implements OnInit, OnDestroy {
       [Validators.required,Validators.max(999999999),Validators.pattern('^[0-9]+$')])
   });
 
-  constructor(private billingAccountService: BillingAccountService) { }
+  constructor(private billingAccountService: BillingAccountService, private authService: AuthorizationService) { }
 
   updateAddMoneyForms() {
     this.addMoneyForm = new FormGroup({
@@ -50,7 +51,7 @@ export class BillingAccountComponent implements OnInit, OnDestroy {
 
   submit(): void {
     this.subscriptions.push(this.billingAccountService.addBillingAccount(
-      new BillingAccount(null, this.addBillingAccountForm.get("money").value, this.addBillingAccountForm.get("payment_method").value, 1))
+      new BillingAccount(null, this.addBillingAccountForm.get("money").value, this.addBillingAccountForm.get("payment_method").value, this.authService.getAuthorizedUser().id))
       .subscribe(() => {
         this.updateBillingAccounts();
       }));

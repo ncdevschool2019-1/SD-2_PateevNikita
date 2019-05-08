@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable, of, Subscription} from "rxjs";
 import {BillingAccount} from "../modules/account/models/billing-account";
 import {HttpClient} from "@angular/common/http";
+import {AuthorizationService} from "./authorization.service";
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,10 @@ export class BillingAccountService {
   billingAccounts: BillingAccount[] = [];
   subscription: Subscription;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthorizationService) { }
 
   getBillingAccounts(): Observable<BillingAccount[]> {
-    return this.http.get<BillingAccount[]>('http://localhost:8081/api/billing-accounts');
+    return this.http.get<BillingAccount[]>('http://localhost:8081/api/billing-accounts/' + this.authService.getAuthorizedUser().id);
   }
 
   deleteBillingAccount(id: number): Observable<void> {

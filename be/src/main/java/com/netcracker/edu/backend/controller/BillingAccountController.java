@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/account/billing")
+@RequestMapping("/api/billing-accounts")
 public class BillingAccountController {
 
     private BillingAccountService billingAccountService;
@@ -20,13 +20,8 @@ public class BillingAccountController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<BillingAccount> getBillingAccountById(@PathVariable(name = "id") Long id) {
-        Optional<BillingAccount> billingAccount = billingAccountService.getBillingAccountById(id);
-        if (billingAccount.isPresent()) {
-            return ResponseEntity.ok(billingAccount.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public Iterable<BillingAccount> getBillingAccountsById(@PathVariable(name = "id") Long id) {
+        return billingAccountService.getBillingAccountById(id);
     }
 
     @RequestMapping(method = RequestMethod.GET)

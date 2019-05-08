@@ -1,32 +1,56 @@
 package com.netcracker.edu.fapi.models;
 
+import java.util.Objects;
+
 //Model for user login process
 public class LoginUser {
 
-    private String username;
-    private String password;
+    private String userName;
+    private String userPassword;
 
     public LoginUser() {
     }
 
-    public LoginUser(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public LoginUser(String userName, String password) {
+        this.userName = userName;
+        this.userPassword = password;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LoginUser loginUser = (LoginUser) o;
+        return Objects.equals(getUserName(), loginUser.getUserName()) &&
+                Objects.equals(getUserPassword(), loginUser.getUserPassword());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUserName(), getUserPassword());
+    }
+
+    @Override
+    public String toString() {
+        return "LoginUser{" +
+                "userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                '}';
     }
 }

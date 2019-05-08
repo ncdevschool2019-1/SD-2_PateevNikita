@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {UserService} from "../../../../services/user.service";
+import {User} from "../../models/user";
 
 @Component({
   selector: 'app-user-info',
@@ -7,10 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
-  ngOnInit() {
+  getUserAccount(): User {
+    return this.userService.getActiveUser();
   }
 
+  ngOnInit(): void {
+  }
 
 }

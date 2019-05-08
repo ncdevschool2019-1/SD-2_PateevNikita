@@ -1,5 +1,12 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,1)"
+  size="large"
+  color="#fff"
+  type="ball-scale-multiple">
+  <p class="spin">Loading...</p>
+</ngx-spinner>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img class="navbar-brand" src="https://img.icons8.com/ios/64/000000/cloud.png" height="64">
+  <img class="navbar-brand" src="https://img.icons8.com/ios/50/000000/flash-bang.png">
   <a class="navbar-brand" routerLink="/home">NetCracker Sub System</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -20,8 +27,8 @@
         <a class="nav-link" [routerLink]="['/catalog/netflix']">Netflix</a>
       </li>
       <li class="nav-item dropdown" [routerLinkActive]="['active']">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Username
+        <a class="nav-link dropdown-toggle" *ngIf="isUser()" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{headerUserName()}}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" [routerLink]="['/account/user']"><img class="acc" src="https://img.icons8.com/ios/24/000000/contacts.png">Personal information</a>
@@ -30,13 +37,19 @@
           <a class="dropdown-item" [routerLink]="['/account/billing']"><img class="acc" src="https://img.icons8.com/ios/24/000000/wallet.png">Billing account</a>
         </div>
       </li>
-      <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/admin']">Admin</a>
+      <li class="nav-item" [routerLinkActive]="['active']" *ngIf="isAdmin()">
+        <a class="nav-link" [routerLink]="['/admin']">ADMIN</a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/auth']"><img class="login" src="https://img.icons8.com/ios/38/000000/user-male-circle-filled.png">Login/Sign up</a></li>
+        <a class="nav-link" [routerLink]="['/auth']" *ngIf="!isAuthorized()"><img class="login" src="https://img.icons8.com/ios/32/000000/user-male-circle-filled.png">Sign in/Sign up</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/home']" (click)="signOut()" *ngIf="isAuthorized()"><img class="login" src="https://img.icons8.com/ios/28/000000/exit.png">Sign out</a>
+      </li>
     </ul>
   </div>
 </nav>

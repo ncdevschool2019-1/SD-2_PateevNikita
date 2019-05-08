@@ -8,6 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxHmCarouselModule } from "ngx-hm-carousel";
 import {APP_BASE_HREF} from "@angular/common";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import {ToastrModule} from "ngx-toastr";
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,6 +21,7 @@ import { CatalogModule } from './modules/catalog/catalog.module';
 import { HeaderModule } from './modules/header/header.module';
 import { LandingModule } from './modules/landing/landing.module';
 import { LayoutModule } from './modules/layout/layout.module';
+import {httpInterceptorProviders} from "./services/interceptor.service";
 
 
 @NgModule({
@@ -37,15 +40,17 @@ import { LayoutModule } from './modules/layout/layout.module';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
+    ToastrModule.forRoot(),
     AppRoutingModule,
     AccountModule,
     AuthorizationModule,
     CatalogModule,
     HeaderModule,
     LandingModule,
-    LayoutModule
+    LayoutModule,
+    NgxSpinnerModule
 ],
-  providers: [{provide: APP_BASE_HREF, useValue : '/'}],
+  providers: [{provide: APP_BASE_HREF, useValue : '/'}, httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

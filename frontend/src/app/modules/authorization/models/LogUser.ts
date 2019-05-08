@@ -1,10 +1,10 @@
 export class LogUser {
   userName: string;
-  password: string;
+  userPassword: string;
 
 
   constructor(userName: string, password: string) {
     this.userName = userName;
-    this.password = password;
+    this.userPassword = password;
   }
 }

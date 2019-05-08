@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {HeaderComponent} from "./components/header/header.component";
 import {HeaderService} from "../../services/header.service";
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import {HeaderService} from "../../services/header.service";
     Ng4LoadingSpinnerModule.forRoot(),
     BrowserModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NgxSpinnerModule
   ],
   exports: [
     HeaderComponent

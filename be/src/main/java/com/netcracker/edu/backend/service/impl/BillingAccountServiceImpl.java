@@ -3,6 +3,7 @@ package com.netcracker.edu.backend.service.impl;
 import com.netcracker.edu.backend.entity.BillingAccount;
 import com.netcracker.edu.backend.repository.BillingAccountRepository;
 import com.netcracker.edu.backend.service.BillingAccountService;
+import com.netcracker.edu.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,9 @@ public class BillingAccountServiceImpl implements BillingAccountService {
     private BillingAccountRepository repository;
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     public BillingAccountServiceImpl(BillingAccountRepository repository) {
         this.repository = repository;
     }
@@ -22,8 +26,8 @@ public class BillingAccountServiceImpl implements BillingAccountService {
     public BillingAccount addBillingAccount(BillingAccount account) { return repository.save(account); }
 
     @Override
-    public Optional<BillingAccount> getBillingAccountById(Long id) {
-        return repository.findById(id);
+    public Iterable<BillingAccount> getBillingAccountById(Long id) {
+        return userService.getUserById(id).getBillingAccounts();
     }
 
     @Override

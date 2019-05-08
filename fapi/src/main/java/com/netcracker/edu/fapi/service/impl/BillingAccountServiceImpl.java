@@ -24,7 +24,7 @@ public class BillingAccountServiceImpl implements BillingAccountService {
     }
 
     @Override
-    public List<BillingAccountViewModel> getBillingAccountsByUserId(Long id) {
+    public List<BillingAccountViewModel> getBillingAccountsByUserId(String id) {
         RestTemplate restTemplate = new RestTemplate();
         BillingAccountViewModel[] billingAccountViewModelResponse = restTemplate.getForObject(backendServerUrl + "api/billing-accounts/" + id, BillingAccountViewModel[].class);
         return billingAccountViewModelResponse == null ? Collections.emptyList() : Arrays.asList(billingAccountViewModelResponse);

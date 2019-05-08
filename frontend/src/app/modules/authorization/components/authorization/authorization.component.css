@@ -1,8 +1,21 @@
 .main {
   padding: 0;
   height: 700px;
-  background-image: url("~src/assets/img/back2.jpg");
+  background-image: url("~src/assets/img/background-brown-carpentry-326311.jpg");
   background-size: cover;
+}
+
+.spin {
+  font-family: 'Bungee', cursive;
+  font-size: 30px;
+  margin-left: 10px;
+  color: lightgrey;
+}
+
+.invalid-feedback {
+  font-size: 15px;
+  text-align: left;
+  margin-left: 10px;
 }
 
 .form {
@@ -20,7 +33,8 @@
   text-align: center;
 }
 .form .thumbnail {
-  background: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+  background-image: url("~src/assets/img/background-brown-carpentry-326311.jpg");
+  background-size: cover;
   width: 150px;
   height: 150px;
   margin: 0 auto 30px;
@@ -53,7 +67,6 @@
 .form button {
   font-family: 'Oswald', sans-serif;
   outline: 0;
-  background: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
   width: 100%;
   border: 0;
   padding: 15px;
@@ -61,15 +74,11 @@
   border-top-right-radius: 3px;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  color: black;
+  color: whitesmoke;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 17px;
   transition: font-size 0.3s ease-in;
   cursor: pointer;
-}
-
-.form button:hover {
-  font-size: 15px;
 }
 
 .form .message {

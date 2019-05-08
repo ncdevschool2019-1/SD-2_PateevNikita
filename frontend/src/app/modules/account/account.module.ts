@@ -7,7 +7,6 @@ import {RouterModule} from '@angular/router';
 import {BillingAccountComponent} from "./components/billing-account/billing-account.component";
 import {UserInfoComponent} from "./components/user-info/user-info.component";
 import {UserSubscriptionsComponent} from "./components/user-subscriptions/user-subscriptions.component";
-import {UsersListComponent} from "./components/users-list/users-list.component";
 import { AdminComponent } from './components/admin/admin.component';
 import {YandexComponent} from "./components/yandex/yandex.component";
 
@@ -24,7 +23,6 @@ import {YandexComponent} from "./components/yandex/yandex.component";
     BillingAccountComponent,
     UserInfoComponent,
     UserSubscriptionsComponent,
-    UsersListComponent,
     AdminComponent,
     YandexComponent
   ],
@@ -32,7 +30,6 @@ import {YandexComponent} from "./components/yandex/yandex.component";
     BillingAccountComponent,
     UserInfoComponent,
     UserSubscriptionsComponent,
-    UsersListComponent,
     AdminComponent,
     YandexComponent
   ]

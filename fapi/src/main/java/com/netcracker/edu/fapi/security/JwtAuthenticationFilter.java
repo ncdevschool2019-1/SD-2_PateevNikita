@@ -27,6 +27,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 
+
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
         String header = httpServletRequest.getHeader(SecurityJwtConstants.HEADER_STRING);
@@ -56,6 +57,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 logger.info("Authenticated user " + userName + ", setting security context.");
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
+
         }
 
         filterChain.doFilter(httpServletRequest, httpServletResponse);

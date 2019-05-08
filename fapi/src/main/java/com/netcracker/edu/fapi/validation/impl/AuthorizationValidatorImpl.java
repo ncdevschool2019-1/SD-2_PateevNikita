@@ -13,7 +13,10 @@ public class AuthorizationValidatorImpl implements AuthorizationValidator {
     public String validate(User user, List<User> users) {
         for (User value : users) {
             if (value.getUserName().equals(user.getUserName())) {
-                return "Such username already exists!";
+                return "Such username is already exists!";
+            }
+            if (value.getEmail().equals(user.getEmail())){
+                return "Such E-Mail is already exists!";
             }
         }
         return "ok";

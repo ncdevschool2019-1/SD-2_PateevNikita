@@ -23,26 +23,26 @@ public class UserController {
     @PreAuthorize("hasRole('Admin')")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<User>> getAllUsers() {
-        return ResponseEntity.ok(userService.findAll());
+        return ResponseEntity.ok(this.userService.findAll());
     }
 
     @PreAuthorize("hasRole('User') or hasRole('Admin')")
     @GetMapping("/username/{userName}")
-    public User getUserByUserName(@PathVariable String userName) {
-        return userService.findByUserName(userName);
+    public ResponseEntity<User> getUserByUserName(@PathVariable String userName) {
+        return ResponseEntity.ok(this.userService.findByUserName(userName));
     }
 
     @PreAuthorize("hasRole('Admin')")
     @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
     public ResponseEntity<User> getUserByUserId(@PathVariable String id) {
-        return ResponseEntity.ok(userService.findUserById(Long.valueOf(id)));
+        return ResponseEntity.ok(this.userService.findUserById(Long.valueOf(id)));
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity saveUser(@RequestBody User user){
-        String answer = authorizationValidator.validate(user, userService.findAll());
+        String answer = authorizationValidator.validate(user, this.userService.findAll());
         if (user != null && answer.equals("ok")) {
-            return ResponseEntity.ok(userService.save(user));
+            return ResponseEntity.ok(this.userService.save(user));
         }
         return ResponseEntity.badRequest().body(answer);
     }

@@ -16,17 +16,16 @@ public class BillingAccountController {
     @Autowired
     private BillingAccountService billingAccountService;
 
-    @PreAuthorize("hasRole('Admin')")
+    @PreAuthorize("hasRole('User') or hasRole('Admin')")
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<BillingAccountViewModel>> getBillingAccounts() {
         return ResponseEntity.ok(billingAccountService.getBillingAccounts());
     }
 
-    @PreAuthorize("hasRole('User') or hasRole('Admin')")
+   // @PreAuthorize("hasRole('User')")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<List<BillingAccountViewModel>> getBillingAccountsByUserId(@PathVariable String id) {
-        billingAccountService.getBillingAccountsByUserId(Long.valueOf(id));
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(billingAccountService.getBillingAccountsByUserId(id));
     }
 
     @PreAuthorize("hasRole('User')")

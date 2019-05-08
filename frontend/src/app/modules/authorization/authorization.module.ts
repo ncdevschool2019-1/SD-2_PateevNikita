@@ -5,6 +5,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {AuthorizationComponent} from "./components/authorization/authorization.component";
+import { NgxSpinnerModule } from 'ngx-spinner';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   imports: [
@@ -13,7 +16,10 @@ import {AuthorizationComponent} from "./components/authorization/authorization.c
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   exports: [
     AuthorizationComponent

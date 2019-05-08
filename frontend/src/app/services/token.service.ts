@@ -18,12 +18,6 @@ export class TokenService {
     window.sessionStorage.clear();
   }
 
-  public saveAuthorizationToken(value: AuthorizationToken) {
-    this.saveToken(value.token);
-    this.saveLogin(value.login);
-    this.saveAuthorities(value.role);
-  }
-
   public saveToken(token: string) {
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);

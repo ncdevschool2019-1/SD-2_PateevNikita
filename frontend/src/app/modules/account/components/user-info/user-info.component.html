@@ -1,15 +1,13 @@
 <main >
   <section class="infosite">
-    <img class="ava" src="https://img.icons8.com/doodle/100/000000/manager.png" alt="user_photo">
-    <h1>xXx_Vadim228</h1>
-    <p>"Hello, World!"</p>
+    <img class="ava" src="https://img.icons8.com/cotton/100/000000/check-male.png" alt="user_photo">
+    <h1>{{getUserAccount().userName}}</h1>
+    <p>Role: "{{getUserAccount().role.name}}"</p>
   </section>
   <section class="userinfo_">
-      <p class="field" id="firstName">Name:</p><p class="value">Vadim</p>
-      <p class="field" id="lastName">Surname:</p><p class="value">Karpishuk</p>
-      <p class="field" id="userName">Username:</p><p class="value">xXx_Vadim228</p>
-      <p class="field" id="email">E-mail:</p><p class="value">vadik1337@mail.ru
-      <p class="field" id="role">Role:</p><p class="value">USER</p>
+      <p class="field" id="firstName">Name:</p><p class="value">{{getUserAccount().firstName}}</p>
+      <p class="field" id="lastName">Surname:</p><p class="value">{{getUserAccount().lastName}}</p>
+      <p class="field" id="email">E-mail:</p><p class="value">{{getUserAccount().email}}</p>
   </section>
 </main>
 

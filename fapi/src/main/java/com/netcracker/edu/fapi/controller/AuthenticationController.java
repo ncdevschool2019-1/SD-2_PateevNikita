@@ -3,6 +3,7 @@ package com.netcracker.edu.fapi.controller;
 import com.netcracker.edu.fapi.models.User;
 import com.netcracker.edu.fapi.service.AuthService;
 import com.netcracker.edu.fapi.service.TokenService;
+import com.netcracker.edu.fapi.service.impl.TokenServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +14,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/auth")
 public class AuthenticationController {
 
-
     @Autowired
-    private TokenService tokenService;
+    private TokenServiceImpl tokenService;
     @Autowired
     private AuthService authService;
 
