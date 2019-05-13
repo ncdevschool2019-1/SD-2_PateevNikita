@@ -26,7 +26,6 @@ public class BillingAccount {
        this.userId = userId;
     }
 
-
     public long getId() {
         return id;
     }
@@ -82,5 +81,11 @@ public class BillingAccount {
             ", payment_method='" + payment_method + '\'' +
                 ", userId='" + userId + '\'' +
             '}';
+    }
+
+    public void writeOff(double cash) {
+        if(balance >= cash) {
+            balance -= cash;
+        }
     }
 }

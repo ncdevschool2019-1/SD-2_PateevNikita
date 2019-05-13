@@ -19,4 +19,14 @@ public class NetflixCatalogController {
     public ResponseEntity<List<CatalogViewModel>> getNetflixCatalog() {
         return ResponseEntity.ok(netflixCatalogService.getNetflixCatalog());
     }
+
+    @RequestMapping(value = "/pages", method = RequestMethod.GET)
+    public ResponseEntity<Integer> getNumberOfPages() {
+        return ResponseEntity.ok(netflixCatalogService.getNumberOfPages());
+    }
+
+    @RequestMapping(value = "/{page}", method = RequestMethod.GET)
+    public ResponseEntity<List<CatalogViewModel>> getPage(@PathVariable String page) {
+        return ResponseEntity.ok(netflixCatalogService.getNetflixCatalog(page));
+    }
 }

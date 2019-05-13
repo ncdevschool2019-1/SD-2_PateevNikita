@@ -1,8 +1,24 @@
 .main {
   padding: 0;
-  height: 700px;
+  height: 70%;
   background-image: url("~src/assets/img/background-brown-carpentry-326311.jpg");
   background-size: cover;
+}
+
+.show-pass {
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+  top: 420px;
+  right: 35px;
+}
+
+.show-pass_ {
+  position: absolute;
+  cursor: pointer;
+  z-index: 2;
+  top: 266px;
+  right: 35px;
 }
 
 .spin {

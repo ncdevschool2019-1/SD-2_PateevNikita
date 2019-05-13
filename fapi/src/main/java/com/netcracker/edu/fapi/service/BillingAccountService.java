@@ -10,4 +10,5 @@ public interface BillingAccountService {
     void deleteBillingAccount(Long id);
     BillingAccountViewModel addBillingAccount(BillingAccountViewModel account);
     void addMoney(BillingAccountViewModel account, Long id);
+    Double getBalanceFromBillingAccount(String id);
 }

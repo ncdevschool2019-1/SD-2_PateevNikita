@@ -19,7 +19,9 @@ import {ToastrModule} from "ngx-toastr";
     RouterModule,
     NgxSpinnerModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right'
+    })
   ],
   exports: [
     AuthorizationComponent

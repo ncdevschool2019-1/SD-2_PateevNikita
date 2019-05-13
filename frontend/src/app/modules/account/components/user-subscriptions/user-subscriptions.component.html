@@ -1,23 +1,28 @@
+<ng4-loading-spinner></ng4-loading-spinner>
 <div class="subscript">
   <section class="infosite">
     <h1>Subscriptions</h1>
   </section>
-  <div class="us_container">
-  <ul>
-    <li>
-      <img class="ava" src="../../../../../assets/img/spoti.png" alt="user_photo">
-      <p class="balance">Spotify 30 days</p>
-      <p class="balance">Balance: 228$</p>
-      <p class="balance">Expired time: 10 days</p>
-      <div class="form-group">
-        <button type="submit" class="btn btn-secondary float-right">
-          Delete
-        </button>
-        <button type="submit" class="btn btn-secondary float-right">
-          Reload
-        </button>
-      </div>
-    </li>
-  </ul>
-  </div>
-</div>
+
+  <table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col" >Service</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Status</th>
+      <th scope="col">Start time</th>
+      <th scope="col">Expired time</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let sub of subs">
+      <th scope="row">{{sub.service.serviceName}}</th>
+      <td >{{sub.service.cost}}</td>
+      <td>{{isActive(sub.active)}}</td>
+      <td>{{setTime(sub.startTime)|date:'medium'}}</td>
+      <td>{{setTime(sub.expiredTime)|date:'medium'}}</td>
+      <td><button class="btn btn-outline-danger" (click)="deleteSubscription(sub.id)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>

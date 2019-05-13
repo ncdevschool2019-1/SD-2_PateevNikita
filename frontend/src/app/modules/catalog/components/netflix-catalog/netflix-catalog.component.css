@@ -1,14 +1,15 @@
 .cont {
-  background-image: url("~src/assets/img/pattern.jpg");
+  background-image: url("~src/assets/img/background-canvas-close-up-1020320.jpg");
+  background-size: cover;
 }
 
 .card {
   background-image: url("~src/assets/img/netflix-hex-colors-gradient-background.png");
   background-size: cover;
-  display: flex;
+  display: inline-flex;
   width: 900px;
   height: 300px;
-  margin: 0 300px 30px 300px;
+  margin: 10px 300px 30px 300px;
   border: none;
 }
 
@@ -29,4 +30,19 @@
 .btn {
   display: inline-block;
   margin-right: 20px;
+}
+
+.spinner-grow {
+  margin-bottom: 2.5px;
+  margin-left: 3px;
+}
+
+.pagination {
+  margin-left: 38%;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.cont-pag {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }

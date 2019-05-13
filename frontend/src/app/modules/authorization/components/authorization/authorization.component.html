@@ -11,8 +11,6 @@
 <div class="main">
 <h1>NetCracker Sub System</h1>
 
-
-
 <div class="form">
   <div class="thumbnail">
     <img src="https://img.icons8.com/ios/96/000000/login-as-user-filled.png"/>
@@ -20,20 +18,23 @@
   <form class="register-form" [formGroup]="addUserForm" ngNativeValidate (ngSubmit)="regUser()">
     <div class="form-group">
      <input type="text" class="form-control" required [ngClass]="{'is-invalid': addUserForm.get('firstName').touched && addUserForm.get('firstName').invalid}" formControlName="firstName" autocomplete="off" placeholder="First name"/>
-      <div class="invalid-feedback">
-        <div>First name is required</div>
+      <div *ngIf="addUserForm.get('firstName').touched && addUserForm.get('firstName').invalid" class="invalid-feedback">
+        <div *ngIf="addUserForm.get('firstName').errors['required']">First name is required</div>
+        <div *ngIf="addUserForm.get('firstName').errors['pattern']">Please, type your real first name</div>
       </div>
     </div>
     <div class="form-group">
       <input type="text" class="form-control" required [ngClass]="{'is-invalid': addUserForm.get('lastName').touched && addUserForm.get('lastName').invalid}" formControlName="lastName" autocomplete="off" placeholder="Last name"/>
-      <div class="invalid-feedback">
-        <div>Last name is required</div>
+      <div *ngIf="addUserForm.get('lastName').touched && addUserForm.get('lastName').invalid" class="invalid-feedback">
+        <div *ngIf="addUserForm.get('lastName').errors['required']">Last name is required</div>
+        <div *ngIf="addUserForm.get('lastName').errors['pattern']">Please, type your real last name</div>
       </div>
     </div>
     <div class="form-group">
       <input type="text" class="form-control" required [ngClass]="{'is-invalid': addUserForm.get('userName').touched && addUserForm.get('userName').invalid}" formControlName="userName" autocomplete="off" placeholder="Username"/>
-      <div *ngIf="addUserForm.get('email').touched && addUserForm.get('email').invalid" class="invalid-feedback">
-        <div>Username is required</div>
+      <div *ngIf="addUserForm.get('userName').touched && addUserForm.get('userName').invalid" class="invalid-feedback">
+        <div *ngIf="addUserForm.get('userName').errors['required']">Username is required</div>
+        <div *ngIf="addUserForm.get('userName').errors['maxlength']">Username must contain no more than 15 characters</div>
       </div>
     </div>
     <div class="form-group">
@@ -44,7 +45,8 @@
     </div>
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" required [ngClass]="{'is-invalid': addUserForm.get('userPassword').touched && addUserForm.get('userPassword').invalid}" formControlName="userPassword" autocomplete="off" placeholder="Password"/>
+      <input #sign_up type="password" class="form-control" required [ngClass]="{'is-invalid': addUserForm.get('userPassword').touched && addUserForm.get('userPassword').invalid}" formControlName="userPassword" autocomplete="off" placeholder="Password"/>
+      <a><img class="show-pass" (click)="showPassword(sign_up)" src="https://img.icons8.com/ios/25/000000/visible.png" alt="show_password"></a>
       <div *ngIf="addUserForm.get('userPassword').touched && addUserForm.get('userPassword').invalid" class="invalid-feedback">
         <div *ngIf="addUserForm.get('userPassword').errors['required']">Password is required!</div>
         <div *ngIf="addUserForm.get('userPassword').errors['pattern']">Password must be at least 7-20 characters long, and include at least one lowercase letter, one uppercase letter, and a number</div>
@@ -58,7 +60,8 @@
       <input type="text" class="form-control" required formControlName="userName" autocomplete="off" placeholder="Username"/>
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" required formControlName="userPassword" autocomplete="off" placeholder="Password"/>
+      <input #sign_in type="password" class="form-control" required formControlName="userPassword" autocomplete="off" placeholder="Password"/>
+      <a><img class="show-pass_" (click)="showPassword(sign_in)" src="https://img.icons8.com/ios/25/000000/visible.png" alt="show_password"></a>
     </div>
     <button class="btn btn-secondary" type="submit">Sign in</button>
     <p class="create">Not registered? <a>Create an account</a></p>

@@ -8,4 +8,5 @@ public interface SubscriptionsService {
     List<SubscriptionViewModel> getSubscriptionsByUserId(Long userId);
     SubscriptionViewModel addSubscription(SubscriptionViewModel subscriptionViewModel);
     void deleteSubscription(Long id);
+    void changeSubscriptionStatus(SubscriptionViewModel subscriptionViewModel);
 }

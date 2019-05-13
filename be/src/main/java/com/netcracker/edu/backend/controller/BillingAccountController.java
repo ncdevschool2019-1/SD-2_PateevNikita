@@ -29,6 +29,11 @@ public class BillingAccountController {
         return billingAccountService.getAllBillingAccounts();
     }
 
+    @RequestMapping(value = "/balance/{id}", method = RequestMethod.GET)
+    public Double getBalanceFromBillingAccounts(@PathVariable(name = "id") Long id){
+        return billingAccountService.getBalanceFromBillingAccounts(id);
+    } //proverka
+
     @RequestMapping(method = RequestMethod.POST)
     public BillingAccount addBillingAccount(@RequestBody BillingAccount account) {
         return billingAccountService.addBillingAccount(account);

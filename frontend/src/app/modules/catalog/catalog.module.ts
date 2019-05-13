@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from "@angular/common/http";
 import {Ng4LoadingSpinnerModule} from 'ng4-loading-spinner';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {MagazinesCatalogComponent} from "./components/magazines-catalog/magazines-catalog.component";
 import {MusicCatalogComponent} from "./components/music-catalog/music-catalog.component";
 import {NetflixCatalogComponent} from "./components/netflix-catalog/netflix-catalog.component";
+import {NgxPaginationModule} from "ngx-pagination";
+import {PaginationModule} from "ngx-bootstrap";
 
 @NgModule({
   imports: [
@@ -14,7 +16,10 @@ import {NetflixCatalogComponent} from "./components/netflix-catalog/netflix-cata
     Ng4LoadingSpinnerModule.forRoot(),
     BrowserModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    PaginationModule
   ],
   exports: [
     MagazinesCatalogComponent,

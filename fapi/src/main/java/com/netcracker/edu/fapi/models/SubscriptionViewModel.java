@@ -9,17 +9,17 @@ public class SubscriptionViewModel {
     private Long id;
     private Long userId;
     private Long expiredTime;
-    private Long startDate;
+    private Long startTime;
     private boolean isActive;
     private Service service;
 
     public SubscriptionViewModel(){}
 
-    public SubscriptionViewModel(Long id, Long userId, Long expiredTime, Long startDate, boolean isActive, Service service) {
+    public SubscriptionViewModel(Long id, Long userId, Long expiredTime, Long startTime, boolean isActive, Service service) {
         this.id = id;
         this.userId = userId;
         this.expiredTime = expiredTime;
-        this.startDate = startDate;
+        this.startTime = startTime;
         this.isActive = isActive;
         this.service = service;
     }
@@ -48,12 +48,12 @@ public class SubscriptionViewModel {
         this.expiredTime = expiredTime;
     }
 
-    public Long getStartDate() {
-        return startDate;
+    public Long getStartTime() {
+        return startTime;
     }
 
-    public void setStartDate(Long startDate) {
-        this.startDate = startDate;
+    public void setStartTime(Long startTime) {
+        this.startTime = startTime;
     }
 
     public boolean isActive() {
@@ -73,18 +73,6 @@ public class SubscriptionViewModel {
     }
 
     @Override
-    public String toString() {
-        return "SubscriptionViewModel{" +
-                "id=" + id +
-                ", userId=" + userId +
-                ", expiredTime=" + expiredTime +
-                ", startDate=" + startDate +
-                ", isActive=" + isActive +
-                ", service=" + service +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -93,12 +81,24 @@ public class SubscriptionViewModel {
                 Objects.equals(getId(), that.getId()) &&
                 Objects.equals(getUserId(), that.getUserId()) &&
                 Objects.equals(getExpiredTime(), that.getExpiredTime()) &&
-                Objects.equals(getStartDate(), that.getStartDate()) &&
+                Objects.equals(getStartTime(), that.getStartTime()) &&
                 Objects.equals(getService(), that.getService());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getUserId(), getExpiredTime(), getStartDate(), isActive(), getService());
+        return Objects.hash(getId(), getUserId(), getExpiredTime(), getStartTime(), isActive(), getService());
+    }
+
+    @Override
+    public String toString() {
+        return "SubscriptionViewModel{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", expiredTime=" + expiredTime +
+                ", startTime=" + startTime +
+                ", isActive=" + isActive +
+                ", service=" + service +
+                '}';
     }
 }

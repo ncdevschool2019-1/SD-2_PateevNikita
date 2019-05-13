@@ -22,4 +22,18 @@ public class MusicCatalogServiceImpl implements MusicCatalogService {
         CatalogViewModel[] catalogViewModelsResponse = restTemplate.getForObject(backendServerUrl + "api/catalog/music", CatalogViewModel[].class);
         return catalogViewModelsResponse == null ? Collections.emptyList() : Arrays.asList(catalogViewModelsResponse);
     }
+
+    @Override
+    public List<CatalogViewModel> getMusicCatalog(String page) {
+        RestTemplate restTemplate = new RestTemplate();
+        CatalogViewModel[] catalogViewModelsResponse = restTemplate.getForObject(backendServerUrl + "api/catalog/music/" + page, CatalogViewModel[].class);
+        return catalogViewModelsResponse == null ? Collections.emptyList() : Arrays.asList(catalogViewModelsResponse);
+    }
+
+    @Override
+    public Integer getNumberOfPages() {
+        RestTemplate restTemplate = new RestTemplate();
+        Integer res = restTemplate.getForObject(backendServerUrl + "api/catalog/music/pages", Integer.class);
+        return res == null ? 0 : res;
+    }
 }

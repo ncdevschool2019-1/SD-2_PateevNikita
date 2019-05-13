@@ -1,11 +1,48 @@
+<ng4-loading-spinner></ng4-loading-spinner>
 <div class="cont">
-<div class="card" *ngFor="let service of catalog">
-  <img class="card-img-top" src="../../../../../assets/img/{{service.serviceName}}.png" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Price: {{service.cost}}$</h5>
-    <h5 class="card-title">Time: 30 days</h5>
-    <button class="btn btn-success">Subscribe</button>
-    <button class="btn btn-outline-danger">Delete</button>
+  <div class="card" *ngFor="let service of asyncCatalog | async | paginate: {id: 'server', itemsPerPage: 9, currentPage: p, totalItems: elements}">
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">NEW SUBSCRIPTION</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+
+            <form [formGroup]="addSubscriptionForm" novalidate (ngSubmit)="subscribe(service)">
+              <div class="form-group">
+                <label for="sel1">Choose your payment method:</label>
+                <select class="form-control" id="sel1" formControlName="wallet" type="text">
+                  <option id="opt" *ngFor="let ba of billingAccount">{{ba.payment_method}} - {{ba.balance}} $</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-success float-right" (click)="subscribe(service)" data-dismiss="modal">Subscribe<span class="spinner-grow spinner-grow-sm"></span></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img class="card-img-top" src="../../../../../assets/img/{{service.serviceName}}.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Price: {{service.cost}}$</h5>
+      <h5 class="card-title">Time: 30 days</h5>
+      <button class="btn btn-success" data-toggle="modal" data-target="#myModal" *ngIf="isUser()">Subscribe</button>
+      <button class="btn btn-outline-danger" *ngIf="isAdmin()">Delete</button>
+    </div>
+
   </div>
+
 </div>
+<div class="cont-pag">
+  <pagination-controls class="pagination" *ngIf="elements > 9" (pageChange)="getCurrentPage($event)" id="server"></pagination-controls>
 </div>
+
+

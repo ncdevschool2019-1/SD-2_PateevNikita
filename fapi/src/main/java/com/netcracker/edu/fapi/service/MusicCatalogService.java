@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface MusicCatalogService {
     List<CatalogViewModel> getMusicCatalog();
+    List<CatalogViewModel> getMusicCatalog(String page);
+    Integer getNumberOfPages();
 }

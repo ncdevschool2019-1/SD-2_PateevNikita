@@ -21,4 +21,13 @@ public class MagazinesCatalogController {
         return magazinesCatalogService.getAllMagazinesCatalogByType();
     }
 
+    @RequestMapping(value = "/{page}", method = RequestMethod.GET)
+    public Iterable<Service> getPage(@PathVariable(name = "page") String page) {
+        return magazinesCatalogService.getAllMagazinesCatalog(page);
+    }
+
+    @RequestMapping(value = "/pages", method = RequestMethod.GET)
+    public Integer getNumberOfPages() {
+        return magazinesCatalogService.getNumberOfServices();
+    }
 }

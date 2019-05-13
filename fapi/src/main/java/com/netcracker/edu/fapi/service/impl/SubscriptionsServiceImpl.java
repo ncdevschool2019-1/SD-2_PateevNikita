@@ -27,17 +27,20 @@ public class SubscriptionsServiceImpl implements SubscriptionsService {
     @Override
     public SubscriptionViewModel addSubscription(SubscriptionViewModel subscription) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity subscriptionViewModelResponse = restTemplate.postForEntity(backendServerUrl + "api/subscriptions/", subscription, SubscriptionViewModel.class);
-        if (subscriptionViewModelResponse.getStatusCode().is2xxSuccessful()) {
-            return (SubscriptionViewModel) subscriptionViewModelResponse.getBody();
-        }
-        return null;
+        return restTemplate.postForEntity(backendServerUrl + "api/subscriptions/", subscription, SubscriptionViewModel.class).getBody();
     }
+
 
     @Override
     public void deleteSubscription(Long id) {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.delete(backendServerUrl + "api/subscriptions/" + id);
+    }
+
+    @Override
+    public void changeSubscriptionStatus(SubscriptionViewModel subscriptionViewModel) {
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.put(backendServerUrl + "api/subscriptions", subscriptionViewModel, SubscriptionViewModel.class);
     }
 
 }

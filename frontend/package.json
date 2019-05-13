@@ -25,6 +25,7 @@
     "jquery": "^3.4.0",
     "ngx-hm-carousel": "^1.6.5-bata.1",
     "ngx-loading-spinners": "^3.1.2",
+    "ngx-pagination": "^3.2.1",
     "ngx-spinner": "^7.1.4",
     "ngx-toastr": "^10.0.2",
     "popper.js": "^1.14.7",

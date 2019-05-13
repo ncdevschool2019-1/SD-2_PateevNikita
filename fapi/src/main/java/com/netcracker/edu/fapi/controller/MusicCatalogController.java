@@ -19,4 +19,14 @@ public class MusicCatalogController {
     public ResponseEntity<List<CatalogViewModel>> getMusicCatalog() {
         return ResponseEntity.ok(musicCatalogService.getMusicCatalog());
     }
+
+    @RequestMapping(value = "/pages", method = RequestMethod.GET)
+    public ResponseEntity<Integer> getNumberOfPages() {
+        return ResponseEntity.ok(musicCatalogService.getNumberOfPages());
+    }
+
+    @RequestMapping(value = "/{page}", method = RequestMethod.GET)
+    public ResponseEntity<List<CatalogViewModel>> getPage(@PathVariable String page) {
+        return ResponseEntity.ok(musicCatalogService.getMusicCatalog(page));
+    }
 }

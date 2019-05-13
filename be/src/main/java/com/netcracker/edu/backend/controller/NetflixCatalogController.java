@@ -18,4 +18,14 @@ public class NetflixCatalogController {
     public Iterable<Service> getAllNetflixCatalogByType() {
         return netflixCatalogService.getAllNetflixCatalogByType();
     }
+
+    @RequestMapping(value = "/{page}", method = RequestMethod.GET)
+    public Iterable<Service> getPage(@PathVariable(name = "page") String page) {
+        return netflixCatalogService.getAllNetflixCatalog(page);
+    }
+
+    @RequestMapping(value = "/pages", method = RequestMethod.GET)
+    public Integer getNumberOfPages() {
+        return netflixCatalogService.getNumberOfServices();
+    }
 }

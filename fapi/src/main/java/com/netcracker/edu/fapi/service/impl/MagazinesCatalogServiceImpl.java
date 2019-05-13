@@ -22,4 +22,18 @@ public class MagazinesCatalogServiceImpl implements MagazinesCatalogService {
         CatalogViewModel[] catalogViewModelsResponse = restTemplate.getForObject(backendServerUrl + "api/catalog/magazines", CatalogViewModel[].class);
         return catalogViewModelsResponse == null ? Collections.emptyList() : Arrays.asList(catalogViewModelsResponse);
     }
+
+    @Override
+    public List<CatalogViewModel> getMagazinesCatalog(String page) {
+        RestTemplate restTemplate = new RestTemplate();
+        CatalogViewModel[] catalogViewModelsResponse = restTemplate.getForObject(backendServerUrl + "api/catalog/magazines/" + page, CatalogViewModel[].class);
+        return catalogViewModelsResponse == null ? Collections.emptyList() : Arrays.asList(catalogViewModelsResponse);
+    }
+
+    @Override
+    public Integer getNumberOfPages() {
+        RestTemplate restTemplate = new RestTemplate();
+        Integer res = restTemplate.getForObject(backendServerUrl + "api/catalog/magazines/pages", Integer.class);
+        return res == null ? 0 : res;
+    }
 }

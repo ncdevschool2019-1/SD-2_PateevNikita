@@ -1,6 +1,7 @@
 package com.netcracker.edu.backend.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -9,16 +10,16 @@ public class Subscription {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private long duration;
 
     @Column(name = "Is_Active")
     private boolean isActive;
 
-    private double price;
+    @Column(name = "start_time")
+    private long startTime;
 
-    @Column(name = "StartDate")
-    private int startTime;
-
-    private int expiredTime;
+    @Column(name = "expired_time")
+    private long expiredTime;
 
     @Column(name = "UserId")
     private long userId;
@@ -29,13 +30,22 @@ public class Subscription {
 
     public Subscription() {}
 
-    public Subscription(boolean isActive, double price, int startTime, int expiredTime, long userId, Service service) {
+    public Subscription(long duration, boolean isActive, long startTime, long expiredTime, long userId, Service service) {
+        this.duration = duration;
         this.isActive = isActive;
-        this.price = price;
         this.startTime = startTime;
         this.expiredTime = expiredTime;
         this.userId = userId;
         this.service = service;
+    }
+
+    public Subscription(long duration, boolean isActive, long userId, Service service) {
+        this.duration = duration;
+        this.isActive = isActive;
+        this.userId = userId;
+        this.service = service;
+        this.startTime = (new Date()).getTime();
+        this.expiredTime = this.startTime + duration;
     }
 
     public long getId() {
@@ -54,27 +64,19 @@ public class Subscription {
         isActive = active;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public int getStartTime() {
+    public long getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(int startTime) {
+    public void setStartTime(long startTime) {
         this.startTime = startTime;
     }
 
-    public int getExpiredTime() {
+    public long getExpiredTime() {
         return expiredTime;
     }
 
-    public void setExpiredTime(int expiredTime) {
+    public void setExpiredTime(long expiredTime) {
         this.expiredTime = expiredTime;
     }
 
@@ -94,6 +96,14 @@ public class Subscription {
         this.service = service;
     }
 
+    public long getDuration() {
+        return duration;
+    }
+
+    public void setDuration(long duration) {
+        this.duration = duration;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -101,7 +111,6 @@ public class Subscription {
         Subscription that = (Subscription) o;
         return getId() == that.getId() &&
                 isActive() == that.isActive() &&
-                Double.compare(that.getPrice(), getPrice()) == 0 &&
                 getStartTime() == that.getStartTime() &&
                 getExpiredTime() == that.getExpiredTime() &&
                 getUserId() == that.getUserId() &&
@@ -110,7 +119,7 @@ public class Subscription {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), isActive(), getPrice(), getStartTime(), getExpiredTime(), getUserId(), getService());
+        return Objects.hash(getId(), isActive(), getStartTime(), getExpiredTime(), getUserId(), getService());
     }
 
     @Override
@@ -118,11 +127,29 @@ public class Subscription {
         return "Subscription{" +
                 "id=" + id +
                 ", isActive=" + isActive +
-                ", price=" + price +
                 ", startTime=" + startTime +
                 ", expiredTime=" + expiredTime +
                 ", userId=" + userId +
                 ", service=" + service +
                 '}';
+    }
+
+    public void play(boolean isActive) {
+        Date date = new Date();
+        this.expiredTime = date.getTime() + this.expiredTime - this.startTime;
+        this.startTime = date.getTime();
+        setActive(isActive);
+    }
+
+    public void block(boolean isActive) {
+        Date date = new Date();
+        this.startTime = date.getTime();
+        setActive(isActive);
+    }
+
+    public void charge() {
+        this.startTime = (new Date()).getTime();
+        this.expiredTime = this.startTime + this.duration;
+        this.setActive(true);
     }
 }

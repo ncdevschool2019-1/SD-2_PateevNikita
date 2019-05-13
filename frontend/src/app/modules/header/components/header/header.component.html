@@ -48,7 +48,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item" [routerLinkActive]="['active']">
-        <a class="nav-link" [routerLink]="['/home']" (click)="signOut()" *ngIf="isAuthorized()"><img class="login" src="https://img.icons8.com/ios/28/000000/exit.png">Sign out</a>
+        <a class="nav-link" [routerLink]="['/auth']" (click)="signOut()" *ngIf="isAuthorized()"><img class="login" src="https://img.icons8.com/ios/28/000000/exit.png">Exit</a>
       </li>
     </ul>
   </div>

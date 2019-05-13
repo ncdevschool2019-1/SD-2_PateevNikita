@@ -9,11 +9,24 @@ import java.util.List;
 @org.springframework.stereotype.Service
 public class MagazinesCatalogServiceImpl implements MagazinesCatalogService {
 
+    private int itemsPerPage = 9;
+
     @Autowired
     private CatalogRepository repository;
 
     @Override
     public List<Service> getAllMagazinesCatalogByType() {
         return (List<Service>) repository.findAllByServiceTypeId(2);
+    }
+
+    @Override
+    public List<Service> getAllMagazinesCatalog(String page) {
+        Integer currentPage = Integer.parseInt(page);
+        return (List<Service>) repository.getServicesOnPage((currentPage - 1) * this.itemsPerPage, this.itemsPerPage, 2);
+    }
+
+    @Override
+    public Integer getNumberOfServices() {
+        return this.repository.getNumberOfServices(2);
     }
 }

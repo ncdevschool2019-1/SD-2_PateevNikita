@@ -43,13 +43,40 @@ public class BillingAccountServiceImpl implements BillingAccountService {
     @Override
     public BillingAccount addMoney(BillingAccount account) {
         if (repository.findById(account.getId()).isPresent()) {
-            BillingAccount tmp = repository.findById(account.getId()).get();
-            if (account.getBalance() > tmp.getBalance()) {
+            BillingAccount ba = repository.findById(account.getId()).get();
+            if (account.getBalance() > ba.getBalance()) {
                 return repository.save(account);
             } else {
-                return tmp;
+                return ba;
             }
         }
         return null;
+    }
+
+    @Override
+    public Double getBalanceFromBillingAccounts(Long id) {
+        if(repository.getBalanceByUserId(id.toString()) != null) {
+            return repository.getBalanceByUserId(id.toString());
+        }
+        else {
+            return 0d;
+        }
+    }
+
+    @Override
+    public void writeOff(Long id, double cash) {
+        Iterable<BillingAccount> billingAccounts = repository.findByUserId(id);
+
+        for (BillingAccount acc : billingAccounts) {
+            if(acc.getBalance() >= cash) {
+                acc.writeOff(cash);
+                cash = 0;
+            }
+            else {
+                cash -= acc.getBalance();
+                acc.setBalance(0);
+            }
+            repository.save(acc);
+        }
     }
 }

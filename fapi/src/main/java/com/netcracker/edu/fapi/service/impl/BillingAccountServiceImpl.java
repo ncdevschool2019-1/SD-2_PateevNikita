@@ -47,4 +47,11 @@ public class BillingAccountServiceImpl implements BillingAccountService {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.put(backendServerUrl + "api/billing-accounts/" + id, account, BillingAccountViewModel.class);
     }
+
+    @Override
+    public Double getBalanceFromBillingAccount(String id) {
+        RestTemplate restTemplate = new RestTemplate();
+        Double balance = restTemplate.getForObject(backendServerUrl + "api/billing-accounts/balance/" + id, Double.class);
+        return balance == null ? 0d : balance;
+    }
 }

@@ -15,4 +15,11 @@ export class MusicCatalogService {
     return this.http.get<Catalog[]>('http://localhost:8081/api/catalog/music');
   }
 
+  getCurrentPage(p: number): Observable<Catalog[]> {
+    return this.http.get<Catalog[]>('http://localhost:8081/api/catalog/music/' + p);
+  }
+
+  getCurrentOfPages(): Observable<number> {
+    return this.http.get<number>('http://localhost:8081/api/catalog/music/pages')
+  }
 }

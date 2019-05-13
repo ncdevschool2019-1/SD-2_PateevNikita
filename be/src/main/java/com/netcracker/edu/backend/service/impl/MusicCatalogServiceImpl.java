@@ -10,11 +10,24 @@ import java.util.List;
 @org.springframework.stereotype.Service
 public class MusicCatalogServiceImpl implements MusicCatalogService {
 
+    private int itemsPerPage = 9;
+
     @Autowired
     private CatalogRepository repository;
 
     @Override
     public List<Service> getAllMusicCatalogByType() {
          return (List<Service>) repository.findAllByServiceTypeId(1);
+    }
+
+    @Override
+    public List<Service> getAllMusicCatalog(String page) {
+        Integer currentPage = Integer.parseInt(page);
+        return (List<Service>) repository.getServicesOnPage((currentPage - 1) * this.itemsPerPage, this.itemsPerPage, 1);
+    }
+
+    @Override
+    public Integer getNumberOfServices() {
+        return this.repository.getNumberOfServices(1);
     }
 }

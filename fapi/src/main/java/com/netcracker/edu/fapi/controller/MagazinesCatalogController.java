@@ -19,4 +19,14 @@ public class MagazinesCatalogController {
     public ResponseEntity<List<CatalogViewModel>> getMagazinesCatalog() {
         return ResponseEntity.ok(magazinesCatalogService.getMagazinesCatalog());
     }
+
+    @RequestMapping(value = "/pages", method = RequestMethod.GET)
+    public ResponseEntity<Integer> getNumberOfPages() {
+        return ResponseEntity.ok(magazinesCatalogService.getNumberOfPages());
+    }
+
+    @RequestMapping(value = "/{page}", method = RequestMethod.GET)
+    public ResponseEntity<List<CatalogViewModel>> getPage(@PathVariable String page) {
+        return ResponseEntity.ok(magazinesCatalogService.getMagazinesCatalog(page));
+    }
 }

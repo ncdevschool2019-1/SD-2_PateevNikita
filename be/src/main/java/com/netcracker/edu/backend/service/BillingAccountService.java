@@ -10,4 +10,6 @@ public interface BillingAccountService {
     void deleteBillingAccount(Long id);
     BillingAccount addBillingAccount(BillingAccount account);
     BillingAccount addMoney(BillingAccount account);
+    Double getBalanceFromBillingAccounts(Long id);
+    void writeOff(Long id, double cash);
 }

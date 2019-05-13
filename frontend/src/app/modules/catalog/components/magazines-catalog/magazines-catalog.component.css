@@ -1,6 +1,5 @@
 .cont {
-  background-image: url("~src/assets/img/pattern.jpg");
-  background-size: cover;
+  background-image: url("~src/assets/img/background-blur-clean-531880.jpg");
 }
 
 .card {
@@ -17,7 +16,22 @@
 
 .btn {
   display: inline-block;
-  margin-left: 35px;
+  margin-left: 80px;
+}
+
+.spinner-grow {
+  margin-bottom: 2.5px;
+  margin-left: 3px;
+}
+
+.pagination {
+  margin-left: 38%;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.cont-pag {
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 

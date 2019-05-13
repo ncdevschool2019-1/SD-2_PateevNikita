@@ -9,6 +9,8 @@ import {UserInfoComponent} from "./components/user-info/user-info.component";
 import {UserSubscriptionsComponent} from "./components/user-subscriptions/user-subscriptions.component";
 import { AdminComponent } from './components/admin/admin.component';
 import {YandexComponent} from "./components/yandex/yandex.component";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   imports: [
@@ -17,7 +19,11 @@ import {YandexComponent} from "./components/yandex/yandex.component";
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-full-width'
+    })
   ],
   exports: [
     BillingAccountComponent,

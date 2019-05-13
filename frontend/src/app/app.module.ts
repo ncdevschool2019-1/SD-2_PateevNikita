@@ -22,6 +22,8 @@ import { HeaderModule } from './modules/header/header.module';
 import { LandingModule } from './modules/landing/landing.module';
 import { LayoutModule } from './modules/layout/layout.module';
 import {httpInterceptorProviders} from "./services/interceptor.service";
+import {PaginationModule} from "ngx-bootstrap";
+import {NgxPaginationModule} from "ngx-pagination";
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import {httpInterceptorProviders} from "./services/interceptor.service";
     HeaderModule,
     LandingModule,
     LayoutModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    PaginationModule,
+    NgxPaginationModule
 ],
   providers: [{provide: APP_BASE_HREF, useValue : '/'}, httpInterceptorProviders],
   bootstrap: [AppComponent]

@@ -22,7 +22,7 @@ public class BillingAccountController {
         return ResponseEntity.ok(billingAccountService.getBillingAccounts());
     }
 
-   // @PreAuthorize("hasRole('User')")
+    @PreAuthorize("hasRole('User')")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<List<BillingAccountViewModel>> getBillingAccountsByUserId(@PathVariable String id) {
         return ResponseEntity.ok(billingAccountService.getBillingAccountsByUserId(id));
@@ -53,4 +53,11 @@ public class BillingAccountController {
         }
         return ResponseEntity.badRequest().build();
     }
+
+    @PreAuthorize("hasRole('User') or hasRole('Admin')")
+    @RequestMapping(value = "/balance/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Double> getBalanceFromBillingAccount(@PathVariable String id) {
+        return ResponseEntity.ok(billingAccountService.getBalanceFromBillingAccount(id));
+    }
+
 }

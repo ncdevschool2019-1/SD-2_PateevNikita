@@ -9,8 +9,6 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import {AuthorizationService} from "../../../../services/authorization.service";
 import {TokenService} from "../../../../services/token.service";
 import {ToastrService} from "ngx-toastr";
-import {routerNgProbeToken} from "@angular/router/src/router_module";
-import {error} from "util";
 
 @Component({
   selector: 'app-authorization',
@@ -23,11 +21,13 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
 
   addUserForm: FormGroup = new FormGroup({
     userName: new FormControl("", [Validators.required,Validators.maxLength(15)]),
-    firstName: new FormControl("", Validators.required),
-    lastName: new FormControl("", Validators.required),
+    firstName: new FormControl("", [Validators.required, Validators.maxLength(20),
+    Validators.pattern('[a-zA-Z-]*')]),
+    lastName: new FormControl("", [Validators.required, Validators.required, Validators.maxLength(25),
+      Validators.pattern('[a-zA-Z-]*')]),
     email: new FormControl("", [Validators.required, Validators.email]),
     userPassword: new FormControl("", [Validators.required, Validators.maxLength(20),
-      Validators.minLength(7), Validators.pattern('(?=.*[A-Z])(?=.*[a-z]).*$')])
+      Validators.minLength(7), Validators.pattern('(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).*$')])
   });
 
   loginForm: FormGroup = new FormGroup({
@@ -41,13 +41,32 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
               private toastr: ToastrService) {
   }
 
+  updateSignUpForm(): void {
+    this.addUserForm = new FormGroup({
+      userName: new FormControl("", [Validators.required,Validators.maxLength(15)]),
+      firstName: new FormControl("", [Validators.required, Validators.maxLength(20),
+        Validators.pattern('[a-zA-Z-]*')]),
+      lastName: new FormControl("", [Validators.required, Validators.required, Validators.maxLength(25),
+        Validators.pattern('[a-zA-Z-]*')]),
+      email: new FormControl("", [Validators.required, Validators.email]),
+      userPassword: new FormControl("", [Validators.required, Validators.maxLength(20),
+        Validators.minLength(7), Validators.pattern('(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).*$')])
+    });
+  }
+
+  showPassword(input: any): any {
+    input.type = (input.type === 'password' ? 'text' : 'password');
+  }
+
   registration() {
     $( document ).ready(function() {
       $('.message a').click(function () {
         $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-        $('.main').animate({height: '100%'}, "slow");
+        $('.main').animate({height: '70%'}, "slow");
+        $('.show-pass_').animate({opacity: "1"}, "slow");
       });
       $('.create a').click(function () {
+        $('.show-pass_').animate({opacity: "0"}, "slow");
         $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
         $('.main').animate({height: '100%'}, "slow");
       });
@@ -63,7 +82,12 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
       this.toastr.clear();
         this.toastr.error("Such Username or E-Mail already exists!", 'Error');
       }, () => {
-      this.toastr.show("Account was successfully created!");
+      $( document ).ready(function() {
+          $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+          $('.main').animate({height: '70%'}, "slow");
+        });
+      this.updateSignUpForm();
+      this.toastr.success("Account was successfully created! Now you can sign in");
     }));
   }
 
@@ -87,10 +111,6 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
         this.subscriptions.push(this.userService.getUserByUsername(this.tokenService.getLogin()).subscribe(data => {
           this.authService.setAuthorizedUser(data);
 
-          setTimeout(() => {
-            this.spinner.hide();
-          }, 2000);
-
           if(data.role.name === "User") {
             this.toastr.success('Hello, ' + data.firstName + '!', 'Success!');
             this.toastr.info("Now you can use all features of our service");
@@ -98,7 +118,11 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
           else {
             this.toastr.success('Hello, Admin!', 'Success!');
           }
-          //window.location.replace('http://localhost:4800/home');
+
+          setTimeout(() => {
+            window.location.replace('http://localhost:4800/home');
+            this.spinner.hide();
+          }, 2000);
         }));
       }));
   }

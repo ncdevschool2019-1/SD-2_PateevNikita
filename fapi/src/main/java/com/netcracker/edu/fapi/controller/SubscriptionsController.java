@@ -22,7 +22,7 @@ public class SubscriptionsController {
         return ResponseEntity.ok(subscriptionsService.getSubscriptionsByUserId(Long.valueOf(id)));
     }
 
-    @PreAuthorize("hasRole('User')")
+    //@PreAuthorize("hasRole('User')")
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<SubscriptionViewModel> addSubscription(@RequestBody SubscriptionViewModel subscription) {
         if (subscription != null) {
@@ -36,5 +36,16 @@ public class SubscriptionsController {
     public ResponseEntity deleteSubscription(@PathVariable String id) {
         subscriptionsService.deleteSubscription(Long.valueOf(id));
         return ResponseEntity.ok().build();
+    }
+
+    @PreAuthorize("hasRole('User') or hasRole('Admin')")
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity<SubscriptionViewModel> changeSubscriptionStatus(@RequestBody SubscriptionViewModel subscription) {
+        if (subscription != null) {
+            subscriptionsService.changeSubscriptionStatus(subscription);
+            return ResponseEntity.ok(subscription);
+        }
+
+        return ResponseEntity.badRequest().build();
     }
 }
