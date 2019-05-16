@@ -6,9 +6,10 @@ import com.netcracker.edu.backend.service.BillingAccountService;
 import com.netcracker.edu.backend.service.SubscriptionService;
 import com.netcracker.edu.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Date;
 
 @Service
 public class SubscriptionServiceImpl implements SubscriptionService{
@@ -39,43 +40,32 @@ public class SubscriptionServiceImpl implements SubscriptionService{
         repository.deleteById(id);
     }
 
-    @Override
-    public Subscription changeSubscriptionStatus(Subscription subscription) {
-        Subscription sub = repository.findById(subscription.getId()).get();
-        String status;
-
-        if(subscription.isActive()) {
-            status = "Active";
-        }
-        else {
-            status = "Blocked";
-        }
-
-        switch (status) {
-            case "Active":
-                sub.play(subscription.isActive());
-                break;
-            case "Blocked":
-                sub.block(subscription.isActive());
-                break;
-            default:
-                break;
-        }
-        return repository.save(sub);
-    }
-
-    @Override
-    public Iterable<Subscription> findExpiringSubscription(boolean isActive) {
-        return repository.findFirstByExpiredTime(isActive);
-    }
-
-    @Override
-    public Subscription updateSubscription(Subscription subscription) {
-        return repository.save(subscription);
-    }
 
     @Override
     public Subscription findByUserIdAndService(Long user_id, com.netcracker.edu.backend.entity.Service service) {
         return repository.findByUserIdAndService(user_id, service);
     }
+
+    @Scheduled(fixedDelay = 2000)
+    private void chargingService() {
+            Iterable<Subscription> subscriptions = repository.findAll();
+            if(subscriptions != null) {
+                for (Subscription sub : subscriptions) {
+                    if (sub != null) {
+                        if (sub.getExpiredTime() <= (new Date()).getTime()) {
+                            if (sub.getService().getCost() > billingAccountService.getBalanceFromBillingAccounts(sub.getUserId())) {
+                                Date date = new Date();
+                                sub.setStartTime(date.getTime());
+                                sub.setActive(false);
+                                repository.save(sub);
+                            } else {
+                                billingAccountService.writeOff(sub.getUserId(), sub.getService().getCost());
+                                sub.reload();
+                                repository.save(sub);
+                            }
+                        }
+                    }
+                }
+            }
+        }
 }

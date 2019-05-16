@@ -37,5 +37,8 @@ public class UserController {
         return userService.save(user);
     }
 
-
+    @RequestMapping(method = RequestMethod.PUT)
+    public User changeUserRole(@RequestBody User user) {
+        return userService.changeUserRole(user);
+    }
 }

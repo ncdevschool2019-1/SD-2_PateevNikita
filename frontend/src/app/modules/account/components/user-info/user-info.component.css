@@ -2,6 +2,8 @@ main {
   justify-content: space-between;
   align-items: baseline;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background-size: cover;
+  height: 650px;
 }
 
 .subs {
@@ -15,14 +17,18 @@ main {
 }
 
 .field {
-  font-size: 25px;
-	color: #f05f40;
-	text-shadow: black 0 1px 0;
+  font-family: 'Bungee', cursive ;
+  font-size: 40px;
+	color: #f04a24;
+	text-shadow: black 1px 1px 0;
 }
 
-.value {
-  border: 2px solid black;
-	color: black;
+p a {
+  font-family: 'Bungee', cursive ;
+  font-size: 28px;
+	color: #f05f40;
+  text-shadow: black 2px 2px 0px;
+  margin-left: 10px;
 }
 
 .ava {
@@ -47,7 +53,6 @@ main {
 .userinfo_ {
   text-align: center;
   padding: 25px;
-
 }
 
 .col-main {
@@ -78,17 +83,3 @@ main {
   background-image: linear-gradient(to left, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
 }
 
-.subscriptions {
-  width: 50%;
-  min-height: 150px;
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);;
-  float: left;
-}
-
-.billingAccs {
-  width: 50%;
-  min-height: 150px;
-  background-image: linear-gradient(180deg, #fdfbfb 0%, #ebedee 100%);
-  margin-left: 50%;
-  border-left: 3px solid black;
-}

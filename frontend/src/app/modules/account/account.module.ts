@@ -11,6 +11,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import {YandexComponent} from "./components/yandex/yandex.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
+import { AdminSubsComponent } from './components/admin-subs/admin-subs.component';
+import {PaginationModule} from "ngx-bootstrap";
 
 @NgModule({
   imports: [
@@ -20,6 +22,7 @@ import {ToastrModule} from "ngx-toastr";
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    PaginationModule.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-top-full-width'
@@ -30,14 +33,16 @@ import {ToastrModule} from "ngx-toastr";
     UserInfoComponent,
     UserSubscriptionsComponent,
     AdminComponent,
-    YandexComponent
+    YandexComponent,
+    AdminSubsComponent
   ],
   declarations: [
     BillingAccountComponent,
     UserInfoComponent,
     UserSubscriptionsComponent,
     AdminComponent,
-    YandexComponent
+    YandexComponent,
+    AdminSubsComponent
   ]
 })
 export class AccountModule { }

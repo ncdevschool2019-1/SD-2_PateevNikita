@@ -5,6 +5,7 @@ import {ToastrService} from "ngx-toastr";
 import {SubscriptionService} from "../../../../services/subscription.service";
 import {Subscriptions} from "../../models/subscriptions";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
+import {BillingAccountService} from "../../../../services/billing-account.service";
 
 @Component({
   selector: 'app-user-subscriptions',
@@ -30,6 +31,7 @@ export class UserSubscriptionsComponent implements OnInit, OnDestroy {
   }
 
   deleteSubscription(id: number): void {
+    this.toastr.clear();
     this.spinner.show();
     this.subscriptions.push(
       this.subsService.deleteSubscription(id).subscribe(() => {
@@ -39,11 +41,27 @@ export class UserSubscriptionsComponent implements OnInit, OnDestroy {
     this.toastr.success("Your subscription has been successfully deleted");
   }
 
+  changeSubscriptionsStatus(subId: number, isActive: boolean): void {
+     this.subs.forEach(value => {
+       if(value.id == subId) {
+         this.subscriptions.push(
+           this.subsService.changeSubscriptionStatus(new Subscriptions(value.id, value.expiredTime, value.userId, isActive, value.startTime, value.service))
+             .subscribe(() => {
+               this.updateSubscriptions();
+             }));
+       }
+     });
+  }
+
   isActive(id: boolean): string {
     if(id) {
       return "Active";
     }
     else return "Blocked";
+  }
+
+  isAdmin(): boolean {
+    return this.authService.isAdmin();
   }
 
   setTime(seconds: number): Date {

@@ -43,4 +43,10 @@ public class SubscriptionsServiceImpl implements SubscriptionsService {
         restTemplate.put(backendServerUrl + "api/subscriptions", subscriptionViewModel, SubscriptionViewModel.class);
     }
 
+    @Override
+    public Integer getUsersCount(Integer id) {
+        RestTemplate restTemplate = new RestTemplate();
+        Integer count = restTemplate.getForObject(backendServerUrl + "api/subscriptions/count/" + id, Integer.class);
+        return count == null ? 0 : count;
+    }
 }

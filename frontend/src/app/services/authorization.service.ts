@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Observable, Subject, Subscription} from 'rxjs';
+import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {LogUser} from "../modules/authorization/models/LogUser";
 import {AuthorizationToken} from "../modules/authorization/models/AuthorizationToken";
@@ -29,7 +29,7 @@ export class AuthorizationService {
 
   public leaveAccount() {
     this.authorizedUser = null;
-    this.tokenService.signOut();
+    this.tokenService.exit();
   }
 
   isAuthorized(): boolean {

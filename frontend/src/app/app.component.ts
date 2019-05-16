@@ -22,7 +22,6 @@ export class AppComponent implements OnInit, OnDestroy{
             this.userService.getUserByUsername(this.tokenService.getLogin()).subscribe(value => {
               if (value != null) {
                 this.authService.setAuthorizedUser(value);
-                console.log(this.authService.getAuthorizedUser().id);
               }
             })
           );

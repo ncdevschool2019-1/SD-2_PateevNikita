@@ -9,7 +9,7 @@ import java.util.List;
 @org.springframework.stereotype.Service
 public class NetflixCatalogServiceImpl implements NetflixCatalogService {
 
-    private int itemsPerPage = 3;
+    private int itemsPerPage = 1;
 
     @Autowired
     private CatalogRepository repository;

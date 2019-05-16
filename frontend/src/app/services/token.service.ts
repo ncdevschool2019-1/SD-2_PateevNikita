@@ -13,8 +13,10 @@ export class TokenService {
 
   constructor() { }
 
-  signOut() {
+  exit() {
     window.sessionStorage.clear();
+    window.location.reload();
+    window.location.replace("http://localhost:4800/auth");
   }
 
   public saveToken(token: string) {

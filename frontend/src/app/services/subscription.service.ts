@@ -1,27 +1,24 @@
-import { Injectable } from '@angular/core';
+import { Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 import {HttpClient} from "@angular/common/http";
-import {Observable, of, Subscription} from 'rxjs';
 import {UserService} from "./user.service";
-import {Catalog} from "../modules/catalog/models/catalog";
 import {Subscriptions} from "../modules/account/models/subscriptions";
 import {AuthorizationService} from "./authorization.service";
-import {BillingAccount} from "../modules/account/models/billing-account";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SubscriptionService {
-
-  private subscription: Subscription;
-
-  private subscriptions: Subscriptions[] = [];
-
+  public id: number = 0;
   constructor(private http: HttpClient, private userService: UserService,
-              private authService: AuthorizationService) { }
-
+              private authService: AuthorizationService) {}
 
   getSubscriptions(): Observable<Subscriptions[]> {
     return this.http.get<Subscriptions[]>('http://localhost:8081/api/subscriptions/' + this.authService.getAuthorizedUser().id);
+  }
+
+  getSubscriptionsByUserId(): Observable<Subscriptions[]> {
+    return this.http.get<Subscriptions[]>('http://localhost:8081/api/subscriptions/' + this.id);
   }
 
   deleteSubscription(id: number): Observable<void> {

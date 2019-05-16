@@ -9,4 +9,5 @@ public interface SubscriptionsService {
     SubscriptionViewModel addSubscription(SubscriptionViewModel subscriptionViewModel);
     void deleteSubscription(Long id);
     void changeSubscriptionStatus(SubscriptionViewModel subscriptionViewModel);
+    Integer getUsersCount(Integer id);
 }

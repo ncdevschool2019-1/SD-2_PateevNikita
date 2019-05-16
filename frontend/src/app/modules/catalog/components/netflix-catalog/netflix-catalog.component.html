@@ -1,39 +1,18 @@
 <ng4-loading-spinner></ng4-loading-spinner>
 <div class="cont">
-<div class="card bg-dark text-white" *ngFor="let service of asyncCatalog | async | paginate: {id: 'server', itemsPerPage: 3, currentPage: p, totalItems: elements}">
-  <!-- The Modal -->
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-
-
-
-        <!-- Modal body -->
-        <div class="modal-body">
-
-          <form [formGroup]="addSubscriptionForm" novalidate (ngSubmit)="subscribe(service)">
-            <div class="form-group">
-              <label for="sel1">Choose your payment method:</label>
-              <select class="form-control" id="sel1" formControlName="wallet" type="text">
-                <option id="opt" *ngFor="let ba of billingAccount">{{ba.payment_method}} - {{ba.balance}} $</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-success float-right" (click)="subscribe(service)" data-dismiss="modal">Subscribe<span class="spinner-grow spinner-grow-sm"></span></button>
-            </div>
-          </form>
-        </div>
-      </div>
+  <section class="infosite">
+    <h1>Netflix</h1>
+  </section>
+  <div class="card" *ngFor="let service of asyncCatalog | async | paginate: {id: 'server', itemsPerPage: 3, currentPage: p, totalItems: elements}">
+    <img class="card-img-top" src="../../../../../assets/img/{{service.serviceName}}.png" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Price: {{service.cost}}$ <img *ngIf="service.serviceName == 'Yandex'" class="bonus"  src="https://img.icons8.com/metro/21/000000/christmas-gift.png"></h5>
+      <h5 class="card-title">Time: 10 seconds</h5>
+      <button class="btn btn-success" (click)="subscribe(service)" *ngIf="isUser() && !isThereSubscriptionInAccount(service)">Subscribe</button>
+      <button class="btn btn-outline-warning" *ngIf="isUser() && isThereSubscriptionInAccount(service)" [routerLink]="['/account/subs']">Check in subscriptions</button>
     </div>
   </div>
-  <div class="card-img-overlay">
-    <h5 class="card-title">Netflix</h5>
-    <p class="card-text">Price: {{service.cost}}$ for 1 month</p>
-    <button class="btn btn-success" data-toggle="modal" data-target="#myModal" *ngIf="isUser()">Subscribe</button>
-    <button class="btn btn-outline-danger" *ngIf="isAdmin()">Delete</button>
-  </div>
-</div>
-</div>
+
 <div class="cont-pag">
   <pagination-controls class="pagination" *ngIf="elements > 3" (pageChange)="getCurrentPage($event)" id="server"></pagination-controls>
 </div>

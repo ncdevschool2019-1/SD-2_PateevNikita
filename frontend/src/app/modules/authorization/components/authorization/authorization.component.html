@@ -46,7 +46,7 @@
     </div>
     <div class="form-group">
       <input #sign_up type="password" class="form-control" required [ngClass]="{'is-invalid': addUserForm.get('userPassword').touched && addUserForm.get('userPassword').invalid}" formControlName="userPassword" autocomplete="off" placeholder="Password"/>
-      <a><img class="show-pass" (click)="showPassword(sign_up)" src="https://img.icons8.com/ios/25/000000/visible.png" alt="show_password"></a>
+      <a class="show" (click)="showPassword(sign_up)"><ng-container *ngIf="sign_up.type == 'password'">Show password</ng-container><ng-container *ngIf="sign_up.type == 'text'">Hide password</ng-container></a>
       <div *ngIf="addUserForm.get('userPassword').touched && addUserForm.get('userPassword').invalid" class="invalid-feedback">
         <div *ngIf="addUserForm.get('userPassword').errors['required']">Password is required!</div>
         <div *ngIf="addUserForm.get('userPassword').errors['pattern']">Password must be at least 7-20 characters long, and include at least one lowercase letter, one uppercase letter, and a number</div>
@@ -60,8 +60,8 @@
       <input type="text" class="form-control" required formControlName="userName" autocomplete="off" placeholder="Username"/>
     </div>
     <div class="form-group">
-      <input #sign_in type="password" class="form-control" required formControlName="userPassword" autocomplete="off" placeholder="Password"/>
-      <a><img class="show-pass_" (click)="showPassword(sign_in)" src="https://img.icons8.com/ios/25/000000/visible.png" alt="show_password"></a>
+      <input id="sign_in" #sign_in type="password" class="form-control" required formControlName="userPassword" autocomplete="off" placeholder="Password"/>
+      <a class="show" (click)="showPassword(sign_in)"><ng-container *ngIf="sign_in.type == 'password'">Show password</ng-container><ng-container *ngIf="sign_in.type == 'text'">Hide password</ng-container></a>
     </div>
     <button class="btn btn-secondary" type="submit">Sign in</button>
     <p class="create">Not registered? <a>Create an account</a></p>

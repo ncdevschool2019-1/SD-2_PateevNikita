@@ -9,7 +9,7 @@ import java.util.List;
 @org.springframework.stereotype.Service
 public class MagazinesCatalogServiceImpl implements MagazinesCatalogService {
 
-    private int itemsPerPage = 9;
+    private int itemsPerPage = 3;
 
     @Autowired
     private CatalogRepository repository;

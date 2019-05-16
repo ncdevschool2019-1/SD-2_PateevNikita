@@ -9,6 +9,7 @@ import {MusicCatalogComponent} from "./components/music-catalog/music-catalog.co
 import {NetflixCatalogComponent} from "./components/netflix-catalog/netflix-catalog.component";
 import {NgxPaginationModule} from "ngx-pagination";
 import {PaginationModule} from "ngx-bootstrap";
+import {TooltipModule} from "ngx-tooltip";
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import {PaginationModule} from "ngx-bootstrap";
     RouterModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    PaginationModule
+    PaginationModule,
+    TooltipModule
   ],
   exports: [
     MagazinesCatalogComponent,

@@ -1,5 +1,6 @@
 <ng4-loading-spinner></ng4-loading-spinner>
 <div class="subscript">
+
   <section class="infosite">
     <h1>Subscriptions</h1>
   </section>
@@ -18,11 +19,14 @@
     <tbody>
     <tr *ngFor="let sub of subs">
       <th scope="row">{{sub.service.serviceName}}</th>
-      <td >{{sub.service.cost}}</td>
+      <td>{{sub.service.cost}}</td>
       <td>{{isActive(sub.active)}}</td>
       <td>{{setTime(sub.startTime)|date:'medium'}}</td>
       <td>{{setTime(sub.expiredTime)|date:'medium'}}</td>
-      <td><button class="btn btn-outline-danger" (click)="deleteSubscription(sub.id)">Delete</button></td>
+      <td>
+        <button class="btn btn-outline-danger" (click)="deleteSubscription(sub.id)">Unsubscribe</button>
+      </td>
     </tr>
     </tbody>
   </table>
+</div>

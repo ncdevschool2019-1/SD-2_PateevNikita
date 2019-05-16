@@ -1,18 +1,20 @@
 <ng4-loading-spinner></ng4-loading-spinner>
 <div class="cont">
-
-<div class="card" *ngFor="let service of asyncCatalog | async | paginate: {id: 'server', itemsPerPage: 9, currentPage: p, totalItems: elements}">
-
+  <section class="infosite">
+    <h1>MUSIC</h1>
+  </section>
+<div class="card" *ngFor="let service of asyncCatalog | async | paginate: {id: 'server', itemsPerPage: 3, currentPage: p, totalItems: elements}">
     <img class="card-img-top" src="../../../../../assets/img/{{service.serviceName}}.png" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Price: {{service.cost}}$</h5>
+      <h5 class="card-title">Price: {{service.cost}}$ <img *ngIf="service.serviceName == 'Yandex'" class="bonus"  src="https://img.icons8.com/metro/21/000000/christmas-gift.png"></h5>
       <h5 class="card-title">Time: 10 seconds</h5>
-      <button class="btn btn-success" (click)="subscribe(service)" *ngIf="isUser()">Subscribe</button>
-      <button class="btn btn-outline-danger" *ngIf="isAdmin()">Delete</button>
+      <button class="btn btn-success" (click)="subscribe(service)" *ngIf="isUser() && !isThereSubscriptionInAccount(service)">Subscribe</button>
+      <button class="btn btn-outline-warning" *ngIf="isUser() && isThereSubscriptionInAccount(service)" [routerLink]="['/account/subs']">Check in subscriptions</button>
     </div>
 </div>
+</div>
 
-</div>
 <div class="cont-pag">
-<pagination-controls class="pagination" *ngIf="elements > 9" (pageChange)="getCurrentPage($event)" id="server"></pagination-controls>
+  <pagination-controls class="pagination" *ngIf="elements > 3" (pageChange)="getCurrentPage($event)" id="server"></pagination-controls>
 </div>
+

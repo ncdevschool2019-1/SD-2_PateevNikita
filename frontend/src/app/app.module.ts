@@ -25,7 +25,6 @@ import {httpInterceptorProviders} from "./services/interceptor.service";
 import {PaginationModule} from "ngx-bootstrap";
 import {NgxPaginationModule} from "ngx-pagination";
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -52,7 +51,8 @@ import {NgxPaginationModule} from "ngx-pagination";
     LayoutModule,
     NgxSpinnerModule,
     PaginationModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    TooltipModule
 ],
   providers: [{provide: APP_BASE_HREF, useValue : '/'}, httpInterceptorProviders],
   bootstrap: [AppComponent]

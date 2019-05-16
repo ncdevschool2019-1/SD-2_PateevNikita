@@ -6,8 +6,6 @@ import {AuthorizationService} from "../../../../services/authorization.service";
 import {SubscriptionService} from "../../../../services/subscription.service";
 import {BillingAccountService} from "../../../../services/billing-account.service";
 import {Ng4LoadingSpinnerService} from "ng4-loading-spinner";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {BillingAccount} from "../../../account/models/billing-account";
 import {Subscriptions} from "../../../account/models/subscriptions";
 import {ToastrService} from "ngx-toastr";
 
@@ -22,19 +20,17 @@ export class MusicCatalogComponent implements OnInit, OnDestroy {
   public p: number = 1;
   public elements: number;
   public catalog: Catalog[];
-  public billingAccount: BillingAccount[] = [];
   private subscriptions: Subscription[] = [];
-
-  addSubscriptionForm: FormGroup = new FormGroup({
-    wallet: new FormControl("", Validators.required)
-  });
+  private subs: Subscriptions[] = [];
+  clearIntervalInstance: any;
 
   constructor(private musicCatalogService: MusicCatalogService, private authService: AuthorizationService,
               private subsService: SubscriptionService, private billingService: BillingAccountService,
               private spinner: Ng4LoadingSpinnerService, private toastr: ToastrService) { }
 
-  getBillingAccounts(): void {
-    this.subscriptions.push(this.billingService.getBillingAccounts().subscribe(billingAccount => this.billingAccount = billingAccount));
+
+  getSubscriptions(): void {
+    this.subscriptions.push(this.subsService.getSubscriptions().subscribe(subs => this.subs = subs));
   }
 
   getMusicCatalog() {
@@ -47,18 +43,27 @@ export class MusicCatalogComponent implements OnInit, OnDestroy {
   }
 
   subscribe(service: Catalog): void {
+    this.toastr.clear();
      this.subscriptions.push(this.billingService.getBalanceFromBillingAccount().subscribe(data => {
        if (service.cost > data) {
          this.toastr.warning("You don't have enough funds to subscribe. " +
            "Please, add money in your billing account")
        } else {
          this.subscriptions.push(this.subsService.addSubscription(new Subscriptions(null, null, this.authService.getAuthorizedUser().id, true, null, service)).subscribe(() => {
-           setTimeout(() => {
-             this.getMusicCatalog();
-           }, 1000);
+           this.getSubscriptions();
          }));
        }
      }));
+  }
+
+  isThereSubscriptionInAccount(service: Catalog): boolean {
+    let flag = false;
+    this.subs.forEach(value => {
+      if(value.service.serviceName === service.serviceName) {
+        flag = true;
+      }
+    });
+    return flag;
   }
 
   getCurrentPage(p: number): void {
@@ -70,26 +75,27 @@ export class MusicCatalogComponent implements OnInit, OnDestroy {
     }));
   }
 
+
+
   isUser(): boolean {
     return this.authService.isUser();
   }
 
-  isAdmin(): boolean {
-    return this.authService.isAdmin();
-  }
-
   ngOnInit() {
+    this.getMusicCatalog();
     this.subscriptions.push(
       this.musicCatalogService.getCurrentOfPages().subscribe(data => {
         this.elements = data;
         this.getCurrentPage(1);
       })
     );
-    this.getMusicCatalog();
-    this.getBillingAccounts();
+    this.clearIntervalInstance = setInterval(() => {
+      this.getSubscriptions();
+    }, 100);
   }
 
   ngOnDestroy(): void {
     this.subscriptions.forEach(s => s.unsubscribe());
+    clearInterval(this.clearIntervalInstance);
   }
 }

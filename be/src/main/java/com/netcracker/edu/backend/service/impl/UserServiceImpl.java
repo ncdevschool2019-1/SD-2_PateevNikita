@@ -41,6 +41,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User changeUserRole(User user) {
+        User usr = userRepository.findById(user.getId()).get();
+        switch (user.getRole().getName()) {
+            case "Admin":
+                usr.changeRole(user.getRole());
+                break;
+            case "User":
+                usr.changeRole(user.getRole());
+                break;
+            default:
+                break;
+        }
+        return userRepository.save(usr);
+    }
+
+    @Override
     public void delete(long id) {
         userRepository.deleteById(id);
     }

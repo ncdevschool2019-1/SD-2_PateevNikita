@@ -1,0 +1,12 @@
+.not-found {
+  position: absolute;
+  z-index: 1;
+  left: 37%;
+  top: 34%;
+}
+
+.not404 {
+  margin-left: 100px;
+  margin-top: 50px;
+}
+

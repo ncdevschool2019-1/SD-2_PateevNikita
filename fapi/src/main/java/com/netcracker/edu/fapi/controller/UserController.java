@@ -46,4 +46,14 @@ public class UserController {
         }
         return ResponseEntity.badRequest().body(answer);
     }
+
+    @PreAuthorize("hasRole('Admin')")
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity<User> changeUserRole(@RequestBody User user) {
+        if (user != null) {
+            userService.changeUserRole(user);
+            return ResponseEntity.ok(user);
+        }
+        return ResponseEntity.badRequest().build();
+    }
 }

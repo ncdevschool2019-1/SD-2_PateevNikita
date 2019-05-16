@@ -8,4 +8,5 @@ public interface UserService {
     User findUserById(Long id);
     List<User> findAll();
     User save(User user);
+    void changeUserRole(User user);
 }

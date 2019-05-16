@@ -147,6 +147,10 @@ public class User {
                 ", role=" + role +
                 '}';
     }
+
+    public void changeRole(Role role) {
+        setRole(role);
+    }
 }
 
 

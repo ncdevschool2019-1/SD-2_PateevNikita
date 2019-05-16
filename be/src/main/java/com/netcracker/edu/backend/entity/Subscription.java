@@ -134,20 +134,7 @@ public class Subscription {
                 '}';
     }
 
-    public void play(boolean isActive) {
-        Date date = new Date();
-        this.expiredTime = date.getTime() + this.expiredTime - this.startTime;
-        this.startTime = date.getTime();
-        setActive(isActive);
-    }
-
-    public void block(boolean isActive) {
-        Date date = new Date();
-        this.startTime = date.getTime();
-        setActive(isActive);
-    }
-
-    public void charge() {
+    public void reload() {
         this.startTime = (new Date()).getTime();
         this.expiredTime = this.startTime + this.duration;
         this.setActive(true);

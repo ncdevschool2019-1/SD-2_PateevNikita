@@ -36,7 +36,7 @@ export class YandexComponent implements OnInit, OnDestroy {
     this.clearIntervalInstance =
       setTimeout(() => {
         this.getSubscriptions();
-      }, 1000);
+      }, 100);
   }
 
   ngOnDestroy(): void {

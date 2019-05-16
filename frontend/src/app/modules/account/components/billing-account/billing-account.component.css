@@ -46,7 +46,8 @@
 
 #money_input {
   width: 200px;
-  margin-left: 38%;
+  margin-left: 10%;
+  margin-bottom: 20px;
 }
 
 .form-group {
@@ -67,7 +68,7 @@ li {
   border-radius: 15px;
   margin-bottom: 10%;
   min-width: 50px;
-  width: 800px;
+  width: 400px;
   list-style-type: none;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }

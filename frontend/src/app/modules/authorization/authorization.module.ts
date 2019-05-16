@@ -8,7 +8,6 @@ import {AuthorizationComponent} from "./components/authorization/authorization.c
 import { NgxSpinnerModule } from 'ngx-spinner';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
-
 @NgModule({
   imports: [
     HttpClientModule,

@@ -5,6 +5,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {CarouselComponent} from "./components/carousel/carousel.component";
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   imports: [
@@ -15,10 +16,12 @@ import {CarouselComponent} from "./components/carousel/carousel.component";
     RouterModule
   ],
   exports: [
-    CarouselComponent
+    CarouselComponent,
+    NotFoundComponent
   ],
   declarations: [
-    CarouselComponent
+    CarouselComponent,
+    NotFoundComponent
   ]
 
 })

@@ -27,6 +27,10 @@ export class UserService {
     return this.http.get<User>('http://localhost:8081/api/users' + '/username/' + username);
   }
 
+  changeUserRole(user: User): Observable<User> {
+    return this.http.put<User>('http://localhost:8081/api/users', user);
+  }
+
   setActiveUser(user: User) {
     this.activeUser = user;
   }

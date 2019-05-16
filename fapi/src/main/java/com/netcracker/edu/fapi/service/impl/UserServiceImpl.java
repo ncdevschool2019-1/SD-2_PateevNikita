@@ -50,4 +50,10 @@ public class UserServiceImpl implements UserService {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.postForEntity(backendServerUrl + "/api/users", user, User.class).getBody();
     }
+
+    @Override
+    public void changeUserRole(User user) {
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.put(backendServerUrl + "api/users", user, User.class);
+    }
 }

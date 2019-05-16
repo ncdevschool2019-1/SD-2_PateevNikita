@@ -15,6 +15,8 @@ import { UserSubsComponent } from './components/user-subs/user-subs.component';
 import { UserBillAccsComponent } from './components/user-bill-accs/user-bill-accs.component';
 import { UserInfComponent } from './components/user-inf/user-inf.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
+import { PlayerComponent } from './components/player/player.component';
+import { NotFound404Component } from './components/not-found404/not-found404.component';
 
 @NgModule({
   imports: [
@@ -26,10 +28,10 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
     LandingModule
   ],
   declarations: [
-    HomeComponent, MusicComponent, MagazinesComponent, NetflixComponent, AuthComponent, AccComponent, UserSubsComponent, UserBillAccsComponent, UserInfComponent, AdminPageComponent
+    HomeComponent, MusicComponent, MagazinesComponent, NetflixComponent, AuthComponent, AccComponent, UserSubsComponent, UserBillAccsComponent, UserInfComponent, AdminPageComponent, PlayerComponent, NotFound404Component
   ],
   exports: [
-    HomeComponent, MusicComponent, MagazinesComponent, NetflixComponent, AuthComponent, AccComponent
+    HomeComponent, MusicComponent, MagazinesComponent, NetflixComponent, AuthComponent, AccComponent, NotFound404Component
   ]
 })
 export class LayoutModule { }

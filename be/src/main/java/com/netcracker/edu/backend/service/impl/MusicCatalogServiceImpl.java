@@ -10,7 +10,7 @@ import java.util.List;
 @org.springframework.stereotype.Service
 public class MusicCatalogServiceImpl implements MusicCatalogService {
 
-    private int itemsPerPage = 9;
+    private int itemsPerPage = 3;
 
     @Autowired
     private CatalogRepository repository;

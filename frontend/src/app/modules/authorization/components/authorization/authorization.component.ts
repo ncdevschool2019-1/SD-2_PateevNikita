@@ -103,10 +103,10 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
       this.tokenService.saveLogin(data.login);
       this.tokenService.saveAuthorities(data.role);
       console.log(data.token, data.role);
-      }, error => {
+      }, () => {
       this.spinner.hide();
       this.toastr.clear();
-      this.toastr.error(error.error.message, 'Error');
+      this.toastr.error("You are not registered!", 'Error');
       }, () => {
         this.subscriptions.push(this.userService.getUserByUsername(this.tokenService.getLogin()).subscribe(data => {
           this.authService.setAuthorizedUser(data);

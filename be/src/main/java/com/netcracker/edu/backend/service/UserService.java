@@ -9,5 +9,9 @@ public interface UserService {
     User findByUserName(String userName);
     User getUserById(Long id);
     User save(User user);
+    User changeUserRole(User user);
     void delete(long id);
+    default void sas() {
+        System.out.println("sks");
+    }
 }

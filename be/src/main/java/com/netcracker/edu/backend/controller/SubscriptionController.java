@@ -35,9 +35,4 @@ public class SubscriptionController {
     public void deleteSubscription(@PathVariable(name = "id") Long id) {
         subscriptionService.deleteSubscription(id);
     }
-
-    @RequestMapping(method = RequestMethod.PUT)
-    public Subscription changeSubscriptionStatus(@RequestBody Subscription subscription) {
-        return subscriptionService.changeSubscriptionStatus(subscription);
-    }
 }

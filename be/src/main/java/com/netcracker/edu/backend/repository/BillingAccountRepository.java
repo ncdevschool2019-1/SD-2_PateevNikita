@@ -13,4 +13,6 @@ public interface BillingAccountRepository extends CrudRepository<BillingAccount,
 
     @Query(value = "select * from billingaccounts where user_id = ?", nativeQuery = true)
     Iterable<BillingAccount> findByUserId(Long id);
+
+
 }
